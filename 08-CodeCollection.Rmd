@@ -1,0 +1,537 @@
+
+ 
+
+# R code collection {#s07-Code-Collection} 
+ 
+```{r, echo=F}
+save(AGMeans, Amat.array, Create.Amat, DecomposeF, DecomposeU, elasticity.matrix, EstimateSGR, EulerLotka, GenTime, LC, LifeExpectancy, nsim.stochastic, nsimLC, projection, projection.stochastic, R0.lifetable, R0function, sensitivity.matrix, TC.lifetable, uvlambda, lx, mx, px, Abird.post, Abird.pre, LifeTableBird, Fbird.pre,  Ubird.pre, Pop.bird.pre, Pop.bird.post, Pop.bird.transpose, stablestructure.pre, repvalues.pre, file="CompendiumCode.RData")
+```
+
+This appendix includes a collection of the R functions used in the compendium. 
+
+An RData-file containing all the functions as well as relevant R objects for the songbird example can be downloaded here:
+
+```{r , echo=FALSE}
+# a single file
+xfun::embed_file('CompendiumCode.RData')
+```
+
+<br>
+
+To import this file into R, use `load("CompendiumCode.RData")` (after saving the file in your R working directory folder). Then all functions and objects should be visible in the 'Environment' tab.
+
+ 
+<br>
+
+## Life tables
+
+### Net reproductive rate $R_0$
+
+```{r}
+R0.lifetable <- function(lx, mx){
+  sum(lx*mx) 
+}
+```
+
+
+<br>
+
+### Euler-Lotka 
+
+Part of the method to solve the equation for $\lambda$ using `uniroot()` (see main text).
+
+```{r}
+EulerLotka <- function(lambda, x, lx, mx){
+  sum(lambda^(-x)*lx*mx)-1
+}
+```
+
+
+
+<br><br>
+
+## Matrix population models
+
+<br>
+
+### Create Leslie matrix 
+
+Build Leslie matrix from vectors of survival and fertility coefficients (need to have same length). If the last survival coefficient is not zero, individuals can accumulate in the final class.
+
+```{r}
+Create.Amat <- function(Svec, Fvec){
+  k <- length(Svec)
+  MatA<- matrix(0,k,k)
+  MatA[1,] <- Fvec 
+  for(i in 1:(k-1)){
+    MatA[i+1,i] <- Svec[i]
+  }
+  MatA[k,k] <- Svec[k] 
+  MatA
+  }
+```
+ 
+<br>
+ 
+ 
+### Decompose $\mathbf{U}$ and $\mathbf{F}$
+
+Decompose the matrices $\mathbf{U}$ and $\mathbf{F}$ based on equation to obtain the transition matrix $\mathbf{G}$ vector of survival probability $\mathbf{s}$ (from  $\mathbf{U}$), and the transition matrix $\mathbf{Q}$  the  fertility vector $\mathbf{f}$ (from  $\mathbf{F}$)
+
+
+```{r}
+DecomposeU <- function(MatU){
+  k<-dim(MatU)[1]
+  if(is.na(MatU[k,k])){
+    MatU[k,k]<-0
+  }
+  Svec <- apply(MatU,2,sum)
+  MatG <- t(t(MatU)/Svec)
+  for(i in 1:k){
+    if(Svec[i]==0){
+      MatG[,i] <- 0
+      MatG[i,i] <- 1
+    }
+  }
+ list("Gmat"=MatG, "Survival"=Svec)
+}
+```
+
+<br>
+
+```{r}
+DecomposeF <- function(MatF){
+	k <- dim(MatF)[1]
+	Fvec <- apply(MatF,2,sum)
+	MatQ <- matrix(0,k,k)
+	for(i in 1:k){
+		if(Fvec[i]==0){
+			MatQ[1,i]<-1
+			
+		}
+		else{
+			MatQ[,i]<-MatF[,i]/Fvec[i]
+		}
+	}
+ list("Qmat"=MatQ, "Fertility"=Fvec)
+}
+```
+
+
+<br>
+ 
+ 
+ 
+### Population projection 
+
+Project size of stages over time given a projection matrix and an initial population vector. Return as data frame.
+
+```{r}
+projection <- function(MatA, Tmax = 50, n0){
+  k <- dim(MatA)[1]
+  if(length(n0)!=k){
+	  warning("n0 should have length 
+	          k corresponding to 
+	          number of stages in Amat")
+	  }
+  Nmat <- matrix(NA, nrow= Tmax+1, ncol=k)
+  cnames <- paste("n", 1:k, sep="")
+  timesteps <- 0:Tmax
+  Nmat[1,] = n0 
+  for(i in 2:(Tmax+1)){  
+    Nmat[i,] = MatA%*%Nmat[i-1,]
+  }
+  frame <- data.frame(timesteps, Nmat)
+  colnames(frame) <- c("time", cnames)
+  frame
+}
+```
+
+ <br>
+ 
+### Long-term growth rate, stable structure and reproductive value
+
+For a projection matrix $\mathbf{A}$, the function returns the asymptotic growth rate $\lambda$, a vector describing the stable stage structure $\mathbf{u}$, and a vector describing the stage-specific reproductive values $\mathbf{v}'$. NB: We scale the reproductive values so that $\mathbf{v}'\mathbf{u}=1$.   
+
+```{r}
+uvlambda <- function(MatA){
+ ev <- eigen(MatA)
+ tev <- eigen(t(MatA))
+ lmax <- which.max(Re(ev$values))
+ U <- ev$vectors
+ V <- tev$vectors
+ u <- as.matrix(abs(Re(U[, lmax]))/
+                  sum(abs(Re(U[, lmax]))))
+ u <- u/(sum(u)) #scale u
+ v <- as.matrix(abs(Re(V[, lmax])))
+ v <- v/sum(u*v ) #scale v
+ v <- t(ifelse(u*v <= 0, 0, v))
+ return(list("lambda"=max(Re(ev$values)),
+             "u"=u,
+             "v"=v))
+}
+```
+
+<br>
+
+### Life expectancy
+
+For a projection matrix MatU, the function returns the vector of life expectancies for given stages. Life expectancy at the first stage is the first element of this vector.
+
+```{r}
+ LifeExpectancy <- function(MatU){   
+  k<-dim(MatU)[1]
+  if(is.na(MatU[k,k])){
+    MatU[k,k]<-0
+  }
+  uDim=dim(MatU)[1]
+  N = solve(diag(uDim[1])-MatU)   
+  colSums(N)  
+}
+```
+<br>
+
+
+### Lifetime reproduction
+
+The function returns the mean lifetime reproduction $R_0$, based on the matrices $\mathbf{A}$ and $\mathbf{U}$. and the vector of expected remaining lifetime reproduction by stage. If all offspring are born into the first stage, the first element also corresponds to $R_0$.
+
+```{r}
+R0function  <-  function(MatU, MatF){
+  k <- dim(MatU)[[1]]
+  Rmat <- MatF%*%solve(diag(1, k, k)-MatU)    
+  Rvec <- apply(Rmat,2,sum)
+  R0 <- uvlambda(MatA=Rmat)$lam
+  return(list("R0"= R0, "Rvec"= Rvec))
+}
+```
+
+<br>
+
+### Generation time
+
+For a projection matrix MatA and a reproduction matrix MatF, the function returns the generation time estimated as the mean age of mothers in a population with stable structure.
+
+```{r}
+GenTime  <-  function(MatA, FMat){
+  res <- uvlambda(MatA=MatA)
+  lam <- res$lam
+  u <- res$u
+  v <- res$v
+  lam/(v%*%FMat%*%u)    
+}
+```
+
+<br>
+
+
+### Sensitivities and elasticities
+
+For a given projection matrix $\mathbf{A}$, the function `sensitivity.matrix()` returns the matrix of sensitivities  of $\lambda$ to each corresponding element of MatA, and the function  `elasticity.matrix()` returns the elasticities. The argument 'zeroes' can be set to FALSE to return also the sensitivities / elasticities corresponding to elements of MatA that are zero.
+
+
+ 
+
+```{r}
+sensitivity.matrix <- function(MatA, zeroes=T){
+  res <- uvlambda(MatA=MatA)
+  sensmat <- t(res$u%*%res$v)
+  if (zeroes==T){
+    sensmat <- ifelse (MatA==0, 0, sensmat)
+  }
+ sensmat
+}
+```
+
+
+<br>
+
+```{r}
+elasticity.matrix <- function(MatA, zeroes=T){
+  res <- uvlambda(MatA=MatA)
+  sensmat <- t(res$u%*%res$v)
+  if (zeroes==T){
+    sensmat <- ifelse (MatA==0, 0, sensmat)
+  }
+ sensmat*MatA/res$lam 
+}
+```
+
+<br>
+
+ 
+ 
+## Stochastic models
+ 
+### Arithmetic and geometric mean
+
+The function calculates the arithmetic and geometric mean of a sequence of annual population growth rates $\Lambda_t$ with a given mean and standard deviation. It returns a data frame with time steps, the generated random sequence of annual growth rates $\Lambda_t$, and the two means.
+
+```{r}
+AGMeans <- function(Tmax=100, mean.lambda=1.05, sd.lambda=.3){
+  #Use lognormal distribution to avoid negative values
+  Lambdavec <- rlnorm(n=Tmax, 
+                      log(mean.lambda)-
+                        .5*log(1+ sd.lambda^2/
+                                 (mean.lambda^2)), 
+                      sdlog=sqrt(log(1+sd.lambda^2/
+                                       (mean.lambda^2))))
+   geomLambda <- exp(mean(log(Lambdavec)))
+   meanLambda <- mean(Lambdavec)
+  data.frame("Time"=0:(length(Lambdavec)-1), 
+             "Lambda"=Lambdavec,
+             "Geometric"=geomLambda, 
+             "Arithmetic"=meanLambda)
+}
+```
+ 
+ <br>
+ 
+### Simulations in Lewontin-Cohen model
+ 
+Function to generate one realization of the model, given initial population size, mean and standard deviation of the annual growth rates $\Lambda_t$:
+
+
+```{r }
+LC <- function(Tmax=30, 
+               n0=100, 
+               mean.lambda=1.05, 
+               sd.lambda=0.1){
+  stochastic.lambdas <- rnorm(Tmax, 
+                              mean=mean.lambda, 
+                              sd=sd.lambda)
+  Nvec <- rep(NA, Tmax+1)
+  Nvec[1] <- n0
+  for(i in 1:Tmax){
+    Nvec[i+1] <- stochastic.lambdas[i]*Nvec[i]
+  }
+  data.frame("Time"=0:Tmax, "N"=Nvec)
+}
+```
+
+
+<br>
+
+
+Function to generate a chosen number (`nsim`) of realizations of the Lewontin-Cohen model, returned in a data frame.
+
+
+```{r}
+nsimLC <- function(nsim=100, 
+                   Tmax=30, 
+                   n0=100, 
+                   mean.lambda=1.05, 
+                   sd.lambda=0.1){
+  frame <-  data.frame("Time"=0:Tmax)
+  for(j in 1:nsim){
+  stochastic.lambdas <- rnorm(Tmax, 
+                              mean=mean.lambda, 
+                              sd=sd.lambda)
+  Nvec <- rep(NA, Tmax+1)
+  Nvec[1] <- n0
+  for(i in 1:Tmax){
+    Nvec[i+1] <- stochastic.lambdas[i]*Nvec[i]
+  }
+  frame <- cbind(frame, Nvec)
+  names(frame)[j+1] <- paste("N",j,sep="")
+  }
+  frame
+}
+```
+
+
+### Simulations of stochastic structured model
+
+#### Generate sequence of projection matrices
+
+The function below returns a time series of stochastic projection matrices as an array, for a model assuming stochasticity in survival coefficients and fertility coefficients only, and no correlation between matrix elements (can be modified to include such correlation). Fertility is modeled with a log-link (normally distributed on log-scale), while survival is modeled with a log-log-link (normally distribued on log-log-scale). The mean (constant) environment is determined by the input matrices $\mathbf{A}$, $\mathbf{U}$ and $\mathbf{F}$. The input vectors `VarF` and `VarS` specify the variances of fertility and survival on their respective scales.
+
+
+```{r }
+Amat.array <- function(MatA, 
+                       MatU, 
+                       MatF, 
+                       tmax=30, 
+                       VarF=rep(0.03, 3), 
+                       VarS=rep(0.03, 3)){
+  #Split survival/transition matrix:
+  SplitU <- DecomposeU(MatU) 
+  #Split fertility matrix:
+  SplitF <- DecomposeF(MatF) 
+   #Transition matrix:
+  Gmat <- SplitU$Gmat
+   #Survival vector:
+  Svec <- SplitU$Survival
+  #Define beta (log-log link function):
+  Beta.S <- -log(-log(Svec))
+  #Offspring transition matrix:
+  Qmat <- SplitF$Qmat 
+  #Fertility vector:
+  Fvec <- SplitF$Fertility 
+  #Define beta (log link function):
+  Beta.F <- log(Fvec) 
+ 
+  #variance covariance matrix 
+  SigMat <- diag(c(VarS, VarF))
+  #Draw random (scaled) values for S and F:
+  SFTime <- mvrnorm(tmax, mu=c(Beta.S, Beta.F), Sigma=SigMat)
+  #Number of matrix classes 
+  k <- length(Svec) 
+  #Rescaled survival probabilities (loglog link):
+  SvecTime<-   exp(-exp(-SFTime[,1:k])) 
+  #Rescaled fertilities  (log link):
+  FvecTime<- exp(SFTime[,(k+1):(2*k)]) 
+#Build  projection matrix for each time step:
+  A.array <- array(NA,dim=c(k,k,tmax))
+  for (i in 1:tmax){
+    Smat <- diag(SvecTime[i,])
+    Fmat <- diag(FvecTime[i,])
+    A.array[,,i] <-   Gmat%*%Smat+Qmat%*%Fmat
+  }
+return("Amats" = A.array)
+}
+```
+
+<br>
+
+
+#### Stochastic population projection
+
+The function below returns a data frame with the size of each stage over time, for a given array of projection matrices (third dimension should correspond to time) and initial population vector `n0`.
+
+```{r }
+projection.stochastic <-function(Amats, n0){
+	Tmax <- dim(Amats)[3]
+	k <- dim(Amats)[1]
+	if(length(n0)!=k){
+	  warning("n0 should have length k 
+	          corresponding to number of 
+	          stages in the Amats object")
+	  }
+	Nmat <- matrix(NA,nrow= Tmax+1, ncol=k)
+	Nmat[1,] <- n0
+  cnames <- paste("n", 1:k, sep="")
+  timesteps <- 0:Tmax
+	for(i in 2:(Tmax+1)){  
+		Nmat[i,] <- Amats[,,i-1] %*% Nmat[i-1,]
+		}
+  frame <- data.frame(timesteps,Nmat)
+  colnames(frame) <- c("time", cnames)
+  frame
+}
+```
+
+
+<br>
+
+
+The following function generates a series of stochastic matrices `nsim` times, each series of length `Tmax`, and returns the projected total population size over time for each series, in a data frame.  Other input variables are the constant matrices and variance vectors,  and initial population vector.
+
+```{r }
+nsim.stochastic <- function(nsim=100, 
+                            tmax=30, 
+                            n0=rep(10,3), 
+                            MatA, 
+                            MatU, 
+                            MatF, 
+                            VarF, 
+                            VarS){
+  frame <-  data.frame("Time"=0:tmax)
+  for(m in 1:nsim){
+  AMATS <- Amat.array(MatA=MatA, 
+                      MatU=MatU, 
+                      MatF=MatF, 
+                      VarF=VarF, 
+                      VarS=VarS, 
+                      tmax=tmax)
+   projectN <- apply(projection.stochastic(Amats=AMATS, 
+                                           n0=n0)[,-1],1,sum)
+  frame <- cbind(frame, projectN)
+  names(frame)[m+1] <- paste("Rep",m,sep="")
+  }
+  frame
+}
+```
+
+<br>
+
+### Estimate stochastic growth rate
+
+The following code can be used to calculate the stochastic growth rate following the definition of equation \@ref(eq:StochasticRate), given one sequence of projection matrices. The cutoff argument removes the first time steps (corresponding to cutoff number).
+
+```{r}
+ 
+EstimateSGR <- function(Amats, n0, cutoff=20){
+  Tmax <- dim(Amats)[3]
+	if(cutoff>=Tmax){
+	  warning("cutoff must be lower 
+	          than the number of 
+	          matrices in Amats")
+	  }
+  project <- projection.stochastic(Amats=Amats, n0=n0) 
+  Ntot <- apply(project[,-1],1,sum)
+  logN <- log(Ntot[cutoff:length(Ntot)])
+  TM <- length(logN)
+  (logN[TM]-logN[1])/TM
+}
+
+```
+
+
+
+<br>
+
+
+## Parameters and matrices for the songbird example
+
+Copy paste if you want to look at example code without running all the previous code.
+ 
+```{r}
+#------------------------------
+#Life table parameters
+#------------------------------
+x <- 0:3
+mx <- c(0, 0, 3, 6) 
+lx <- c(1, 0.2, 0.18, 0.108)
+px <- c(.2, .9, .6, 0)
+
+#------------------------------
+#Life table calculations
+#------------------------------
+TC_Bird <- TC.lifetable(x,  lx, mx)
+R0_Bird <- R0.lifetable(lx, mx) 
+
+#------------------------------
+#Apply uniroot to find lambda 
+#(EulerLotka defined among funcions)
+#------------------------------
+lambdabird <- uniroot(EulerLotka, 
+                      x=x,
+                      lx=lx,
+                      mx=mx,
+                      interval=c(.1,2))$root
+
+#------------------------------
+#Projection matrices
+#------------------------------
+Abird.pre <- Create.Amat(
+  Svec <- c(.9, .6, 0), 
+  Fvec= c(0, .6, 1.2))  
+Abird.post <- Create.Amat(
+  Svec <- c(.2, .9, 0), 
+  Fvec= c(0, 2.7, 3.6))  
+
+#------------------------------
+#Projection 
+#------------------------------
+Pop.bird.pre <- projection(
+  MatA=Abird.pre,
+  n0=rep(10,3), 
+  Tmax=30)
+
+Pop.bird.post <- projection(
+  MatA=Abird.post, 
+  n0=rep(10,3),
+  Tmax=30)
+
+```

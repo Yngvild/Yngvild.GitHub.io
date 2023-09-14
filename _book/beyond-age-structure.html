@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Beyond age structure | Demography and matrix models</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Beyond age structure | Demography and matrix models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Beyond age structure | Demography and matrix models" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_03-MatrixModels.html"/>
+<link rel="next" href="stochastic-environments.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#baseline-model-for-population-growth"><i class="fa fa-check"></i><b>1.2</b> Baseline model for population growth</a></li>
+<li class="chapter" data-level="1.3" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#the-exponential-growth-model-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> The exponential growth model in ecology and evolution</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.4.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="2.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#what-is-a-life-table"><i class="fa fa-check"></i><b>2.1</b> What is a life table?</a></li>
+<li class="chapter" data-level="2.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.2</b> A basic life table</a></li>
+<li class="chapter" data-level="2.3" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.3</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.4" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.4</b> Life table calculations</a></li>
+<li class="chapter" data-level="2.5" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-euler-lotka-equation"><i class="fa fa-check"></i><b>2.5</b> The Euler-Lotka equation</a></li>
+<li class="chapter" data-level="2.6" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.6</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.7" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-fictive-bird-example"><i class="fa fa-check"></i><b>2.7</b> A fictive bird example</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-by-hand"><i class="fa fa-check"></i><b>2.7.1</b> Calculations ‘by hand’</a></li>
+<li class="chapter" data-level="2.7.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-in-r"><i class="fa fa-check"></i><b>2.7.2</b> Calculations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.9.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#why-matrix-models"><i class="fa fa-check"></i><b>3.1</b> Why matrix models?</a></li>
+<li class="chapter" data-level="3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth and the Leslie matrix</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes when constructing matrix models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#asymptotic-properties"><i class="fa fa-check"></i><b>3.5</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.5.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.5.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.5.2</b> Calculations using eigen analysis</a></li>
+<li class="chapter" data-level="3.5.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.5.3</b> Net reproductive rate and generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#sensitivity-analysis-of-lambda"><i class="fa fa-check"></i><b>3.6</b> Sensitivity analysis of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.6.1</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>3.7</b> Life table response experiments</a></li>
+<li class="chapter" data-level="3.8" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+<li class="chapter" data-level="3.8.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html"><i class="fa fa-check"></i><b>4</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#matrix-models-are-very-flexible"><i class="fa fa-check"></i><b>4.1</b> Matrix models are very flexible</a></li>
+<li class="chapter" data-level="4.2" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#life-cycle-stages"><i class="fa fa-check"></i><b>4.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>4.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#age-by-stage-models"><i class="fa fa-check"></i><b>4.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4" data-path="beyond-age-structure.html"><a href="beyond-age-structure.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>4.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>5</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>5.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="5.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>5.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>5.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="5.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>5.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>5.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> Appendix A. R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>A.2.5</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="A.2.6" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Appendix B. Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="beyond-age-structure" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Beyond age structure<a href="beyond-age-structure.html#beyond-age-structure" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-goals-3" class="section level2 unnumbered hasAnchor">
+<h2>Learning goals<a href="beyond-age-structure.html#learning-goals-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Understand the key components of a general stage structured matrix models.</p></li>
+<li><p>Mention and discuss examples of different stage structure.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="matrix-models-are-very-flexible" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Matrix models are very flexible<a href="beyond-age-structure.html#matrix-models-are-very-flexible" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The life table and associated parameters defined in the previous chapters apply only to age structured populations. However, the methods you learned for matrix models can be used with any kind of projection matrix (provided it fulfills certain mathematical assumptions). Here we mention only a few common examples and look at how the projection matrix changes. You can apply the exact same methods above on your own to explore the stable structure, reproductive values, etc. The only difference is that the results refer to stages instead of age classes.</p>
+<p><br></p>
+</div>
+<div id="life-cycle-stages" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Life cycle stages<a href="beyond-age-structure.html#life-cycle-stages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Distinct life cycle stages are typical for many insects. For each stage (e.g. egg, larvae, pupae, adult), the individuals can either remain in their current stage for one more time step, or make a transition to the next stage (development). With this kind of structure, the projection matrix will includes transition probabilities <span class="math inline">\(g_j\)</span> (probability of transition out of the stage) in addition to stage-specific survival <span class="math inline">\(s_j\)</span> and fertility <span class="math inline">\(f_j\)</span>, and takes the form</p>
+<p><br></p>
+<p><span class="math display" id="eq:Lefkovitch">\[\begin{align}
+\begin{split}
+\mathbf{A}=\left[
+\begin{matrix}
+f_1+s_1(1-g_1) &amp; f_2 &amp; \cdots &amp;f_{k-1}&amp;f_k\\
+s_1 g_1&amp;s_2(1-g_2) &amp; \cdots&amp;0&amp;0\\
+0 &amp;s_2 g_2&amp;\ddots&amp;0&amp;0\\
+\vdots &amp; \vdots  &amp; \ddots&amp;s_{k-1}(1-g_{k-1})&amp;0 \\
+0 &amp;0 &amp; \cdots&amp;s_{k-1}g_{k-1}&amp;s_k \\  
+\end{matrix}
+\right].
+\end{split}
+\tag{4.1}
+\end{align}\]</span></p>
+<p><br></p>
+<p>Note that in the final stage (typically the adult stage), all individuals can only survive and remain. This kind of projection matrix is known as a <strong>Lefkovitch matrix</strong>, named after the work of <span class="citation">Lefkovitch (<a href="#ref-Lefkovitch1" role="doc-biblioref">1965</a>)</span>.</p>
+<p><br></p>
+<div id="example-of-lefkovitch-matrix-wild-boar" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Example of Lefkovitch matrix: Wild boar<a href="beyond-age-structure.html#example-of-lefkovitch-matrix-wild-boar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<div class="figure"><span style="display:block;" id="fig:fig6"></span>
+<img src="Villsvin.jpg" alt="Wild boar (*Sus scrofa*)." width="60%" />
+<p class="caption">
+Figure 4.1: Wild boar (<em>Sus scrofa</em>).
+</p>
+</div>
+<p><br></p>
+<p>This example is one of many studies using a Lefkovitch matrix to separate among main life cycle stages. Such models are often used because it captures the main differences among individuals without becoming too complex. In a study on wild boar, <span class="citation">Bieber and Ruf (<a href="#ref-Bieber1" role="doc-biblioref">2005</a>)</span> constructed a model with three classes: Juveniles (age 0-1), yearlings (age 1-2) and adults (age 2+).</p>
+<p>The projection matrix for this wild boar model is given by</p>
+<p><span class="math display">\[
+\mathbf{A}=\left[\begin{matrix} 0.26 &amp; 0.94 &amp;1.93  \\ 0.33&amp;0  &amp;0  \\ 0&amp;0.4  &amp;0.66  \\  \end{matrix}\right].
+\]</span></p>
+<p><br></p>
+<p>As you may have noticed, this matrix is quite similar to an age structured model (Leslie matrix), but with the exception that adults do not necessarily die after reaching age 2, but can continue to live so that the final stage contains all individuals of age 2 and more (2+).</p>
+<p><br></p>
+</div>
+</div>
+<div id="age-by-stage-models" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Age by stage models<a href="beyond-age-structure.html#age-by-stage-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Individuals in a population will always differ in more than one way, and sometimes (depending on the study question as well as the species) we have to account for more than one state variable in order to adequately describe the life history. For instance, we may need to combine age and life cycle stage, if the age differences within each life cycle stage are large enough. The key is to define such a model is to first define new classes from each possible combination of age and stage. If there are <span class="math inline">\(k\)</span> age classes, and <span class="math inline">\(m\)</span> stages, the new age by stage model will have <span class="math inline">\(\phi=k*m\)</span> classes in total. From this we can define a new projection matrix of dimension <span class="math inline">\(\phi \times \phi\)</span>, which can be analysed using the same methods as before to find <span class="math inline">\(\lambda\)</span> and other parameters.</p>
+<p><br></p>
+</div>
+<div id="size-structure-integral-projection-models" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Size structure: Integral projection models<a href="beyond-age-structure.html#size-structure-integral-projection-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many state variables are continuous in nature, such as body size. Matrix models can lump individuals into different discrete size classes, but this adds an extra modeling decision of where to set the limits for each size class. This can be avoided by using an integral projection model (IPM; <span class="citation">Easterling, Ellner, and Dixon (<a href="#ref-Easterling1" role="doc-biblioref">2000</a>)</span>). Instead of a population vector with a discrete number of stages, these models follow a continuous trait distribution <span class="math inline">\(n(z)\)</span>, where <span class="math inline">\(z\)</span> represents the trait measure (e.g. size), and instead of a projection matrix IPMs use a projection kernel (or surface). You can think of an IPM as a matrix model with infinitely many stages, and in fact they belong to the same class of models (matrix models). An IPM can be analysed with matrix model methods to find <span class="math inline">\(\lambda\)</span> and other life history parameters. The main difference is in how these parameters are (typically) estimated from data. We will not go into details regarding IPMs here, but you have already learned the methods for analyzing them, as they are the same as for matrix models.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bieber1" class="csl-entry">
+Bieber, C., and T. Ruf. 2005. <span>“Population Dynamics in Wild Boar <em>Sus Scrofa</em>: Ecology, Elasticity of Growth Rate and Implications for the Management of Pulsed Resource Consumers.”</span> <em>J. Appl. Ecol.</em> 42: 1203–13.
+</div>
+<div id="ref-Easterling1" class="csl-entry">
+Easterling, M. R., Stephen P. Ellner, and P. M. Dixon. 2000. <span>“Size-Specific Sensitivity: Applying a New Structured Population Model.”</span> <em>Ecology</em> 81: 694–708.
+</div>
+<div id="ref-Lefkovitch1" class="csl-entry">
+Lefkovitch, L. P. 1965. <span>“The Study of Population Growth in Organisms Grouped by Stages.”</span> <em>Biometrics</em> 21: 1–18.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_03-MatrixModels.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="stochastic-environments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

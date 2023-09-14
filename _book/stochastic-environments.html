@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Stochastic environments | Demographic methods in life history theory</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Stochastic environments | Demographic methods in life history theory" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Stochastic environments | Demographic methods in life history theory" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="s04-Stage.html"/>
+<link rel="next" href="id_06-references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="1" data-path="s01-Exponential.html"><a href="s01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="s01-Exponential.html"><a href="s01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="s01-Exponential.html"><a href="s01-Exponential.html#a-baseline-model"><i class="fa fa-check"></i><b>1.2</b> A baseline model</a></li>
+<li class="chapter" data-level="1.3" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> Exponential growth in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="s02-life-tables.html"><a href="s02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i><b>2.1</b> Learning goals</a></li>
+<li class="chapter" data-level="2.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#age-specific-survival-and-fecundity"><i class="fa fa-check"></i><b>2.2</b> Age-specific survival and fecundity</a></li>
+<li class="chapter" data-level="2.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-history-strategies-and-trade-offs"><i class="fa fa-check"></i><b>2.3</b> Life history strategies and trade-offs</a></li>
+<li class="chapter" data-level="2.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.4</b> A basic life table</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#bird"><i class="fa fa-check"></i><b>2.4.1</b> A bird example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="s02-life-tables.html"><a href="s02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.5</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.6" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.6</b> Life table calculations</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#net-reproductive-rate"><i class="fa fa-check"></i><b>2.6.1</b> Net reproductive rate</a></li>
+<li class="chapter" data-level="2.6.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#cohort-generation-time"><i class="fa fa-check"></i><b>2.6.2</b> Cohort generation time</a></li>
+<li class="chapter" data-level="2.6.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#approximation-of-long-term-growth-rate"><i class="fa fa-check"></i><b>2.6.3</b> Approximation of long-term growth rate</a></li>
+<li class="chapter" data-level="2.6.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#Euler"><i class="fa fa-check"></i><b>2.6.4</b> Euler-lotka equation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="s02-life-tables.html"><a href="s02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.7</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.8" data-path="s02-life-tables.html"><a href="s02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="s02-life-tables.html"><a href="s02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a></li>
+<li class="chapter" data-level="2.10" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.3"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i><b>3.1</b> Learning goals</a></li>
+<li class="chapter" data-level="3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#age-structured-growth"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#avoiding-mistakes"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected-growth"><i class="fa fa-check"></i><b>3.5</b> Projected growth</a></li>
+<li class="chapter" data-level="3.6" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#asymptotic"><i class="fa fa-check"></i><b>3.6</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.6.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.6.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.6.2</b> Calculations based on projection matrix</a></li>
+<li class="chapter" data-level="3.6.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.6.3</b> Net reproductive rate</a></li>
+<li class="chapter" data-level="3.6.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#gentime"><i class="fa fa-check"></i><b>3.6.4</b> Generation time</a></li>
+<li class="chapter" data-level="3.6.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#lifetime"><i class="fa fa-check"></i><b>3.6.5</b> Life expectancy</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-and-elasticity-of-lambda"><i class="fa fa-check"></i><b>3.7</b> Sensitivity and elasticity of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-matrix-elements"><i class="fa fa-check"></i><b>3.7.1</b> Sensitivity to matrix elements</a></li>
+<li class="chapter" data-level="3.7.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-underlying-parameters"><i class="fa fa-check"></i><b>3.7.2</b> Sensitivity to underlying parameters</a></li>
+<li class="chapter" data-level="3.7.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.7.3</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>3.8</b> Life table response experiments</a></li>
+<li class="chapter" data-level="3.9" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.9</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="s04-Stage.html"><a href="s04-Stage.html"><i class="fa fa-check"></i><b>4</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#flexibility-of-matrix-models"><i class="fa fa-check"></i><b>4.1</b> Flexibility of matrix models</a></li>
+<li class="chapter" data-level="4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#life-cycle-stages"><i class="fa fa-check"></i><b>4.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="s04-Stage.html"><a href="s04-Stage.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>4.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#age-by-stage-models"><i class="fa fa-check"></i><b>4.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4" data-path="s04-Stage.html"><a href="s04-Stage.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>4.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>5</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>5.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="5.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>5.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>5.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="5.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>5.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>5.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#lifetime-reproduction"><i class="fa fa-check"></i><b>A.2.5</b> Lifetime reproduction</a></li>
+<li class="chapter" data-level="A.2.6" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_0s8-CaseStudy.html"><a href="id_0s8-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="s09-Solutions.html"><a href="s09-Solutions.html"><i class="fa fa-check"></i><b>C</b> Suggested solutions to exercises</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-1-exercises"><i class="fa fa-check"></i><b>C.1</b> Chapter 1 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.1-1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.2-1"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="C.2" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-2-exercises"><i class="fa fa-check"></i><b>C.2</b> Chapter 2 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.1-1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.2-1"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.3-1"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demographic methods in life history theory</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="stochastic-environments" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Stochastic environments<a href="stochastic-environments.html#stochastic-environments" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-goals-4" class="section level2 unnumbered hasAnchor">
+<h2>Learning goals<a href="stochastic-environments.html#learning-goals-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Understand key properties of population growth in stochastic environments.</p></li>
+<li><p>Be able to describe the main properties of the Lewontin-Cohen model.</p></li>
+<li><p>Understand the role of bet-hedging strategies for variable environments.</p></li>
+<li><p>Discuss the role of variable and unpredictable environments in light of climate change.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="what-is-a-stochastic-environment" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> What is a stochastic environment?<a href="stochastic-environments.html#what-is-a-stochastic-environment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have only considered populations in constant environments. But natural environments tend to show much variation, both in time and space. Here, ‘environment’ is a very general term which can refer to a particular abiotic variable (like temperature) or a combination of several factors that affect organisms living in the habitat, including resource availability. Environmental variability can be <em>predictable</em>, like the seasonal changes in light conditions at higher latitudes, or <em>unpredictable</em> - which is the case for stochastic environments. This also includes rare events such as rainfalls in a dessert. We can estimate a frequency at which such events typically occur over many years, but not the exact timing of each event.</p>
+<p>Practically all organisms live in some kind of variable environment (although some habitats are more stable than others, for instance the deep depths of the oceans), and they have evolved various strategies to deal with both the wide range of possible conditions they (or their offspring) may encounter, and the unpredictability of these conditions. These adaptations allow them to mitigate the impacts during times of bad conditions, as well as take advantage of times when conditions are good. If the environment varies in a predictable way, phenotypic plasticity is an important strategy to maximize fitness. Organisms can then take advantage of environmental cues to predict and develop an optimum phenotype for the future environment. For unpredictable (stochastic) environments, however, organisms cannot rely on such cues. In thse cases <strong>bet-hedging</strong> strategies may evolve.</p>
+<p>This section focuses on such unpredictable environments and bet-hedging, while phenotypic plasticity is covered in the lectures. The underlying theory is based on stochastic processes and probability theory, and this note will only cover a few basic concepts. A key result from the most basic model of stochastic population growth is that the long-term population growth rate in variable environments will always be lower than the growth rate in the constant mean environment. This result is also important for the theory of bet-hedging, but builds on some important assumptions.</p>
+<p><br></p>
+</div>
+<div id="stochastic-growth-of-unstructured-populations" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Stochastic growth of unstructured populations<a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For simplicity we will assume annual time steps in the following, but the model applies to any time interval. The simplest model for stochastic population growth applies to an unstructured population, and the population growth rate each year is a stochastic variable <span class="math inline">\(\Lambda_t\)</span> with mean <span class="math inline">\(\text{E}[\Lambda_t]=\lambda\)</span>, variance <span class="math inline">\(\text{Var}(\Lambda)=\sigma^2\)</span>, and no autocorrelation between the growth rates of different years. This means that the growth rates across years are ‘IID’, meaning ‘Identically and Independently Distributed’, and this assumption is very important for the derivation of the long-term population growth rate. This model is the Lewontin-Cohen model <span class="citation">(<a href="#ref-Lewontin1" role="doc-biblioref">Lewontin and Cohen 1969</a>)</span>, also known as a ‘geometric random walk’.</p>
+<p>We are interested in the long-term behavior of this stochastic process. Will the population be more likely to grow or decline over time compared to the starting point? How likely is it to go extinct? Assume that we could start the same population process from <span class="math inline">\(N_0\)</span> many times over and look at the growth of each realization over several time steps (see the shiny app below for an example of many such realizations). The different realizations will diverge more and more from each other over time, as the randomness of the process accumulates over the years. By chance, some populations may grow to a large size, while others will decline. Many trajectories will lie somewhere in between. We are interested in describing the expected long-term growth of a <em>typical population</em>. It turns out that this is not the same as the growth of the expected population size.</p>
+<p>The derivations below are slightly technical (especially if you are not familiar with stochastic variables), but the purpose is to demonstrate an important point: With stochastic population growth, the expected long-term growth is not well described by the growth of the mean population size <span class="math inline">\(\ln \text{E}[N_t]\)</span> (on log scale). Instead we need to look at the growth of <span class="math inline">\(\text{E}[\ln N_t]\)</span> to capture the mean long-term growth. If you are not familiar with stochastic models, you may want to take some time to explore the plots below to look at how the stochastic population trajectories behave on the absolute scale and on the log scale (growth of <span class="math inline">\(\ln \text{E}[N_t]\)</span> and <span class="math inline">\(\text{E}[\ln N_t]\)</span> are shown in blue and red), and how they chenge with different values of <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\sigma^2\)</span>. The red lines represent the relevant long-term means that we are interested in. This should give you a more intuitive understanding of the process, before reading the following derivations.</p>
+<p>You should also notice the histograms showing the distribution of the population size on absolute scale and log scale after some time. The first is skewed (approximating a lognormal distribution) while the other shows a symmetric distribution (approximating a normal distribution). The skewness in the distribution of population size means that only a few of the different runs will grow to a very large size, while most will end up at a low size. This means that the mean population size (blue line in the shiny app histogram) will be much affected by those few realisations with very high growth, and is not a good representation of the typical population. The median value (red line) is generally much lower and in this case a better measure of the typical endpoint. In the extreme case when variance is large, the expected population size can still increase exponentially while every run will go extinct with probability 1.</p>
+<div id="deriving-the-long-term-mean-growth-rate" class="section level3 hasAnchor" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Deriving the long-term mean growth rate<a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We now consider the dynamics of the Lewontin-Cohen model in a bit more detail, to understand the mean growth (and growth of the mean) over the long term. Starting from a population size <span class="math inline">\(N_0\)</span>, the population size after <span class="math inline">\(t\)</span> time steps is given by</p>
+<p><span class="math display">\[\begin{align}
+N_{t+1}=\Lambda_{t}\Lambda_{t-1}\cdots\Lambda_{1}\Lambda_0N_0=N_0\prod_{i=0}^t \Lambda_i.
+\end{align}\]</span></p>
+<p>Because we assumed that the <span class="math inline">\(\Lambda_t\)</span>’s are IID (see above), the expected population size after <span class="math inline">\(t\)</span> time steps is given by</p>
+<p><span class="math display">\[\begin{align}
+\text{E}[N_t]&amp;=N_0\text{E}\left[\prod_{i=0}^{t-1} \Lambda_i\right] =N_0\prod_{i=0}^{t-1}\text{E}[\Lambda_i] =N_0\lambda^t.
+\end{align}\]</span></p>
+<p>Thus, the expected population size grows at the rate <span class="math inline">\(\lambda\)</span> (the mean of the annual growth rate), just like a population growing exponentially in a constant environment. However, as we will see shortly, looking at the growth of the expected population size is not really useful when it comes to understanding how a typical population will grow in a stochastic environment.</p>
+<p>We will next look at the growth on the log scale, where each growth increment is additive - this allows us to take advantage of the central limit theorem (if you need a reminder: <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" class="uri">https://en.wikipedia.org/wiki/Central_limit_theorem</a>). On log scale, the population size after <span class="math inline">\(t\)</span> time steps is given by</p>
+<p><span class="math display">\[\begin{align}
+\ln N_t=\ln \Lambda_{t-1}+\ln\Lambda_{t-2}+...+\ln\Lambda_{1}+\ln\Lambda_0+\ln N_0=\ln N_0+ \sum_{i=0}^{t-1} \ln \Lambda_i.
+\end{align}\]</span>
+Here, the first term <span class="math inline">\(\ln N_0\)</span> is a constant (since we know the initial population size). The second term is a sum over all the stochastic growth increments on log scale. From the central limit theorem (and because of the IID assumption), we know that as the number of time steps <span class="math inline">\(t\)</span> approaches infinity this sum will be normally distributed with mean <span class="math inline">\(t\text{E}[\ln\Lambda_t]\)</span> and variance <span class="math inline">\(t\text{Var}(\ln\Lambda_t)\)</span>.</p>
+<p>From this we can calculate the expected value of <span class="math inline">\(\ln N_t\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+\text{E}[\ln N_t]=\ln N_0+ \text{E}\left[\sum_{i=0}^{t-1} \ln \Lambda_i\right]=\ln N_0+ t\text{E}[\ln\Lambda_t]
+\end{align}\]</span>
+We see that this expectation grows (or declines) linearly with time <span class="math inline">\(t\)</span>, and the slope of this line is the mean <span class="math inline">\(\text{E}[\ln\Lambda_t]=r_s\)</span>. Importantly, this value is generally lower than the mean <span class="math inline">\(r=\ln \lambda=\ln(\text{E}[\Lambda_t])\)</span>, unless the variance of the environment is zero. On absolute scale, the total population size after a large number of time steps will be lognormally distributed, which skewed so that the median is lower than the mean (see histogram in the shiny app). Thus, the typical trajectory of <span class="math inline">\(N_t\)</span> is not well described by the dynamics of the expected population size. The expected growth rate <span class="math inline">\(r_s=\text{E}[\ln\Lambda_t]\)</span> is often called the stochastic growth rate (but NB: This is a constant, and not a stochastic variable).</p>
+<p>How different are the two growth rates, and can we express this difference as a function of the variance <span class="math inline">\(\sigma^2\)</span>? Yes, <span class="citation">Lewontin and Cohen (<a href="#ref-Lewontin1" role="doc-biblioref">1969</a>)</span> show (using a Taylor expansion of <span class="math inline">\(\ln \Lambda_t\)</span> around <span class="math inline">\(\lambda\)</span>; not within the scope of this course) that the stochastic growth rate <span class="math inline">\(r_S\)</span> can be written as</p>
+<p><span class="math display">\[\begin{align}
+r_S\approx r-\frac{\sigma^2}{2\lambda^2}.
+\end{align}\]</span>
+This equation tells us that the difference between the growth rate <span class="math inline">\(r\)</span> in the constant environment and <span class="math inline">\(r_S\)</span> in the stochastic environment is increasing with the value of <span class="math inline">\(\sigma^2\)</span>. Thus, we can have cases where the population growth rate <span class="math inline">\(r\)</span> is positive, but <span class="math inline">\(r_S\)</span> is negative. And in that case, extinction of the population (at some point) is certain.</p>
+<p><br></p>
+</div>
+<div id="arithmetic-and-geometric-mean" class="section level3 hasAnchor" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Arithmetic and geometric mean<a href="stochastic-environments.html#arithmetic-and-geometric-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The stochastic growth rate <span class="math inline">\(r_s=\text{E}[\ln \Lambda_t]\)</span> and the growth rate of the mean environment <span class="math inline">\(r=\ln \text{E}[\Lambda_t])\)</span> can also be found by considering the arithmetic and geometric mean of the annual growth rate <span class="math inline">\(\Lambda_t\)</span>. The arithmetic mean is given by</p>
+<p><span class="math display">\[\begin{align}
+\lambda=\text{E}[\Lambda_t]=\frac{1}{t}\sum_{i=1}^t\Lambda_i,
+\end{align}\]</span>
+and the log of this value is <span class="math inline">\(r=\ln \lambda\)</span>. The geometric mean is given by</p>
+<p><span class="math display">\[\begin{align}
+e^{\text{E}[\ln\Lambda_t]}=\left(\prod_{i=1}^t \Lambda_i \right)^{1/t},
+\end{align}\]</span>
+and the log of this value corresponds to <span class="math inline">\(r_S=\text{E}[\ln\Lambda_t]\)</span>. In contrast to the arithmetic mean, the geometric mean depends on the variance <span class="math inline">\(\sigma^2\)</span>. The arithmetic mean will always be greater than or equal to the geometric mean, and in this case they are only equal in the constant environment (if <span class="math inline">\(\sigma^2=0\)</span>).</p>
+<p><br></p>
+</div>
+<div id="bet-hedging" class="section level3 hasAnchor" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Bet-hedging<a href="stochastic-environments.html#bet-hedging" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From an evolutionary perspective, the Lewontin-Cohen also describes the fitness in a stochastic environment (<span class="math inline">\(r_S\)</span>) and how it differs from that of the mean environment (<span class="math inline">\(r\)</span>). This is therefore an important model to describe strategies of bet-hedging. Since <span class="math inline">\(r_S\)</span> depends on both <span class="math inline">\(r\)</span> and <span class="math inline">\(\sigma^2\)</span>, organisms in stochastic environments can improve their fitness through increasing the mean <span class="math inline">\(r\)</span>, or reducing the variance <span class="math inline">\(\sigma^2\)</span>. <strong>Bet-hedging</strong> strategies <em>reduce the variance, at the cost of also reducing the arithmetic mean fitness</em>. As a result the fitness in the stochastic environment <span class="math inline">\(r_S\)</span> is optimized.</p>
+<p>Bet-hedging can operate through two main mechanisms, or a combination:</p>
+<ul>
+<li><p><strong>Conservative bet hedging</strong> refers to strategies that ‘play it safe’, where the organism does not optimize its fitness for any given environment, but in the long run still come out with a higher geometric mean fitness. For instance, an bird could lay a low number of eggs at each reproduction to improve the survival of their offspring, thus reducing the variance but at the cost of a lower than optimum clutch size in the mean environment.</p></li>
+<li><p><strong>Diversifying bet-hedging</strong> are strategies that avoid risk by ‘not putting all eggs in one basket’, for instance by producing offspring with a high diversity of phenotypes. While this will certainly increase the variance in fitness among the offspring, it reduces the variance of the parent. Again, it is not truly bet-hedging unless the parent also pays a cost in terms of lowered arithmetic mean fitness (here corresponding to producing offspring of just one type optimal for the mean environment).</p></li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="stochastic-growth-of-structured-populations" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Stochastic growth of structured populations<a href="stochastic-environments.html#stochastic-growth-of-structured-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In structured populations, studying stochastic growth is more complex because the population dynamics are no longer ‘IID’ (even if the environment is). Because of the population structure, there is a memory (autocorrelation) in the process. For instance, if the environment is particularly good for reproduction one year, this can lead to a ‘strong’ year class (cohort) that in turn affects the population growth for potentially many years as this ‘wave’ of individuals travels through the stages. Such fluctuations in the stage structure come on top of the environmental fluctuations, and create autocorrelation in the population growth process. In contrast to the population growth in a constant environment, where the transient initial fluctuations disappear over time, these transients will never disappear in the stochastic case. But the population structure will fluctuate around a stable structure (see shiny app below).</p>
+<p>In a changing environment, the projection matrix <span class="math inline">\(\mathbf{A}\)</span> will take a new value each time step, so that the population growth over many time steps is given by matrix multiplication from time 0:</p>
+<p><span class="math display">\[\mathbf{n}_{t+1}=\mathbf{A}_{t}\mathbf{n}_{t}=\mathbf{A}_{t}\mathbf{A}_{t-1}\mathbf{A}_{t-2}\cdots\mathbf{A}_{0}\mathbf{n}_{t}\]</span></p>
+<p>When these time-dependent projection matrices <span class="math inline">\(\mathbf{A}_t\)</span> are generated by some random process each time step, we have a <strong>stochastic matrix model</strong>. There are two main approaches to study the dynamics of such a model:</p>
+<ul>
+<li><p>The <em>environment-blind</em> approach generates a set of projection matrices e.g. from each year of a study, and then sample among these to generate a new stochastic sequence of matrices according to a given sampling model (e.g. a Markov process). In this case, correlation between vital rates of the projection matrix are automatically incorporated, because they are selected together.</p></li>
+<li><p>The <em>environment-specific</em> approach specifies each vital rate underlying the stochastic projection matrix as a stochastic variable, which is a specific function of the environment (with approapriate scaling). Together, all the stochastic vital rates in the model define a multivariate vector with a given distribution, including potential correlations between them that can be captured by a variance-covariance matrix. This approach is more complex, but better suited to account for explicit relationships between the vital rates and environmental variables.</p></li>
+</ul>
+<p>When a stochastic sequence of projection matrices is obtained (using either approach), the stochastic growth rate can be defined from the resulting population process as the asymptotic time-averaged growth rate</p>
+<p><span class="math display">\[\begin{align}
+r_S=\lim_{t\to\infty}\frac{1}{t}[\ln N_t-\ln N_0],
+\end{align}\]</span>
+This value can easily estimated from simulations, once the sequence of stochastic matrices is determined.</p>
+<p><br></p>
+<div id="small-noise-approximation" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Small noise approximation<a href="stochastic-environments.html#small-noise-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Assuming small environmental fluctuations (i.e. that no projection matrix would be very different from the mean matrix) and no environmental autocorrelations, <span class="citation">Tuljapurkar (<a href="#ref-Tuljapurkar7" role="doc-biblioref">1982</a>)</span> derived the following approximation for the stochastic growth rate:</p>
+<p><span class="math display">\[\begin{align}
+r_S&amp;\approx r-\frac{1}{2\lambda^2}\sum_{i}\sum_{j}\sum_{k}\sum_{l}\frac{\partial\lambda}{\partial a_{ij}}\frac{\partial\lambda}{\partial a_{kl}}\text{Cov}(A_{ij},A_{kl})\\
+&amp;= r-\frac{1}{2\lambda^2}\sigma_e^2.
+\end{align}\]</span></p>
+<p>The above expression is similar to that from the Lewontin-Cohen model, and is useful because it shows how the stochastic growth rate is related to the sensitivities of the mean projection matrix and the variances (and covariances) between matrix elements.</p>
+<p>The concept of <strong>demographic buffering</strong> or simply ‘buffering’ refers to the observation that vital rates to which <span class="math inline">\(\lambda\)</span> shows a high sensitivity in the mean environment often show low temporal variability. This is often seen as a strategy to mitigate negative impacts of variability, which would be most severe if it affected these vital rates that are so important to the growth in the average environment. However, because the variance of vital rates is mathematically constrained by the mean (e.g. for survival, a high mean automatically implies that the variance must be low) it is difficult to tease appart the underlying mechanisms behind an observed low variance and high mean for any given vital rate. In contrast to bet-hedging, buffering refers to any case of low variation in vital rates, without any assumption about any cost to the mean.</p>
+<p><br></p>
+</div>
+<div id="example-with-r-code-stochastic-growth-of-the-bird-population" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Example with R code: Stochastic growth of the bird population<a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We will now add some stochasticity to the bird example to look at the growth over time - the same model as shown in the shiny app above. The fertilities and survival probabilities fluctuate randomly, with no correlation between them. Because survival probabilities are restricted to be between 0 and 1, and fertilities must be non-negative, we have to be careful in how we add stochasticity to these variables. This is done by selecting appropriate <em>scaling functions</em>. Here we will assume a log-link function for the fertilities, and a log log link function for the survival (other kinds of functions are also possible):</p>
+<p><span class="math display">\[f_{it}=\exp(\beta_{fi}+\varepsilon_{fit})\]</span></p>
+<p><span class="math display">\[s_{it}=\exp(-\exp(-\beta_{si}-\varepsilon_{sit})))\]</span></p>
+<p>The stochasticity is captured by the variables <span class="math inline">\(\varepsilon_{fi}\)</span> and <span class="math inline">\(\varepsilon_{si}\)</span>, here assumed to follow a normal distribution with mean 0 and standard deviation <span class="math inline">\(\sigma_{i}\)</span>. The values <span class="math inline">\(\beta_{fi}\)</span> and <span class="math inline">\(\beta_{si}\)</span> are defined as the fertility and survival when the variances (and thus the <span class="math inline">\(\varepsilon\)</span>’s) are zero.</p>
+<p>To add stochasticity to the fertilities and survival probabilities in the projection matrix, we will use the function <code>mvrnorm()</code> from the package <code>MASS</code>, which generates values from the multivariate normal distribution. The function <code>mvrnorm</code> uses a variance-covariance matrix as one of its input variables, so we need to define this matrix first. Here, the diagonal corresponds to the variance of each vital rate in the vector, and all other elements are zero because of our assumption of no correlation between the vital rates.</p>
+<p>The following function generates a series of random projection matrices using the <code>mvrnorm()</code> function. The level of stochasticity is determined by the variance vectors for the fertilities and survival probabilities, <code>VarF</code> and <code>VarS</code> (make sure that these vectors have the correct number of elements, corresonding to the given matrix model):</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="stochastic-environments.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:dplyr&#39;:
+## 
+##     select</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="stochastic-environments.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Split the U-matrix into transitions and survival probabilities:</span></span>
+<span id="cb35-2"><a href="stochastic-environments.html#cb35-2" aria-hidden="true" tabindex="-1"></a>MatG <span class="ot">&lt;-</span> <span class="cf">function</span>(MatU){</span>
+<span id="cb35-3"><a href="stochastic-environments.html#cb35-3" aria-hidden="true" tabindex="-1"></a>    k<span class="ot">&lt;-</span><span class="fu">dim</span>(MatU)[<span class="dv">1</span>]</span>
+<span id="cb35-4"><a href="stochastic-environments.html#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">is.na</span>(MatU[k,k])){</span>
+<span id="cb35-5"><a href="stochastic-environments.html#cb35-5" aria-hidden="true" tabindex="-1"></a>        MatU[k,k]<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb35-6"><a href="stochastic-environments.html#cb35-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb35-7"><a href="stochastic-environments.html#cb35-7" aria-hidden="true" tabindex="-1"></a>    Svec<span class="ot">&lt;-</span><span class="fu">apply</span>(MatU,<span class="dv">2</span>,sum)</span>
+<span id="cb35-8"><a href="stochastic-environments.html#cb35-8" aria-hidden="true" tabindex="-1"></a>    matG <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(MatU)<span class="sc">/</span>Svec)</span>
+<span id="cb35-9"><a href="stochastic-environments.html#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb35-10"><a href="stochastic-environments.html#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(Svec[i]<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb35-11"><a href="stochastic-environments.html#cb35-11" aria-hidden="true" tabindex="-1"></a>        matG[,i]<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb35-12"><a href="stochastic-environments.html#cb35-12" aria-hidden="true" tabindex="-1"></a>        matG[i,i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb35-13"><a href="stochastic-environments.html#cb35-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb35-14"><a href="stochastic-environments.html#cb35-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb35-15"><a href="stochastic-environments.html#cb35-15" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="st">&quot;Svec&quot;</span><span class="ot">=</span>Svec, <span class="st">&quot;matG&quot;</span><span class="ot">=</span> matG)</span>
+<span id="cb35-16"><a href="stochastic-environments.html#cb35-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-17"><a href="stochastic-environments.html#cb35-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-18"><a href="stochastic-environments.html#cb35-18" aria-hidden="true" tabindex="-1"></a><span class="co">#Split the F-matrix into transitions and fertilities:</span></span>
+<span id="cb35-19"><a href="stochastic-environments.html#cb35-19" aria-hidden="true" tabindex="-1"></a>MatO <span class="ot">&lt;-</span> <span class="cf">function</span>(MatF){</span>
+<span id="cb35-20"><a href="stochastic-environments.html#cb35-20" aria-hidden="true" tabindex="-1"></a>    k<span class="ot">&lt;-</span><span class="fu">dim</span>(MatF)[<span class="dv">1</span>]</span>
+<span id="cb35-21"><a href="stochastic-environments.html#cb35-21" aria-hidden="true" tabindex="-1"></a>    Omat<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="dv">0</span>,k,k)</span>
+<span id="cb35-22"><a href="stochastic-environments.html#cb35-22" aria-hidden="true" tabindex="-1"></a>    Fvec <span class="ot">&lt;-</span> <span class="fu">apply</span>(MatF,<span class="dv">2</span>,sum) <span class="co">#Total fertilities each stage </span></span>
+<span id="cb35-23"><a href="stochastic-environments.html#cb35-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb35-24"><a href="stochastic-environments.html#cb35-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(Fvec[i]<span class="sc">==</span><span class="dv">0</span>){ <span class="co">#If fertility is zero for a class</span></span>
+<span id="cb35-25"><a href="stochastic-environments.html#cb35-25" aria-hidden="true" tabindex="-1"></a>            Omat[<span class="dv">1</span>,i]<span class="ot">&lt;-</span><span class="dv">1</span> <span class="co">#Set offspring transition probability to 1 (does not matter)</span></span>
+<span id="cb35-26"><a href="stochastic-environments.html#cb35-26" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb35-27"><a href="stochastic-environments.html#cb35-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>{</span>
+<span id="cb35-28"><a href="stochastic-environments.html#cb35-28" aria-hidden="true" tabindex="-1"></a>            Omat[,i]<span class="ot">&lt;-</span>MatF[,i]<span class="sc">/</span>Fvec[i]</span>
+<span id="cb35-29"><a href="stochastic-environments.html#cb35-29" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb35-30"><a href="stochastic-environments.html#cb35-30" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb35-31"><a href="stochastic-environments.html#cb35-31" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(<span class="st">&quot;Fvec&quot;</span><span class="ot">=</span>Fvec, <span class="st">&quot;matO&quot;</span><span class="ot">=</span> Omat)</span>
+<span id="cb35-32"><a href="stochastic-environments.html#cb35-32" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-33"><a href="stochastic-environments.html#cb35-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-34"><a href="stochastic-environments.html#cb35-34" aria-hidden="true" tabindex="-1"></a>Stochastic.matrices <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">MatA=</span>leslie.bird.pre, <span class="at">MatU=</span>Ubird.pre, <span class="at">MatF=</span>Fbird.pre, <span class="at">tmax=</span><span class="dv">30</span>, <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>)){</span>
+<span id="cb35-35"><a href="stochastic-environments.html#cb35-35" aria-hidden="true" tabindex="-1"></a>SplitU <span class="ot">&lt;-</span> <span class="fu">MatG</span>(MatU)<span class="co">#Split survival/transition matrix</span></span>
+<span id="cb35-36"><a href="stochastic-environments.html#cb35-36" aria-hidden="true" tabindex="-1"></a>SplitF <span class="ot">&lt;-</span> <span class="fu">MatO</span>(MatF)<span class="co">#Split fertility matrix</span></span>
+<span id="cb35-37"><a href="stochastic-environments.html#cb35-37" aria-hidden="true" tabindex="-1"></a>Gmat <span class="ot">&lt;-</span> SplitU<span class="sc">$</span>matG <span class="co">#Transition matrix</span></span>
+<span id="cb35-38"><a href="stochastic-environments.html#cb35-38" aria-hidden="true" tabindex="-1"></a>Svec <span class="ot">&lt;-</span> SplitU<span class="sc">$</span>Svec <span class="co">#Survival vector</span></span>
+<span id="cb35-39"><a href="stochastic-environments.html#cb35-39" aria-hidden="true" tabindex="-1"></a>Beta.S <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">log</span>(<span class="sc">-</span><span class="fu">log</span>(Svec)) <span class="co">#Define beta for constant environment (no variance)</span></span>
+<span id="cb35-40"><a href="stochastic-environments.html#cb35-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-41"><a href="stochastic-environments.html#cb35-41" aria-hidden="true" tabindex="-1"></a>Omat <span class="ot">&lt;-</span> SplitF<span class="sc">$</span>matO <span class="co">#Offspring transition matrix</span></span>
+<span id="cb35-42"><a href="stochastic-environments.html#cb35-42" aria-hidden="true" tabindex="-1"></a>Fvec <span class="ot">&lt;-</span> SplitF<span class="sc">$</span>Fvec <span class="co">#Fertility vector</span></span>
+<span id="cb35-43"><a href="stochastic-environments.html#cb35-43" aria-hidden="true" tabindex="-1"></a>Beta.F <span class="ot">&lt;-</span> <span class="fu">log</span>(Fvec) <span class="co">#Define beta for constant environment (no variance)</span></span>
+<span id="cb35-44"><a href="stochastic-environments.html#cb35-44" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">length</span>(Svec) <span class="co">#Number of matrix classes (used in for-loop)</span></span>
+<span id="cb35-45"><a href="stochastic-environments.html#cb35-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-46"><a href="stochastic-environments.html#cb35-46" aria-hidden="true" tabindex="-1"></a>SigMat <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="fu">c</span>(VarS, VarF))</span>
+<span id="cb35-47"><a href="stochastic-environments.html#cb35-47" aria-hidden="true" tabindex="-1"></a><span class="co">#Draw values for each year from 1 to tmax (each column corresponds to a survival probability (from 1:k) or fertility (from k+1 to 2k)):</span></span>
+<span id="cb35-48"><a href="stochastic-environments.html#cb35-48" aria-hidden="true" tabindex="-1"></a>SFYears <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(tmax, <span class="at">mu=</span><span class="fu">c</span>(Beta.S, Beta.F), <span class="at">Sigma=</span>SigMat)</span>
+<span id="cb35-49"><a href="stochastic-environments.html#cb35-49" aria-hidden="true" tabindex="-1"></a><span class="co">#Rescale to absolute scale, the matrix then contains year-specific survival probaiblities and fertilities:</span></span>
+<span id="cb35-50"><a href="stochastic-environments.html#cb35-50" aria-hidden="true" tabindex="-1"></a>SFYears[,<span class="dv">1</span><span class="sc">:</span>k] <span class="ot">&lt;-</span>   <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>SFYears[,<span class="dv">1</span><span class="sc">:</span>k])) <span class="co">#Survival probabilities (loglog link)</span></span>
+<span id="cb35-51"><a href="stochastic-environments.html#cb35-51" aria-hidden="true" tabindex="-1"></a>SFYears[,(k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>(<span class="dv">2</span><span class="sc">*</span>k)] <span class="ot">&lt;-</span> <span class="fu">exp</span>(SFYears[,(k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>(<span class="dv">2</span><span class="sc">*</span>k)]) <span class="co">#Fertilities  (square root link)</span></span>
+<span id="cb35-52"><a href="stochastic-environments.html#cb35-52" aria-hidden="true" tabindex="-1"></a>Smat <span class="ot">&lt;-</span> Fmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, k,k)<span class="co">#Empty matrices to use in for-loop </span></span>
+<span id="cb35-53"><a href="stochastic-environments.html#cb35-53" aria-hidden="true" tabindex="-1"></a><span class="co">#Construct one projection matrix for each year, store as array</span></span>
+<span id="cb35-54"><a href="stochastic-environments.html#cb35-54" aria-hidden="true" tabindex="-1"></a>U.array <span class="ot">&lt;-</span> F.array <span class="ot">&lt;-</span> A.array <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>,<span class="at">dim=</span><span class="fu">c</span>(k,k,tmax))</span>
+<span id="cb35-55"><a href="stochastic-environments.html#cb35-55" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tmax){</span>
+<span id="cb35-56"><a href="stochastic-environments.html#cb35-56" aria-hidden="true" tabindex="-1"></a>  Smat[,<span class="dv">1</span><span class="sc">:</span>k] <span class="ot">&lt;-</span> SFYears[i,<span class="dv">1</span><span class="sc">:</span>k]</span>
+<span id="cb35-57"><a href="stochastic-environments.html#cb35-57" aria-hidden="true" tabindex="-1"></a>  Fmat[,<span class="dv">1</span><span class="sc">:</span>k] <span class="ot">&lt;-</span> SFYears[i,(k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>(<span class="dv">2</span><span class="sc">*</span>k)]</span>
+<span id="cb35-58"><a href="stochastic-environments.html#cb35-58" aria-hidden="true" tabindex="-1"></a>  A.array[,,i] <span class="ot">&lt;-</span>   <span class="fu">t</span>(Smat)<span class="sc">*</span>Gmat<span class="sc">+</span><span class="fu">t</span>(Fmat)<span class="sc">*</span>Omat</span>
+<span id="cb35-59"><a href="stochastic-environments.html#cb35-59" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-60"><a href="stochastic-environments.html#cb35-60" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(<span class="st">&quot;Amats&quot;</span> <span class="ot">=</span> A.array)</span>
+<span id="cb35-61"><a href="stochastic-environments.html#cb35-61" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>Using the generated sequence of stochastic projection matrices, we can project the population growth over time. This projection works exactly the same as in the constant environment, except that for each time step we now use a different projection matrix. The function below returns a list of 1) a matrix with the growth of each age/stage class over time, and 2) the corresponding vector of total population size.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="stochastic-environments.html#cb36-1" aria-hidden="true" tabindex="-1"></a>project.pop.stochastic <span class="ot">&lt;-</span><span class="cf">function</span>(<span class="at">Amats =</span> Amats.stoat, <span class="at">N0=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
+<span id="cb36-2"><a href="stochastic-environments.html#cb36-2" aria-hidden="true" tabindex="-1"></a>    tmax <span class="ot">&lt;-</span> <span class="fu">dim</span>(Amats)[<span class="dv">3</span>]</span>
+<span id="cb36-3"><a href="stochastic-environments.html#cb36-3" aria-hidden="true" tabindex="-1"></a>    k <span class="ot">&lt;-</span> <span class="fu">dim</span>(Amats)[<span class="dv">1</span>]</span>
+<span id="cb36-4"><a href="stochastic-environments.html#cb36-4" aria-hidden="true" tabindex="-1"></a>    Nmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>,<span class="at">nrow=</span> tmax<span class="sc">+</span><span class="dv">1</span>, <span class="at">ncol=</span>k)</span>
+<span id="cb36-5"><a href="stochastic-environments.html#cb36-5" aria-hidden="true" tabindex="-1"></a>    Nmat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> N0</span>
+<span id="cb36-6"><a href="stochastic-environments.html#cb36-6" aria-hidden="true" tabindex="-1"></a>    Ntot <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, tmax<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb36-7"><a href="stochastic-environments.html#cb36-7" aria-hidden="true" tabindex="-1"></a>    Ntot[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sum</span>(Nmat[<span class="dv">1</span>,])</span>
+<span id="cb36-8"><a href="stochastic-environments.html#cb36-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tmax){</span>
+<span id="cb36-9"><a href="stochastic-environments.html#cb36-9" aria-hidden="true" tabindex="-1"></a>        Nmat[j<span class="sc">+</span><span class="dv">1</span>,]<span class="ot">&lt;-</span> Amats[,,j] <span class="sc">%*%</span> Nmat[j,]</span>
+<span id="cb36-10"><a href="stochastic-environments.html#cb36-10" aria-hidden="true" tabindex="-1"></a>        Ntot[j<span class="sc">+</span><span class="dv">1</span>]<span class="ot">&lt;-</span><span class="fu">sum</span>(Nmat[j<span class="sc">+</span><span class="dv">1</span>,])</span>
+<span id="cb36-11"><a href="stochastic-environments.html#cb36-11" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb36-12"><a href="stochastic-environments.html#cb36-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(<span class="st">&quot;Nmat&quot;</span><span class="ot">=</span>Nmat, <span class="st">&quot;Ntot&quot;</span><span class="ot">=</span>Ntot)</span>
+<span id="cb36-13"><a href="stochastic-environments.html#cb36-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>As an example, let’s plot the growth of each stage for the bird population over 20 years, starting from a population with 10 birds in each age class:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="stochastic-environments.html#cb37-1" aria-hidden="true" tabindex="-1"></a>Amats.bird <span class="ot">&lt;-</span> <span class="fu">Stochastic.matrices</span>(<span class="at">MatA=</span>leslie.bird.pre, <span class="at">MatU=</span>Ubird.pre, <span class="at">MatF=</span>Fbird.pre, <span class="at">tmax=</span><span class="dv">20</span>, <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>)) </span>
+<span id="cb37-2"><a href="stochastic-environments.html#cb37-2" aria-hidden="true" tabindex="-1"></a>stochastic.bird <span class="ot">&lt;-</span> <span class="fu">project.pop.stochastic</span>(<span class="at">Amats =</span> Amats.bird, <span class="at">N0=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb37-3"><a href="stochastic-environments.html#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="stochastic-environments.html#cb37-4" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb37-5"><a href="stochastic-environments.html#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">bty=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb37-6"><a href="stochastic-environments.html#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years, stochastic.bird<span class="sc">$</span>Nmat, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">bty=</span><span class="st">&quot;l&quot;</span>,  <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Age class  &quot;</span>, n[i](t))))</span>
+<span id="cb37-7"><a href="stochastic-environments.html#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>,<span class="fu">c</span>(<span class="st">&quot;Age 1&quot;</span>, <span class="st">&quot;Age 2&quot;</span>, <span class="st">&quot;Age  3&quot;</span>),<span class="at">lwd=</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb37-8"><a href="stochastic-environments.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(years,stochastic.bird<span class="sc">$</span>Ntot, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">bty=</span><span class="st">&quot;l&quot;</span>,  <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Population size &quot;</span>, <span class="fu">N</span>(t)))) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><br></p>
+<p>Instead of looking at just one realization of the stochastic growth process, it is often useful to generate multiple realizations and look at summary statistics and properties for these. The following function repeats the previous projection <code>nsim</code> times. The output is a matrix where the columns correspond to years, and the rows to different populations (realizations). Here the input variables are the constant matrices and variance vectors. The following code defines the function, and plots the percentiles from 1000 realizations over 20 years:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="stochastic-environments.html#cb38-1" aria-hidden="true" tabindex="-1"></a>nsim.pop <span class="ot">&lt;-</span> <span class="cf">function</span>(MatA, MatU, MatF, VarF, VarS, tmax, nsim, N0){</span>
+<span id="cb38-2"><a href="stochastic-environments.html#cb38-2" aria-hidden="true" tabindex="-1"></a>    Nmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">ncol=</span> tmax<span class="sc">+</span><span class="dv">1</span>, <span class="at">nrow=</span>nsim)</span>
+<span id="cb38-3"><a href="stochastic-environments.html#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
+<span id="cb38-4"><a href="stochastic-environments.html#cb38-4" aria-hidden="true" tabindex="-1"></a>      AMATS <span class="ot">&lt;-</span> <span class="fu">Stochastic.matrices</span>(<span class="at">MatA=</span>MatA, <span class="at">MatU=</span>MatU, <span class="at">MatF=</span>MatF, <span class="at">VarF=</span>VarF, <span class="at">VarS=</span>VarS,<span class="at">tmax=</span>tmax)</span>
+<span id="cb38-5"><a href="stochastic-environments.html#cb38-5" aria-hidden="true" tabindex="-1"></a>      Nmat[j,]<span class="ot">&lt;-</span> <span class="fu">project.pop.stochastic</span>(<span class="at">Amats=</span>AMATS, <span class="at">N0=</span>N0)<span class="sc">$</span>Ntot</span>
+<span id="cb38-6"><a href="stochastic-environments.html#cb38-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb38-7"><a href="stochastic-environments.html#cb38-7" aria-hidden="true" tabindex="-1"></a>    Nmat</span>
+<span id="cb38-8"><a href="stochastic-environments.html#cb38-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-9"><a href="stochastic-environments.html#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="stochastic-environments.html#cb38-10" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb38-11"><a href="stochastic-environments.html#cb38-11" aria-hidden="true" tabindex="-1"></a>nsim.bird <span class="ot">&lt;-</span> <span class="fu">nsim.pop</span> (<span class="at">MatA=</span>leslie.bird.pre, <span class="at">MatU=</span>Ubird.pre, <span class="at">MatF=</span>Fbird.pre,  <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), <span class="at">tmax=</span><span class="dv">20</span>, <span class="at">nsim=</span><span class="dv">1000</span>, <span class="at">N0=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb38-12"><a href="stochastic-environments.html#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-13"><a href="stochastic-environments.html#cb38-13" aria-hidden="true" tabindex="-1"></a>bird.constant <span class="ot">&lt;-</span> <span class="fu">nsim.pop</span>(<span class="at">MatA=</span>leslie.bird.pre, <span class="at">MatU=</span>Ubird.pre, <span class="at">MatF=</span>Fbird.pre,  <span class="at">VarF=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">VarS=</span><span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">3</span>), <span class="at">tmax=</span><span class="dv">20</span>, <span class="at">nsim=</span><span class="dv">1</span>, <span class="at">N0=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>))<span class="co">#Add growth in constant environment</span></span>
+<span id="cb38-14"><a href="stochastic-environments.html#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="stochastic-environments.html#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">bty=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb38-16"><a href="stochastic-environments.html#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years,<span class="fu">t</span>(nsim.bird)[,<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>],<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Population size &quot;</span>, <span class="fu">N</span>(t)))) </span>
+<span id="cb38-17"><a href="stochastic-environments.html#cb38-17" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years,<span class="fu">t</span>(<span class="fu">apply</span>(nsim.bird,<span class="dv">2</span>, quantile, <span class="at">prob=</span><span class="fu">c</span>(.<span class="dv">05</span>,.<span class="dv">25</span>,.<span class="dv">5</span>,.<span class="dv">75</span>,.<span class="dv">95</span>))),<span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">col=</span><span class="dv">1</span>,<span class="at">lty=</span><span class="dv">3</span>,<span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Population size &quot;</span>, <span class="fu">N</span>(t)))) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><br></p>
+<p>To estimate the stochastic growth rate <span class="math inline">\(r_S\)</span>, we can use the following function:</p>
+<p><br></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="stochastic-environments.html#cb39-1" aria-hidden="true" tabindex="-1"></a>diffmat <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">log</span>(nsim.bird),<span class="dv">1</span>,diff)</span>
+<span id="cb39-2"><a href="stochastic-environments.html#cb39-2" aria-hidden="true" tabindex="-1"></a>rS <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">apply</span>(diffmat,<span class="dv">2</span>,mean))</span></code></pre></div>
+<p>In this example, the stochastic growth rate is <span class="math inline">\(r_S\approx\)</span> 0.072.</p>
+<p><span class="math inline">\(^1\)</span> <a href="http://worldpopulationreview.com/countries/total-fertility-rate/" class="uri">http://worldpopulationreview.com/countries/total-fertility-rate/</a></p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Lewontin1" class="csl-entry">
+Lewontin, R. C., and D. Cohen. 1969. <span>“On Population Growth in a Randomly Varying Environment.”</span> <em>Proc. Natl. Acad. Sci. U.S.A.</em> 62: 1056–60.
+</div>
+<div id="ref-Tuljapurkar7" class="csl-entry">
+Tuljapurkar, Shripad. 1982. <span>“Population Dynamics in Variable Environments. <span>III</span>. <span>E</span>volutionary Dynamics of <em>r</em>-Selection.”</span> <em>Theor. Popul. Biol.</em> 21: 114–40.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="s04-Stage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="id_06-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

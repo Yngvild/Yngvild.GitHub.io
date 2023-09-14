@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Exponential growth {s01-Exponential} | Demography and matrix models</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Exponential growth {s01-Exponential} | Demography and matrix models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Exponential growth {s01-Exponential} | Demography and matrix models" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="life-tables-s02-life-tables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Background {-Background}</a></li>
+<li class="chapter" data-level="2" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html"><i class="fa fa-check"></i><b>2</b> Exponential growth {s01-Exponential}</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#learning-goals"><i class="fa fa-check"></i><b>2.1</b> Learning goals</a></li>
+<li class="chapter" data-level="2.2" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#baseline-model-for-population-growth"><i class="fa fa-check"></i><b>2.2</b> Baseline model for population growth</a></li>
+<li class="chapter" data-level="2.3" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>2.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="2.4" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#the-exponential-growth-model-in-ecology-and-evolution"><i class="fa fa-check"></i><b>2.4</b> The exponential growth model in ecology and evolution</a></li>
+<li class="chapter" data-level="2.5" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#exercises"><i class="fa fa-check"></i><b>2.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="exponential-growth-s01-exponential.html"><a href="exponential-growth-s01-exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html"><i class="fa fa-check"></i><b>3</b> Life tables {s02-life-tables}</a>
+<ul>
+<li class="chapter" data-level="" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="3.1" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#what-is-a-life-table"><i class="fa fa-check"></i><b>3.1</b> What is a life table?</a></li>
+<li class="chapter" data-level="3.2" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>3.2</b> A basic life table</a></li>
+<li class="chapter" data-level="3.3" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>3.3</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="3.4" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>3.4</b> Life table calculations</a></li>
+<li class="chapter" data-level="3.5" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#the-euler-lotka-equation"><i class="fa fa-check"></i><b>3.5</b> The Euler-Lotka equation</a></li>
+<li class="chapter" data-level="3.6" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>3.6</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="3.7" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#a-fictive-bird-example"><i class="fa fa-check"></i><b>3.7</b> A fictive bird example</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#calculations-by-hand"><i class="fa fa-check"></i><b>3.7.1</b> Calculations ‘by hand’</a></li>
+<li class="chapter" data-level="3.7.2" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#calculations-in-r"><i class="fa fa-check"></i><b>3.7.2</b> Calculations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>3.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="3.9" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>3.9</b> The Lack clutch</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="life-tables-s02-life-tables.html"><a href="life-tables-s02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>3.9.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html"><i class="fa fa-check"></i><b>4</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#why-matrix-models"><i class="fa fa-check"></i><b>4.1</b> Why matrix models?</a></li>
+<li class="chapter" data-level="4.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix"><i class="fa fa-check"></i><b>4.2</b> Age-structured growth and the Leslie matrix</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>4.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#census"><i class="fa fa-check"></i><b>4.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>4.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="4.3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>4.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="4.3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models"><i class="fa fa-check"></i><b>4.3.3</b> Avoiding mistakes when constructing matrix models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>4.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="4.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#asymptotic-properties"><i class="fa fa-check"></i><b>4.5</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>4.5.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="4.5.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>4.5.2</b> Calculations using eigen analysis</a></li>
+<li class="chapter" data-level="4.5.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>4.5.3</b> Net reproductive rate and generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-analysis-of-lambda"><i class="fa fa-check"></i><b>4.6</b> Sensitivity analysis of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>4.6.1</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>4.7</b> Life table response experiments</a></li>
+<li class="chapter" data-level="4.8" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>4.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+<li class="chapter" data-level="4.8.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>4.8.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="s04-Stage.html"><a href="s04-Stage.html"><i class="fa fa-check"></i><b>5</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="s04-Stage.html"><a href="s04-Stage.html#flexibility-of-matrix-models"><i class="fa fa-check"></i><b>5.1</b> Flexibility of matrix models</a></li>
+<li class="chapter" data-level="5.2" data-path="s04-Stage.html"><a href="s04-Stage.html#life-cycle-stages"><i class="fa fa-check"></i><b>5.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="s04-Stage.html"><a href="s04-Stage.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>5.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="s04-Stage.html"><a href="s04-Stage.html#age-by-stage-models"><i class="fa fa-check"></i><b>5.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="5.4" data-path="s04-Stage.html"><a href="s04-Stage.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>5.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>6</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="6.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>6.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="6.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>6.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>6.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="6.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>6.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="6.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>6.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>6.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>6.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="6.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>6.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>A.2.5</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="A.2.6" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="s09-Solutions.html"><a href="s09-Solutions.html"><i class="fa fa-check"></i><b>C</b> Suggested solutions to exercises</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-1-exercises"><i class="fa fa-check"></i><b>C.1</b> Chapter 1 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.1-1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.2-1"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exponential-growth-s01-exponential" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Exponential growth {s01-Exponential}<a href="exponential-growth-s01-exponential.html#exponential-growth-s01-exponential" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-goals" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Learning goals<a href="exponential-growth-s01-exponential.html#learning-goals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Describe the exponential model for population growth.</p></li>
+<li><p>Discuss the importance of this model in ecology and evolutionary biology.</p></li>
+<li><p>Do simple calculations and projections in R.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="baseline-model-for-population-growth" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Baseline model for population growth<a href="exponential-growth-s01-exponential.html#baseline-model-for-population-growth" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many of the classical population models in ecology (e.g. logistic growth, Lotka-Volterra models for predation and competition) build on the implicit assumption that all individuals are equal: At any given time they all have the same chances of survival and reproduction. Such models are a good starting point for understanding population dynamics, and a useful comparison for more complex models. The simplest model for population growth is the exponential growth model. If <span class="math inline">\(N_t\)</span> is the population size at time <span class="math inline">\(t\)</span>, then the next year’s population size is given by</p>
+<p><span class="math display" id="eq:exp1">\[\begin{align}
+N_{t+1}=\lambda N_t.
+\tag{2.1}
+\end{align}\]</span></p>
+<p>This model assumes that the population grows with a <em>constant rate</em> <span class="math inline">\(\lambda\)</span> each year. If <span class="math inline">\(\lambda&gt;1\)</span>, the population will increase over time, if <span class="math inline">\(\lambda=1\)</span> it remains constant (static), and if <span class="math inline">\(\lambda&lt;1\)</span> the population will decline over time. After <span class="math inline">\(t\)</span> years, a population starting at size <span class="math inline">\(N_0\)</span> is given by</p>
+<p><span class="math display" id="eq:exp2">\[\begin{align}
+N_t&amp;=\lambda^tN_0=e^{rt}N_0.
+\tag{2.2}
+\end{align}\]</span>
+The parameter <span class="math inline">\(r=\ln \lambda\)</span> is the instantaneous growth rate, sometimes called the <em>Malthusian growth rate</em> after the early work of Thomas Malthus <span class="citation">(<a href="#ref-Malthus" role="doc-biblioref">1798</a>)</span> on human population growth.</p>
+<p>On the logarithmic scale (log scale), we get</p>
+<p><span class="math display" id="eq:exp3">\[\begin{align}
+\ln N_t&amp;=t \ln \lambda +\ln N_0=rt+\ln N_0.
+\tag{2.3}
+\end{align}\]</span>
+Since the exponential growth model is linear on log scale, log scale is often used to study population growth and how the growth rate <span class="math inline">\(r\)</span> depends on environmental variables.</p>
+<p><br></p>
+</div>
+<div id="exponential-growth-in-structured-populations" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Exponential growth in structured populations<a href="exponential-growth-s01-exponential.html#exponential-growth-in-structured-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The exponential growth model assumes that all individuals are equal. However, individuals typically differ in a range of properties, such as age, size, and sex. Sometimes they differ because of conditions experienced during early development, that can have long-lasting consequences. Demography provides the link between individual level variation in survival and reproduction, and population level processes like population growth. The most basic matrix population model extends the exponential growth model to structured populations. As long as survival and reproduction are constant over time (but different among stages), it turns out that structured populations do, after some initial fluctuations, grow exponentially at a constant growth rate <span class="math inline">\(\lambda\)</span> (see chapter <a href="s03-MatrixModels.html#s03-MatrixModels">4</a>).</p>
+</div>
+<div id="the-exponential-growth-model-in-ecology-and-evolution" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> The exponential growth model in ecology and evolution<a href="exponential-growth-s01-exponential.html#the-exponential-growth-model-in-ecology-and-evolution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The exponential growth model is simple, yet plays an important role in ecological and evolutionary theory. It assumes no density regulation, which cannot be true for any population over longer time intervals. However, the purpose of the exponential growth model is generally <em>not</em> to describe exact population growth over time, but rather to describe the <em>growth potential</em> of a given population, or a subpopulation with a given phenotype, genotype or allele. In that case, the growth rate <span class="math inline">\(\lambda\)</span> is a measure of the fitness of the subpopulation. For small populations, like the initial population of an invasive species, exponential growth often provides a good description of population growth during the critical initial phase when the success of the invasion is usually determined. Similarly, the exponential growth model is useful to predict the ultimate fate of a new mutation (the chances that it becomes fixed). Mutations tend to arise in one individual at a time, and the subpopulation of mutants will therefore be small at first. Due to chance events even beneficial mutations are often lost in this critical initial phase. If the growth rate of this mutant population is positive and higher than that of the wild-type sub-population, the allele has a chance to spread and become fixed in the population. To describe the actual dynamics of allele frequencies in a population over time, requires more complex models accounting for density and frequency dependence.</p>
+<p><br></p>
+</div>
+<div id="exercises" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exercises<a href="exponential-growth-s01-exponential.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For suggested solutions, see appendix <a href="s09-Solutions.html#s09-Solutions">C</a>.</p>
+<div id="exercise-1.1" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 1.1<a href="exponential-growth-s01-exponential.html#exercise-1.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Write an R function that takes <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(N_0\)</span> (initial population size) and number of time steps <span class="math inline">\(T\)</span> as inputs, and returns a vector of population sizes <span class="math inline">\([N_0, N_1, ..., N_T]\)</span> based on exponential growth.</p></li>
+<li><p>Use the function to make some plots showing population growth for different values of <span class="math inline">\(\lambda&lt;0\)</span>, <span class="math inline">\(\lambda=1\)</span>, and <span class="math inline">\(\lambda&gt;1\)</span>, for the same initial population size.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="exercise-1.2" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 1.2<a href="exponential-growth-s01-exponential.html#exercise-1.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<center>
+<div class="figure">
+<img src="skjeggkre.jpg" width="400" alt="" />
+<p class="caption">Long-tailed silverfish (<em>Ctenolepisma longicaudata</em>). Photo: Johan Mattson.</p>
+</div>
+</center>
+<p>To your dismay, you discover that a population of long-tailed silverfish (“Skjeggkre”, <em>Ctenolepisma longicaudata</em>) has moved into your apartment. After some initial investigations, you find out that the population grows by approximately <span class="math inline">\(1\%\)</span> each day.</p>
+<ul>
+<li><p>What is the value of <span class="math inline">\(\lambda\)</span> for this population? What is the time unit?</p></li>
+<li><p>How long will it take for the population to double in size?</p></li>
+<li><p>If the current population size is 100 individuals, how large will it be after one year - assuming nothing is stopping its growth? Make a plot of the population growth over this period.</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Malthus" class="csl-entry">
+Malthus, Thomas Robert. 1798. <em>An Essay on the Principle of Population</em>. London: J. Johnson.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="life-tables-s02-life-tables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

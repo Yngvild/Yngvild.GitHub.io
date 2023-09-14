@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>B Case study: Asian elephants | Demography and matrix models</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="B Case study: Asian elephants | Demography and matrix models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="B Case study: Asian elephants | Demography and matrix models" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_07-Code-Collection.html"/>
+<link rel="next" href="s09-Solutions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Background</a></li>
+<li class="chapter" data-level="1" data-path="s01-Exponential.html"><a href="s01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="s01-Exponential.html"><a href="s01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="s01-Exponential.html"><a href="s01-Exponential.html#a-baseline-model"><i class="fa fa-check"></i><b>1.2</b> A baseline model</a></li>
+<li class="chapter" data-level="1.3" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> Exponential growth in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="s02-life-tables.html"><a href="s02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="2.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#what-is-a-life-table"><i class="fa fa-check"></i><b>2.1</b> What is a life table?</a></li>
+<li class="chapter" data-level="2.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.2</b> A basic life table</a></li>
+<li class="chapter" data-level="2.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.3</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.4</b> Life table calculations</a></li>
+<li class="chapter" data-level="2.5" data-path="s02-life-tables.html"><a href="s02-life-tables.html#the-euler-lotka-equation"><i class="fa fa-check"></i><b>2.5</b> The Euler-Lotka equation</a></li>
+<li class="chapter" data-level="2.6" data-path="s02-life-tables.html"><a href="s02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.6</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.7" data-path="s02-life-tables.html"><a href="s02-life-tables.html#a-fictive-bird-example"><i class="fa fa-check"></i><b>2.7</b> A fictive bird example</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#calculations-by-hand"><i class="fa fa-check"></i><b>2.7.1</b> Calculations ‘by hand’</a></li>
+<li class="chapter" data-level="2.7.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#calculations-in-r"><i class="fa fa-check"></i><b>2.7.2</b> Calculations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="s02-life-tables.html"><a href="s02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="s02-life-tables.html"><a href="s02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.9.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#why-matrix-models"><i class="fa fa-check"></i><b>3.1</b> Why matrix models?</a></li>
+<li class="chapter" data-level="3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth and the Leslie matrix</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes when constructing matrix models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#asymptotic-properties"><i class="fa fa-check"></i><b>3.5</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.5.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.5.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.5.2</b> Calculations using eigen analysis</a></li>
+<li class="chapter" data-level="3.5.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.5.3</b> Net reproductive rate and generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-analysis-of-lambda"><i class="fa fa-check"></i><b>3.6</b> Sensitivity analysis of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.6.1</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>3.7</b> Life table response experiments</a></li>
+<li class="chapter" data-level="3.8" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+<li class="chapter" data-level="3.8.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="s04-Stage.html"><a href="s04-Stage.html"><i class="fa fa-check"></i><b>4</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#flexibility-of-matrix-models"><i class="fa fa-check"></i><b>4.1</b> Flexibility of matrix models</a></li>
+<li class="chapter" data-level="4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#life-cycle-stages"><i class="fa fa-check"></i><b>4.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="s04-Stage.html"><a href="s04-Stage.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>4.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#age-by-stage-models"><i class="fa fa-check"></i><b>4.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4" data-path="s04-Stage.html"><a href="s04-Stage.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>4.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>5</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>5.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="5.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>5.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>5.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="5.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>5.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>5.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>A.2.5</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="A.2.6" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="s09-Solutions.html"><a href="s09-Solutions.html"><i class="fa fa-check"></i><b>C</b> Suggested solutions to exercises</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-1-exercises"><i class="fa fa-check"></i><b>C.1</b> Chapter 1 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.1-1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.2-1"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="id_08-CaseStudy" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">B</span> Case study: Asian elephants<a href="id_08-CaseStudy.html#id_08-CaseStudy" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><br></p>
+<p>As an example we will look at an age structured model for Asian elephants (<em>Elaphas maximus</em>) with annual time steps <span class="citation">(<a href="#ref-Goswami1" role="doc-biblioref">Goswami, Vasudev, and Oli 2014</a>)</span>. This example was used by <span class="citation">(<a href="#ref-Vindenes2020" role="doc-biblioref">Vindenes, Coeur, and Caswell 2020</a>)</span>.</p>
+<p>Elephants are long-lived and an annual time step age-structured model therefore necessarily requires many age classes. This model is post-reproductive so the first age class represents newborn elephants at age 0. To includes elephants up to age 60, we therefore need 61 age classes. We take advantage of R’s ability to handle repeated elements to define the vectors and matrices.</p>
+<p><br></p>
+<div id="define-vital-rates-and-matrices" class="section level3 hasAnchor" number="7.0.1">
+<h3><span class="header-section-number">B.0.1</span> Define vital rates and matrices<a href="id_08-CaseStudy.html#define-vital-rates-and-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Survival and fertility</strong></p>
+<p>Using numbers provided in the source paper, we first define vectors of annual fertility and survival.</p>
+<p><br></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="id_08-CaseStudy.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fertility coefficients</span></span>
+<span id="cb30-2"><a href="id_08-CaseStudy.html#cb30-2" aria-hidden="true" tabindex="-1"></a>Fvec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>,<span class="dv">15</span>),<span class="fu">rep</span>(.<span class="dv">2243</span>,<span class="dv">5</span>),<span class="fu">rep</span>(.<span class="dv">2216</span>,<span class="dv">30</span>), <span class="fu">rep</span>(.<span class="dv">18</span>,<span class="dv">10</span>),<span class="dv">0</span> )</span>
+<span id="cb30-3"><a href="id_08-CaseStudy.html#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="id_08-CaseStudy.html#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Survival probabilities</span></span>
+<span id="cb30-5"><a href="id_08-CaseStudy.html#cb30-5" aria-hidden="true" tabindex="-1"></a>Svec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fu">rep</span>(<span class="fl">0.96</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="fl">0.985</span>,<span class="dv">10</span>),<span class="fu">rep</span>(<span class="fl">0.997</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="fl">0.985</span>,<span class="dv">30</span>),<span class="fu">rep</span>(<span class="fl">0.9</span>,<span class="dv">10</span>),<span class="dv">0</span>)</span></code></pre></div>
+<p><br>
+The function <code>c()</code> creates a vector, while the <code>rep()</code> function repeats the first argument by the number of times given in the second argument. For instance, <code>rep(0.9,10)</code> repeats 0.9 ten times. This way we don’t have to write every single number out of 61 entries.</p>
+<p>By definition the model assumes that no elephants survive from age 60 to 61, which is an arbitrary decision (we could have included elephants up to age 50 or 70 instead). However, since there are probably few elephants at this age in the population, this assumption does not have a large effect on the demographic calculations.</p>
+<p>To see the number of elements in a vector, we use the function <code>length()</code>. To extract only some numbers from a vector, we use square parentheses <code>[]</code> where we indicate the elements of the vector we want to extract. For instance:</p>
+<p><br></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="id_08-CaseStudy.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Length of the fertility vector</span></span>
+<span id="cb31-2"><a href="id_08-CaseStudy.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(Fvec)</span></code></pre></div>
+<pre><code>## [1] 61</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="id_08-CaseStudy.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the first 10 elements of the survival vector</span></span>
+<span id="cb33-2"><a href="id_08-CaseStudy.html#cb33-2" aria-hidden="true" tabindex="-1"></a>Svec[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre><code>##  [1] 0.900 0.960 0.960 0.960 0.960 0.985 0.985 0.985 0.985 0.985</code></pre>
+<p><br></p>
+<p><strong>Plot the vital rates</strong></p>
+<p>To plot the vital rates with ggplot, we can make a data frame, turn it into long format. We use the function <code>tibble()</code> from tidyverse, which is an alternative to the more complex <code>data.frame()</code> function. A ‘tibble’ is a data frame object that don’t allow users to change variable names or types, and forces users to be more aware of variable types. You can read more about tibbles <a href="https://r4ds.had.co.nz/tibbles.html">here</a>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="id_08-CaseStudy.html#cb35-1" aria-hidden="true" tabindex="-1"></a>Age <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">60</span></span>
+<span id="cb35-2"><a href="id_08-CaseStudy.html#cb35-2" aria-hidden="true" tabindex="-1"></a>VitalRates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(Age, Svec, Fvec)</span>
+<span id="cb35-3"><a href="id_08-CaseStudy.html#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="id_08-CaseStudy.html#cb35-4" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">melt</span>(VitalRates, <span class="at">id.vars=</span><span class="st">&quot;Age&quot;</span>) <span class="co">#Create long formate with one variable representing both vital rates</span></span>
+<span id="cb35-5"><a href="id_08-CaseStudy.html#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="id_08-CaseStudy.html#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(d) <span class="sc">+</span> </span>
+<span id="cb35-7"><a href="id_08-CaseStudy.html#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Age,<span class="at">y=</span>value ),<span class="at">col=</span><span class="dv">1</span>, <span class="at">lwd=</span><span class="fl">1.2</span>) <span class="sc">+</span> <span class="co">#Plot lines, Age on x axis and value of the variable on y axis</span></span>
+<span id="cb35-8"><a href="id_08-CaseStudy.html#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable, <span class="at">scales=</span><span class="st">&quot;free&quot;</span>)<span class="sc">+</span> <span class="co">#To make two separate plots for Svec and Fvec (variable)</span></span>
+<span id="cb35-9"><a href="id_08-CaseStudy.html#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb35-10"><a href="id_08-CaseStudy.html#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,<span class="at">legend.title =</span> <span class="fu">element_blank</span>())<span class="sc">+</span> <span class="co">#Put legend on top</span></span>
+<span id="cb35-11"><a href="id_08-CaseStudy.html#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Age (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Value&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb35-12"><a href="id_08-CaseStudy.html#cb35-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>( <span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>),<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-30-1.png" width="864" /></p>
+<p>Now we can define the matrices <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{U}\)</span> based on the vectors, and then the projection matrix <span class="math inline">\(\mathbf{A}\)</span> based on <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{U}\)</span>:</p>
+<p><strong>F matrix (production and transition of offspring):</strong></p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="id_08-CaseStudy.html#cb36-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">61</span> <span class="co">#Dimension of matrix (corresponding to age 0 to 60)</span></span>
+<span id="cb36-2"><a href="id_08-CaseStudy.html#cb36-2" aria-hidden="true" tabindex="-1"></a>Fmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, k, k) <span class="co">#Make a k x k matrix where all elements are zero</span></span>
+<span id="cb36-3"><a href="id_08-CaseStudy.html#cb36-3" aria-hidden="true" tabindex="-1"></a>Fmat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> Fvec <span class="co">#Add the fertility coefficients on the first row</span></span></code></pre></div>
+<p><br></p>
+<p>Note that we use <code>Fmat[1,]</code> to refer to the first row of the matrix, and then <code>&lt;- Fvec</code> to assign the entire vector to this first row. If we wanted to refer to the second column we would use <code>Fmat[,2]</code>. In general, to get the number located in row i and column j, use <code>Fmat[i, j]</code>.</p>
+<p><br></p>
+<p><strong>U (survival and transitions):</strong></p>
+<p>In age structured models like this one, the only transitions are from one age class to the next (individuals cannot age more than 1 year per year), so the transition matrix only depends on the survival probabilities. These should go on the subdiagonal, so we use the condition <code>row(Umat) == col(Umat) + 1</code> to make the entries (when the row number of the matrix equals the column number + 1). Another option could be to use a ‘for loop’ to go through each row and column and only add elements from the survival vector when the row number correspond to column number plus 1.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="id_08-CaseStudy.html#cb37-1" aria-hidden="true" tabindex="-1"></a>Umat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,k,k)</span>
+<span id="cb37-2"><a href="id_08-CaseStudy.html#cb37-2" aria-hidden="true" tabindex="-1"></a>Umat[<span class="fu">row</span>(Umat) <span class="sc">==</span> <span class="fu">col</span>(Umat) <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> Svec[<span class="dv">1</span><span class="sc">:</span>(k<span class="dv">-1</span>)]</span></code></pre></div>
+<p><br></p>
+<p><strong>A (projection matrix):</strong></p>
+<p>In age structured models we call this the Leslie matrix.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="id_08-CaseStudy.html#cb38-1" aria-hidden="true" tabindex="-1"></a>Amat <span class="ot">&lt;-</span> Umat <span class="sc">+</span> Fmat</span></code></pre></div>
+<p><br></p>
+<p>To get the dimension (row number and column number) of a matrix, use the function <code>dim()</code>.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="id_08-CaseStudy.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(Amat)</span></code></pre></div>
+<pre><code>## [1] 61 61</code></pre>
+<p><br></p>
+<p>We can also name the rows and columns of <span class="math inline">\(\mathbf{A}\)</span>, although this is not necessary for the calculations. Lets say we want to use “Age0” to represent age 0, “Age1” to represent age 1 etc:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="id_08-CaseStudy.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Use the paste function to create a vector of elements A0 to A60, then assign this to the rownames and column names of A.</span></span>
+<span id="cb41-2"><a href="id_08-CaseStudy.html#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(Amat) <span class="ot">&lt;-</span> <span class="fu">rownames</span>(Amat) <span class="ot">&lt;-</span> <span class="fu">paste</span> (<span class="st">&quot;Age&quot;</span>, <span class="dv">0</span><span class="sc">:</span><span class="dv">60</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb41-3"><a href="id_08-CaseStudy.html#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="id_08-CaseStudy.html#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Look at the first 10 by 10 rows and columns:</span></span>
+<span id="cb41-5"><a href="id_08-CaseStudy.html#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="id_08-CaseStudy.html#cb41-6" aria-hidden="true" tabindex="-1"></a>Amat[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<pre><code>##      Age0 Age1 Age2 Age3 Age4  Age5  Age6  Age7  Age8 Age9
+## Age0  0.0 0.00 0.00 0.00 0.00 0.000 0.000 0.000 0.000    0
+## Age1  0.9 0.00 0.00 0.00 0.00 0.000 0.000 0.000 0.000    0
+## Age2  0.0 0.96 0.00 0.00 0.00 0.000 0.000 0.000 0.000    0
+## Age3  0.0 0.00 0.96 0.00 0.00 0.000 0.000 0.000 0.000    0
+## Age4  0.0 0.00 0.00 0.96 0.00 0.000 0.000 0.000 0.000    0
+## Age5  0.0 0.00 0.00 0.00 0.96 0.000 0.000 0.000 0.000    0
+## Age6  0.0 0.00 0.00 0.00 0.00 0.985 0.000 0.000 0.000    0
+## Age7  0.0 0.00 0.00 0.00 0.00 0.000 0.985 0.000 0.000    0
+## Age8  0.0 0.00 0.00 0.00 0.00 0.000 0.000 0.985 0.000    0
+## Age9  0.0 0.00 0.00 0.00 0.00 0.000 0.000 0.000 0.985    0</code></pre>
+<p><br></p>
+<p>Naming rows and columns can be useful to help us keep track of what they represent. Since indexing in R always start at 1 and not 0, it can be confusing to keep track of post reproductive models where the first element represents age 0 (but class 1).</p>
+<p><br></p>
+</div>
+<div id="project-population-growth" class="section level3 hasAnchor" number="7.0.2">
+<h3><span class="header-section-number">B.0.2</span> Project population growth<a href="id_08-CaseStudy.html#project-population-growth" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These parameters are found using the function defined under <a href="id_07-Code-Collection.html#asymptotic-parameters">Asymptotic parameters</a>, with the mean projection matrix defined above.</p>
+<p><br></p>
+<p>The long-term (asymptotic) population growth rate for the elephant model</p>
+<p><br></p>
+</div>
+<div id="matrix-calculations" class="section level3 hasAnchor" number="7.0.3">
+<h3><span class="header-section-number">B.0.3</span> Matrix calculations<a href="id_08-CaseStudy.html#matrix-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These results are found using the function defined under <a href="id_07-Code-Collection.html#asymptotic-parameters">Asymptotic parameters</a>, with the matrices defined above.</p>
+<p><br></p>
+<p>The long-term (asymptotic) population growth rate for the elephant model</p>
+<p><br></p>
+</div>
+<div id="life-expectancy-1" class="section level3 hasAnchor" number="7.0.4">
+<h3><span class="header-section-number">B.0.4</span> Life expectancy<a href="id_08-CaseStudy.html#life-expectancy-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These parameters are found using the function defined under <a href="id_08-CaseStudy.html#life-expectancy-1">Life expectancy</a>, with the survival and transition matrix defined above.</p>
+<p><br></p>
+</div>
+<div id="mean-lifetime-reproduction" class="section level3 hasAnchor" number="7.0.5">
+<h3><span class="header-section-number">B.0.5</span> Mean lifetime reproduction<a href="id_08-CaseStudy.html#mean-lifetime-reproduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<p>Expected lifetime reproduction at birth (net reproductive rate) for the elephant model is</p>
+<p><br></p>
+</div>
+<div id="generation-time-1" class="section level3 hasAnchor" number="7.0.6">
+<h3><span class="header-section-number">B.0.6</span> Generation time<a href="id_08-CaseStudy.html#generation-time-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This parameter is found using the function defined under <a href="id_08-CaseStudy.html#generation-time-1">Generation time</a>, with the matrices defined above.</p>
+<p><br></p>
+<p>The generation time (mean age of mothers) for the elephant model</p>
+<p><br></p>
+</div>
+<div id="sensitivities-and-elasticities-1" class="section level3 hasAnchor" number="7.0.7">
+<h3><span class="header-section-number">B.0.7</span> Sensitivities and elasticities<a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>These parameters are found using the function defined under <a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1">Sensitivities and elasticities</a>, with the Leslie matrix defined above.</p>
+<p><br></p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Goswami1" class="csl-entry">
+Goswami, V. R., D. Vasudev, and Madan K. Oli. 2014. <span>“The Importance of Conflict-Induced Mortality for Conservation Planning in Areas of Human–Elephant Co-Occurrence.”</span> <em>Biol. Cons.</em> 176: 191–98.
+</div>
+<div id="ref-Vindenes2020" class="csl-entry">
+Vindenes, Y., C. le Coeur, and H. Caswell. 2020. <span>“Introduction to Matrix Population Models.”</span> In <em>Demographic Methods Across the Tree of Life</em>, edited by R. Salguero-Gomez and M. Gamelon, 163–79. Oxford, UK.: Oxford University Press.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_07-Code-Collection.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="s09-Solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

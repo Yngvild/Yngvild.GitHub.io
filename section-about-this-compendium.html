@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Demography and matrix models - introduction with R and shiny apps</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Demography and matrix models - introduction with R and shiny apps" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Demography and matrix models - introduction with R and shiny apps" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Yngvild Vindenes (University of Oslo, yngvild.vindenes@ibv.uio.no)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="section-about.html"/>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="/Users/yngvildv/Dropbox/WorkRelated/UndervisningUiO/DemographyNote/DemographyNote2022/libs/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="section-about-this-compendium.html"><a href="section-about-this-compendium.html"><i class="fa fa-check"></i>About this compendium</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-about-this-compendium.html"><a href="section-about-this-compendium.html#section-learning-goals"><i class="fa fa-check"></i>Learning goals</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="section-about.html"><a href="section-about.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="section-about.html"><a href="section-about.html#section-usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
+<li class="chapter" data-level="1.2" data-path="section-about.html"><a href="section-about.html#section-render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
+<li class="chapter" data-level="1.3" data-path="section-about.html"><a href="section-about.html#section-preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models - introduction with R and shiny apps</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-header">
+<h1 class="title">Demography and matrix models - introduction with R and shiny apps</h1>
+<p class="author"><em>Yngvild Vindenes (University of Oslo, <a href="mailto:yngvild.vindenes@ibv.uio.no" class="email">yngvild.vindenes@ibv.uio.no</a>)</em></p>
+<p class="date"><em>Fall 2022</em></p>
+</div>
+<div id="section-about-this-compendium" class="section level1 unnumbered hasAnchor">
+<h1>About this compendium<a href="section-about-this-compendium.html#section-about-this-compendium" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This compendium provides an introduction to demographic methods in life history theory, including R code for main calculations, and is developed for the course BIOS5112/9112 at the University of Oslo. The online version of the document includes ´shiny-apps´ to help you visualize and understand some of the results, and a navigation bar making it easy to navigate among sections.</p>
+<p>Before the widespread availability of computers, demographic methods consisted largely of manual calculations using life tables. However, the current computational tools and software like R <span class="citation">(<a href="section-about.html#section-ref-R" role="doc-biblioref">R Development Core Team 2020</a>)</span> make life table calculations much easier, and have also made matrix population models widely accessible. Matrix population models represent a powerful toolbox for analyses of life history and responses to climate change, among many other applications. In this course we will mostly focus on age structure, but the matrix model methods you will learn are the same for other kinds of population structure as well - such as spatial heterogeneity or life history stages.
+For those who are interested in learning these methods more thoroughly, <span class="citation">Caswell (<a href="section-about.html#section-ref-Caswell1" role="doc-biblioref">2001</a>)</span> provides a detailed introduction to matrix models for biologists.</p>
+<p>In this compendium you will get the R code (including examples) for calculating all of the life history variables. It is important that you focus on understanding the biological meaning. Take your time to try out the calculations in the examples on your own, and solve the provided exercises. Solutions to the exercises will be provided in a separate document later.</p>
+<p>As part of this course you will write a computational essay, which will count 40<span class="math inline">\(\%\)</span> towards the final grade. This compendium will provide the background and most of the code you will need for the first part of this essay, where you will do a demographic analysis for a selected species. The note is written in R Markdown, which is a notebook format that integrates executable R code, outputs of the R code (such as plots), text, images, etc. Your computational essay will be written with R Markdown as well.</p>
+<p>The note is still work in progress - if you find any errors or have questions / suggestions, please send an email (<a href="mailto:yngvild.vindenes@ibv.uio.no" class="email">yngvild.vindenes@ibv.uio.no</a>).</p>
+<p><br></p>
+<div id="section-learning-goals" class="section level2 unnumbered hasAnchor">
+<h2>Learning goals<a href="section-about-this-compendium.html#section-learning-goals" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>After reading this note (and doing the weekly exercises of the course), you should be able to</p>
+<ul>
+<li><p>define and explain all the terms highlighted in <strong>bold type</strong>.</p></li>
+<li><p>describe the exponential model for population growth and its importance in ecology and evolutionary biology.</p></li>
+<li><p>explain main survivorship patterns over age and how these are linked to life history.</p></li>
+<li><p>define a life table and use it to calculate the net reproductive rate <span class="math inline">\(R_0\)</span> and cohort generation time <span class="math inline">\(T_C\)</span>.</p></li>
+<li><p>explain the difference between a dynamic and static life table.</p></li>
+<li><p>define the Euler-Lotka equation for age-structured populations, explain its main components and importance to life history theory.</p></li>
+<li><p>discuss the advantages and disadvantages of using <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(R_0\)</span> as fitness measures.</p></li>
+<li><p>define a projection matrix for age- or stage-structured populations.</p></li>
+<li><p>explain the main differences between a pre- and post-reproductive census.</p></li>
+<li><p>draw a life cycle graph and explain how it is related to the projection matrix.</p></li>
+<li><p>calculate asymptotic parameters from a matrix model (using projection or eigen analysis), and explain their biological meaning.</p></li>
+<li><p>calculate sensitivities of <span class="math inline">\(\lambda\)</span> with respect to projection matrix elements, and explain their meaning and some applications.</p></li>
+<li><p>do a simple LTRE analysis for an age structured population in two different environments.</p></li>
+<li><p>discuss some key properties of population growth in stochastic environments.</p></li>
+<li><p>mention different life history strategies for variable environments.</p></li>
+</ul>
+<p><br><br></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="section-about.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

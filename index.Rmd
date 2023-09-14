@@ -1,0 +1,67 @@
+--- 
+title: "Demographic methods in life history theory"
+author: "Yngvild Vindenes (yngvild.vindenes@ibv.uio.no)"
+date: 'Department of Biosciences, University of Oslo.  '
+output: pdf_document
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: Dreferences.bib
+description: null
+link-citations: yes
+subtitle: An introduction with R
+---
+
+
+<br>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(tidy.opts=list(width.cutoff=80), tidy=TRUE)
+```
+
+# Preface {-}
+
+This compendium provides an introduction to demographic methods in life history theory, including R code for main calculations, and is developed for the course BIOS5112/9112 at the University of Oslo.  
+
+Learning goals are indicated in the beginning of each chapter.  Throughout the text,  particularly important concepts are highlighted in **bold type**. The compendium is written mainly to be read online, but you can also download a pdf or ebook version (use download button on top). 
+
+
+Before the widespread availability of computers, demographic methods consisted largely of manual calculations using life tables. However, the current computational tools and software like R [@R] make life table calculations more available than before, and have also made matrix population models widely accessible. Matrix population models generalize the life table approach to other kinds of structure than age structure, and have a wide range of applications.
+
+This compendium starts with a brief chapter on exponential growth, which is a foundation to understand the methods and models of later chapters. Chapter \@ref(s02-life-tables) introduces life tables for age structured populations, before matrix models are introduced in the following chapters. The last chapter (chapter \@ref(Stochasticity)) provides a short introduction to stochastic population models and evolution of bet-hedging strategies. 
+
+For those who are interested in learning matrix models more thoroughly, @Caswell1 provides a detailed introduction for biologists. 
+
+<br>
+
+The compendium is still work in progress - if you find errors or have questions / suggestions, please send an email (yngvild.vindenes@ibv.uio.no).
+
+
+#### Using R in the compendium {-}
+
+
+Readers are assumed to have a basic knowledge of R, including how to construct vectors, matrices and data frames, and basic knowledge of how R functions work. The compendium includes examples throughout the text,  and exercises after each chapter with suggested solutions in appendix \@ref(s09-Solutions). Note that some functions from different chapters build on previously defined functions, so you cannot apply them unless previously defined functions are also uploaded in R. All R functions are collected in appendix \@ref(s07-Code-Collection), and here you can also download an RData-file with all functions from the compendium (and relevant R objects for one of the repeated examples).
+
+
+The syntax used is a mix of base R syntax and 'tidyverse' syntax for manipulating data frames with 'dplyr', and we use ggplot2 for plotting [@tidyverse]. To run the code in this compendium you should install and load a few packages:
+
+
+
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)#Tidyverse packages
+library(MASS)#Some statistical functions
+library(MetBrewer)#Color palettes for plotting
+
+#Define color vectors for plotting:
+colors2 <- met.brewer(2, name = "NewKingdom", type = "discrete")
+colors3 <- met.brewer(3, name = "Derain", type = "discrete")
+colors4 <- met.brewer(4, name = "Hokusai1", type = "discrete")
+colors5 <- met.brewer(5, name = "Hokusai2", type = "discrete")
+```
+
+
+
+#### License {-}
+
+This work is licensed under [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/)
+ 

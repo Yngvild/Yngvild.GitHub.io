@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Stochasticity | Demographic methods in life history theory</title>
+  <meta name="description" content="5 Stochasticity | Demographic methods in life history theory" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Stochasticity | Demographic methods in life history theory" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Stochasticity | Demographic methods in life history theory" />
+  
+  
+  
+
+<meta name="author" content="Yngvild Vindenes (yngvild.vindenes@ibv.uio.no)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="s04-Stage.html"/>
+<link rel="next" href="id_06-references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="s01-Exponential.html"><a href="s01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="s01-Exponential.html"><a href="s01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="s01-Exponential.html"><a href="s01-Exponential.html#the-exponential-growth-model"><i class="fa fa-check"></i><b>1.2</b> The exponential growth model</a></li>
+<li class="chapter" data-level="1.3" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="s01-Exponential.html"><a href="s01-Exponential.html#the-role-of-exponential-growth-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> The role of exponential growth in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="s02-life-tables.html"><a href="s02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i><b>2.1</b> Learning goals</a></li>
+<li class="chapter" data-level="2.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#age-specific-survival-and-fecundity"><i class="fa fa-check"></i><b>2.2</b> Age-specific survival and fecundity</a></li>
+<li class="chapter" data-level="2.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-history-strategies-and-trade-offs"><i class="fa fa-check"></i><b>2.3</b> Life history strategies and trade-offs</a></li>
+<li class="chapter" data-level="2.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.4</b> A basic life table</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#bird"><i class="fa fa-check"></i><b>2.4.1</b> Songbird example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="s02-life-tables.html"><a href="s02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.5</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.6" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.6</b> Life table calculations</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#net-reproductive-rate"><i class="fa fa-check"></i><b>2.6.1</b> Net reproductive rate</a></li>
+<li class="chapter" data-level="2.6.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#cohort-generation-time"><i class="fa fa-check"></i><b>2.6.2</b> Cohort generation time</a></li>
+<li class="chapter" data-level="2.6.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#approximation-of-long-term-growth-rate"><i class="fa fa-check"></i><b>2.6.3</b> Approximation of long-term growth rate</a></li>
+<li class="chapter" data-level="2.6.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#Euler"><i class="fa fa-check"></i><b>2.6.4</b> Euler-lotka equation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="s02-life-tables.html"><a href="s02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.7</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.8" data-path="s02-life-tables.html"><a href="s02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="s02-life-tables.html"><a href="s02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a></li>
+<li class="chapter" data-level="2.10" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.3"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i><b>3.1</b> Learning goals</a></li>
+<li class="chapter" data-level="3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#age-structured-growth"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#avoiding-mistakes"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected-growth"><i class="fa fa-check"></i><b>3.5</b> Projected growth</a></li>
+<li class="chapter" data-level="3.6" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#asymptotic"><i class="fa fa-check"></i><b>3.6</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.6.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.6.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.6.2</b> Calculations based on projection matrix</a></li>
+<li class="chapter" data-level="3.6.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#lifetime"><i class="fa fa-check"></i><b>3.6.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="3.6.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.6.4</b> Lifetime reproduction</a></li>
+<li class="chapter" data-level="3.6.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#gentime"><i class="fa fa-check"></i><b>3.6.5</b> Generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-and-elasticity-of-lambda"><i class="fa fa-check"></i><b>3.7</b> Sensitivity and elasticity of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-matrix-elements"><i class="fa fa-check"></i><b>3.7.1</b> Sensitivity to matrix elements</a></li>
+<li class="chapter" data-level="3.7.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-underlying-parameters"><i class="fa fa-check"></i><b>3.7.2</b> Sensitivity to underlying parameters</a></li>
+<li class="chapter" data-level="3.7.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.7.3</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LTRE"><i class="fa fa-check"></i><b>3.9</b> Life table response experiments (LTRE)</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#general-description-of-ltre-approach"><i class="fa fa-check"></i><b>3.9.1</b> General description of LTRE approach</a></li>
+<li class="chapter" data-level="3.9.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#ltre-and-sensitivity-analyses"><i class="fa fa-check"></i><b>3.9.2</b> LTRE and sensitivity analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="s04-Stage.html"><a href="s04-Stage.html"><i class="fa fa-check"></i><b>4</b> Stage structured models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#learning-goals-3"><i class="fa fa-check"></i><b>4.1</b> Learning goals</a></li>
+<li class="chapter" data-level="4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#general-stage-structured-matrix-model"><i class="fa fa-check"></i><b>4.2</b> General stage structured matrix model</a></li>
+<li class="chapter" data-level="4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#decomposing-mathbfu-and-mathbff"><i class="fa fa-check"></i><b>4.3</b> Decomposing <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="s04-Stage.html"><a href="s04-Stage.html#examples-of-stage-structured-models"><i class="fa fa-check"></i><b>4.4</b> Examples of stage structured models</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#lefkovitch-models"><i class="fa fa-check"></i><b>4.4.1</b> Lefkovitch models</a></li>
+<li class="chapter" data-level="4.4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#agestage"><i class="fa fa-check"></i><b>4.4.2</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#disease-models"><i class="fa fa-check"></i><b>4.4.3</b> Disease models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="s04-Stage.html"><a href="s04-Stage.html#integral-projection-models-ipms"><i class="fa fa-check"></i><b>4.5</b> Integral projection models (IPMs)</a></li>
+<li class="chapter" data-level="4.6" data-path="s04-Stage.html"><a href="s04-Stage.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.3"><i class="fa fa-check"></i>Exercise 4.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Stochasticity.html"><a href="Stochasticity.html"><i class="fa fa-check"></i><b>5</b> Stochasticity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Stochasticity.html"><a href="Stochasticity.html#learning-goals-4"><i class="fa fa-check"></i><b>5.1</b> Learning goals</a></li>
+<li class="chapter" data-level="5.2" data-path="Stochasticity.html"><a href="Stochasticity.html#variable-vs-unpredictable-environments"><i class="fa fa-check"></i><b>5.2</b> Variable vs unpredictable environments</a></li>
+<li class="chapter" data-level="5.3" data-path="Stochasticity.html"><a href="Stochasticity.html#the-lewontin-cohen-model"><i class="fa fa-check"></i><b>5.3</b> The Lewontin-Cohen model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Stochasticity.html"><a href="Stochasticity.html#defining-the-process"><i class="fa fa-check"></i><b>5.3.1</b> Defining the process</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Stochasticity.html"><a href="Stochasticity.html#the-stochastic-growth-rate"><i class="fa fa-check"></i><b>5.3.2</b> The stochastic growth rate</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Stochasticity.html"><a href="Stochasticity.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.3.3</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.3.4" data-path="Stochasticity.html"><a href="Stochasticity.html#bet-hedging"><i class="fa fa-check"></i><b>5.3.4</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Stochasticity.html"><a href="Stochasticity.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.4</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="Stochasticity.html"><a href="Stochasticity.html#defining-the-process-1"><i class="fa fa-check"></i><b>5.4.1</b> Defining the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-one-realization-of-the-process-1"><i class="fa fa-check"></i>Plot one realization of the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-many-realizations-of-the-process-1"><i class="fa fa-check"></i>Plot many realizations of the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-percentiles-from-many-realizations-1"><i class="fa fa-check"></i>Plot percentiles from many realizations</a></li>
+<li class="chapter" data-level="5.4.2" data-path="Stochasticity.html"><a href="Stochasticity.html#stochastic-growth-rate"><i class="fa fa-check"></i><b>5.4.2</b> Stochastic growth rate</a></li>
+<li class="chapter" data-level="5.4.3" data-path="Stochasticity.html"><a href="Stochasticity.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.4.3</b> Small noise approximation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="Stochasticity.html"><a href="Stochasticity.html#exercises-4"><i class="fa fa-check"></i><b>5.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="s09-Solutions.html"><a href="s09-Solutions.html"><i class="fa fa-check"></i><b>A</b> Suggested solutions to exercises</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-1-exercises"><i class="fa fa-check"></i><b>A.1</b> Chapter 1 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.1-1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.2-1"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-2-exercises"><i class="fa fa-check"></i><b>A.2</b> Chapter 2 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.1-1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.2-1"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.3-1"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-3-exercises"><i class="fa fa-check"></i><b>A.3</b> Chapter 3 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-3.1-1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-3.2-1"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-4-exercises"><i class="fa fa-check"></i><b>A.4</b> Chapter 4 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.1-1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.2-1"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.3-1"><i class="fa fa-check"></i>Exercise 4.3</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-5-exercises"><i class="fa fa-check"></i><b>A.5</b> Chapter 5 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-5.1-1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-5.2-1"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html"><i class="fa fa-check"></i><b>B</b> R code collection</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>B.1</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="B.1.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>B.1.1</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="B.1.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#euler-lotka"><i class="fa fa-check"></i><b>B.1.2</b> Euler-Lotka</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>B.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#create-leslie-matrix"><i class="fa fa-check"></i><b>B.2.1</b> Create Leslie matrix</a></li>
+<li class="chapter" data-level="B.2.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#decompose-mathbfu-and-mathbff"><i class="fa fa-check"></i><b>B.2.2</b> Decompose <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span></a></li>
+<li class="chapter" data-level="B.2.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>B.2.3</b> Population projection</a></li>
+<li class="chapter" data-level="B.2.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#long-term-growth-rate-stable-structure-and-reproductive-value"><i class="fa fa-check"></i><b>B.2.4</b> Long-term growth rate, stable structure and reproductive value</a></li>
+<li class="chapter" data-level="B.2.5" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>B.2.5</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.2.6" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#lifetime-reproduction"><i class="fa fa-check"></i><b>B.2.6</b> Lifetime reproduction</a></li>
+<li class="chapter" data-level="B.2.7" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>B.2.7</b> Generation time</a></li>
+<li class="chapter" data-level="B.2.8" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>B.2.8</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#stochastic-models"><i class="fa fa-check"></i><b>B.3</b> Stochastic models</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#arithmetic-and-geometric-mean-1"><i class="fa fa-check"></i><b>B.3.1</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="B.3.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#simulations-in-lewontin-cohen-model"><i class="fa fa-check"></i><b>B.3.2</b> Simulations in Lewontin-Cohen model</a></li>
+<li class="chapter" data-level="B.3.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#simulations-of-stochastic-structured-model"><i class="fa fa-check"></i><b>B.3.3</b> Simulations of stochastic structured model</a></li>
+<li class="chapter" data-level="B.3.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#estimate-stochastic-growth-rate"><i class="fa fa-check"></i><b>B.3.4</b> Estimate stochastic growth rate</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#parameters-and-matrices-for-the-songbird-example"><i class="fa fa-check"></i><b>B.4</b> Parameters and matrices for the songbird example</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demographic methods in life history theory</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="Stochasticity" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Stochasticity<a href="Stochasticity.html#Stochasticity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter will give an introduction to stochastic environments and bet-hedging strategies. The underlying theory is based on stochastic processes and probability theory, and this chapter will only touch upon a few basic concepts from this large research field. A key result from the most basic model of stochastic population growth is that the long-term population growth rate (fitness) in variable environments will always be lower than the growth rate in the constant mean environment.</p>
+<p><br></p>
+<div id="learning-goals-4" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Learning goals<a href="Stochasticity.html#learning-goals-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Understand key properties of population growth in variable environments.</p></li>
+<li><p>Describe the main properties of the Lewontin-Cohen model.</p></li>
+<li><p>Understand how bet-hedging strategies can help individuals live in variable environments.</p></li>
+<li><p>Discuss the role of variable and unpredictable environments in light of climate change.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="variable-vs-unpredictable-environments" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Variable vs unpredictable environments<a href="Stochasticity.html#variable-vs-unpredictable-environments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have only considered populations in constant environments. But natural environments can be highly variable, both in time and space. Here, ‘environment’ is a very general term which can refer to any particular abiotic variable (like temperature) or a combination of several factors that affect organisms living in the habitat, including biotic factors like resource availability. Environmental variability can be <em>predictable</em>, like the seasonal changes in light conditions at high latitudes, or <em>unpredictable</em> - which is the case for stochastic environments. Unpredictable variation also includes rare events such as rainfalls in a dessert, or flooding and wildfires. We can estimate a frequency at which such events typically occur over many years, but it is difficult to predict the exact timing of each such event.</p>
+<p>Practically all organisms live in some kind of variable environment (although some habitats are more stable than others, for instance the deep depths of the oceans), and species have evolved various strategies to deal with both the wide range of possible conditions they (or their offspring) may encounter, under varying degrees of predictability. These adaptations allow individuals to mitigate negative impacts of bad conditions, as well as take advantage of good conditions, and spread the risk associated with uncertainty in various ways.</p>
+<p>If the environment is fluctuating in a predictable way, <strong>phenotypic plasticity</strong> can allow individuals to cope with the variation. Organisms can then take advantage of environmental cues during development to achieve an optimum phenotype in the future environment. For unpredictable (stochastic) environments, however, organisms cannot rely on such cues. In these cases <strong>bet-hedging</strong> strategies may evolve.</p>
+<p><br></p>
+</div>
+<div id="the-lewontin-cohen-model" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> The Lewontin-Cohen model<a href="Stochasticity.html#the-lewontin-cohen-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The simplest model for stochastic population growth applies to an unstructured population. In this model the annual population growth rate is a stochastic variable <span class="math inline">\(\Lambda_t\)</span> with mean <span class="math inline">\(\text{E}[\Lambda_t]=\lambda\)</span>, variance <span class="math inline">\(\text{Var}(\Lambda)=\sigma^2\)</span>, and with no autocorrelation between the growth rates of different years. This means that the annual growth rates are IID (Identically and Independently Distributed), and this assumption is important for the derivation of the long-term population growth rate. This model is the Lewontin-Cohen model <span class="citation">(<a href="#ref-Lewontin1" role="doc-biblioref">Lewontin and Cohen 1969</a>)</span>, also known as a ‘geometric random walk’.</p>
+<p><br></p>
+<div id="defining-the-process" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Defining the process<a href="Stochasticity.html#defining-the-process" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Starting from a population size <span class="math inline">\(N_0\)</span>, the population size after <span class="math inline">\(t\)</span> time steps in the Lewontin-Cohen model is given by</p>
+<p><span class="math display" id="eq:Lewontin1">\[\begin{align}
+N_{t+1}=\Lambda_{t}\Lambda_{t-1}\cdots\Lambda_{1}\Lambda_0N_0=N_0\prod_{i=0}^t \Lambda_i.
+\tag{5.1}
+\end{align}\]</span>
+We are interested in the behavior of a ‘typical’ population growing according to this process, and to define the long-term growth rate of such a ‘typical’ population (the socalled stochastic growth rate). As we will see below, this is not the growth rate of the mean population size, but rather the median population size. Before we go into details of this derivation, we will look at how we can generate realizations of the Lewontin-Cohen process in R and plot one or more realizations.</p>
+<p><br></p>
+<div id="plot-one-realization-of-the-process" class="section level4 unnumbered hasAnchor">
+<h4>Plot one realization of the process<a href="Stochasticity.html#plot-one-realization-of-the-process" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The R function <code>LC</code> below can be used to generate a random sequence of population sizes over time based on this model (each time you run the code it will generate a different sequence, unless you use the function <code>set.seed()</code> which initializes the pseudorandom number generator in R). The <code>LC</code> function returns the sequence of population sizes as a data frame, including the time steps from 0 to the set number of years. The output from one run of the function is shown in figure <a href="Stochasticity.html#fig:Lewontin">5.1</a>. In this example, a normal distribution is used to generate the sequence of annual growth rates, but the exact kind of distribution is not critical as long as the mean and variance can be set independently (for instance, a lognormal distribution could be used since all the multiplicative growth rates should be non-negative).</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="Stochasticity.html#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#mean.lambda: Expectation of annual lambda</span></span>
+<span id="cb48-2"><a href="Stochasticity.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="co">#sd.lambda: Standard deviation of lambda</span></span>
+<span id="cb48-3"><a href="Stochasticity.html#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="Stochasticity.html#cb48-4" aria-hidden="true" tabindex="-1"></a>LC <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">Tmax=</span><span class="dv">30</span>, </span>
+<span id="cb48-5"><a href="Stochasticity.html#cb48-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">n0=</span><span class="dv">100</span>, </span>
+<span id="cb48-6"><a href="Stochasticity.html#cb48-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">mean.lambda=</span><span class="fl">1.05</span>, </span>
+<span id="cb48-7"><a href="Stochasticity.html#cb48-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">sd.lambda=</span><span class="fl">0.1</span>){</span>
+<span id="cb48-8"><a href="Stochasticity.html#cb48-8" aria-hidden="true" tabindex="-1"></a>  stochastic.lambdas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Tmax, </span>
+<span id="cb48-9"><a href="Stochasticity.html#cb48-9" aria-hidden="true" tabindex="-1"></a>                              <span class="at">mean=</span>mean.lambda, </span>
+<span id="cb48-10"><a href="Stochasticity.html#cb48-10" aria-hidden="true" tabindex="-1"></a>                              <span class="at">sd=</span>sd.lambda)</span>
+<span id="cb48-11"><a href="Stochasticity.html#cb48-11" aria-hidden="true" tabindex="-1"></a>  Nvec <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, Tmax<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb48-12"><a href="Stochasticity.html#cb48-12" aria-hidden="true" tabindex="-1"></a>  Nvec[<span class="dv">1</span>] <span class="ot">&lt;-</span> n0</span>
+<span id="cb48-13"><a href="Stochasticity.html#cb48-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>Tmax){</span>
+<span id="cb48-14"><a href="Stochasticity.html#cb48-14" aria-hidden="true" tabindex="-1"></a>    Nvec[i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> stochastic.lambdas[i]<span class="sc">*</span>Nvec[i]</span>
+<span id="cb48-15"><a href="Stochasticity.html#cb48-15" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb48-16"><a href="Stochasticity.html#cb48-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>Tmax, <span class="st">&quot;N&quot;</span><span class="ot">=</span>Nvec)</span>
+<span id="cb48-17"><a href="Stochasticity.html#cb48-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb48-18"><a href="Stochasticity.html#cb48-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-19"><a href="Stochasticity.html#cb48-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Initialize R&#39;s random number generator,</span></span>
+<span id="cb48-20"><a href="Stochasticity.html#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="co">#the number chosen is arbitrary</span></span>
+<span id="cb48-21"><a href="Stochasticity.html#cb48-21" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)  </span>
+<span id="cb48-22"><a href="Stochasticity.html#cb48-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-23"><a href="Stochasticity.html#cb48-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply function and plot result:</span></span>
+<span id="cb48-24"><a href="Stochasticity.html#cb48-24" aria-hidden="true" tabindex="-1"></a>StochasticGrowth <span class="ot">&lt;-</span> <span class="fu">LC</span>()</span>
+<span id="cb48-25"><a href="Stochasticity.html#cb48-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-26"><a href="Stochasticity.html#cb48-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(StochasticGrowth) <span class="sc">+</span> </span>
+<span id="cb48-27"><a href="Stochasticity.html#cb48-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N), <span class="at">lwd=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb48-28"><a href="Stochasticity.html#cb48-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N), <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb48-29"><a href="Stochasticity.html#cb48-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb48-30"><a href="Stochasticity.html#cb48-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Population size N&quot;</span>)  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:Lewontin"></span>
+<img src="_main_files/figure-html/Lewontin-1.png" alt="Stochastic population growth following the Lewontin-Cohen model with normally distributed annual growth rates with mean $\lambda=1.05$ and standard deviation $\sigma=.1$ " width="576" />
+<p class="caption">
+Figure 5.1: Stochastic population growth following the Lewontin-Cohen model with normally distributed annual growth rates with mean <span class="math inline">\(\lambda=1.05\)</span> and standard deviation <span class="math inline">\(\sigma=.1\)</span>
+</p>
+</div>
+<p><br></p>
+<p>This code only generates one realization of the growth process. To learn more about the typical behavior of this stochastic growth process we need to generate many realizations (from the same starting point, with the same mean and variance of the annual growth rate) and look at some summary statistics.</p>
+<p><br></p>
+</div>
+<div id="plot-many-realizations-of-the-process" class="section level4 unnumbered hasAnchor">
+<h4>Plot many realizations of the process<a href="Stochasticity.html#plot-many-realizations-of-the-process" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following function generates a chosen number (<code>nsim</code>) of realizations of the Lewontin-Cohen model, stores them in a data frame and makes a plot of all of them.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="Stochasticity.html#cb49-1" aria-hidden="true" tabindex="-1"></a>nsimLC <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">nsim=</span><span class="dv">100</span>, <span class="at">Tmax=</span><span class="dv">30</span>, <span class="at">n0=</span><span class="dv">100</span>, </span>
+<span id="cb49-2"><a href="Stochasticity.html#cb49-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">mean.lambda=</span><span class="fl">1.05</span>, <span class="at">sd.lambda=</span><span class="fl">0.1</span>){</span>
+<span id="cb49-3"><a href="Stochasticity.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  frame <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>Tmax)</span>
+<span id="cb49-4"><a href="Stochasticity.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
+<span id="cb49-5"><a href="Stochasticity.html#cb49-5" aria-hidden="true" tabindex="-1"></a>  stochastic.lambdas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(Tmax, <span class="at">mean=</span>mean.lambda, <span class="at">sd=</span>sd.lambda)</span>
+<span id="cb49-6"><a href="Stochasticity.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  Nvec <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, Tmax<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb49-7"><a href="Stochasticity.html#cb49-7" aria-hidden="true" tabindex="-1"></a>  Nvec[<span class="dv">1</span>] <span class="ot">&lt;-</span> n0</span>
+<span id="cb49-8"><a href="Stochasticity.html#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>Tmax){</span>
+<span id="cb49-9"><a href="Stochasticity.html#cb49-9" aria-hidden="true" tabindex="-1"></a>    Nvec[i<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> stochastic.lambdas[i]<span class="sc">*</span>Nvec[i]</span>
+<span id="cb49-10"><a href="Stochasticity.html#cb49-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb49-11"><a href="Stochasticity.html#cb49-11" aria-hidden="true" tabindex="-1"></a>  frame <span class="ot">&lt;-</span> <span class="fu">cbind</span>(frame, Nvec)</span>
+<span id="cb49-12"><a href="Stochasticity.html#cb49-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(frame)[j<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;N&quot;</span>,j,<span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb49-13"><a href="Stochasticity.html#cb49-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb49-14"><a href="Stochasticity.html#cb49-14" aria-hidden="true" tabindex="-1"></a>  frame</span>
+<span id="cb49-15"><a href="Stochasticity.html#cb49-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>To apply this function and plot the results, we can use the following code:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="Stochasticity.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>) </span>
+<span id="cb50-2"><a href="Stochasticity.html#cb50-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-3"><a href="Stochasticity.html#cb50-3" aria-hidden="true" tabindex="-1"></a>simLC100 <span class="ot">&lt;-</span> <span class="fu">nsimLC</span>()</span>
+<span id="cb50-4"><a href="Stochasticity.html#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="Stochasticity.html#cb50-5" aria-hidden="true" tabindex="-1"></a>simLC100.long <span class="ot">&lt;-</span> simLC100 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="sc">-</span>Time),</span>
+<span id="cb50-6"><a href="Stochasticity.html#cb50-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Rep&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;N&quot;</span>)</span>
+<span id="cb50-7"><a href="Stochasticity.html#cb50-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-8"><a href="Stochasticity.html#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(simLC100.long) <span class="sc">+</span> </span>
+<span id="cb50-9"><a href="Stochasticity.html#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N, <span class="at">col=</span>Rep), <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb50-10"><a href="Stochasticity.html#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">100</span>))<span class="sc">+</span></span>
+<span id="cb50-11"><a href="Stochasticity.html#cb50-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb50-12"><a href="Stochasticity.html#cb50-12" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span> )<span class="sc">+</span></span>
+<span id="cb50-13"><a href="Stochasticity.html#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Population size N&quot;</span>)  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:Lewontin2"></span>
+<img src="_main_files/figure-html/Lewontin2-1.png" alt="100 realizations of the   Lewontin-Cohen model with normally distributed annual growth rates, with mean $\lambda=1.05$ and standard deviation $\sigma=.1$ " width="576" />
+<p class="caption">
+Figure 5.2: 100 realizations of the Lewontin-Cohen model with normally distributed annual growth rates, with mean <span class="math inline">\(\lambda=1.05\)</span> and standard deviation <span class="math inline">\(\sigma=.1\)</span>
+</p>
+</div>
+<p><br></p>
+<p>Figure <a href="Stochasticity.html#fig:Lewontin2">5.2</a> shows the output from 100 realizations. We see that over time, these realizations diverge more and more from each other as the randomness accumulates. A few realizations reach large population sizes, while many are located in intermediate values. However, it quickly gets quite messy to plot so many realizations, and if we want more than 100 it will be even worse. If we want to summarize the outcome of many realizations over time, a better option is to plot selected <strong>percentiles</strong> over time.</p>
+<p><br></p>
+</div>
+<div id="plot-percentiles-from-many-realizations" class="section level4 unnumbered hasAnchor">
+<h4>Plot percentiles from many realizations<a href="Stochasticity.html#plot-percentiles-from-many-realizations" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Percentiles (or quantiles) are useful for summarizing outputs from many realizations. For instance, the 50%%% percentile represents the population size at which 50<span class="math inline">\(\%\)</span> of the realizations will lie above it and 50<span class="math inline">\(\%\)</span> below it (i.e. the median in the limit as the number of realizations approaches infinty), the 95<span class="math inline">\(\%\)</span> percentile represents the population size at which 5<span class="math inline">\(\%\)</span> of the realizations lies above it and 5<span class="math inline">\(\%\)</span> below it, etc. The following code makes such a plot based on 10 000 realizations of the Lewontin-Cohen process. It can take some seconds to run (reduce the number of realizations <code>nsim</code> if it gets too slow)</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="Stochasticity.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply function to get 10 0000 realizations (can take some time)</span></span>
+<span id="cb51-2"><a href="Stochasticity.html#cb51-2" aria-hidden="true" tabindex="-1"></a>simLC_Large <span class="ot">&lt;-</span> <span class="fu">nsimLC</span>(<span class="at">nsim=</span><span class="dv">10000</span>)</span>
+<span id="cb51-3"><a href="Stochasticity.html#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-4"><a href="Stochasticity.html#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the 5, 25, 50, 75, and 95 percentiles:</span></span>
+<span id="cb51-5"><a href="Stochasticity.html#cb51-5" aria-hidden="true" tabindex="-1"></a>Percentiles1  <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">apply</span>(<span class="fu">t</span>(simLC_Large[,<span class="sc">-</span><span class="dv">1</span>]), </span>
+<span id="cb51-6"><a href="Stochasticity.html#cb51-6" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">2</span>, </span>
+<span id="cb51-7"><a href="Stochasticity.html#cb51-7" aria-hidden="true" tabindex="-1"></a>                         quantile, </span>
+<span id="cb51-8"><a href="Stochasticity.html#cb51-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">probs=</span><span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">25</span>, .<span class="dv">5</span>, .<span class="dv">75</span>,.<span class="dv">95</span>)))</span>
+<span id="cb51-9"><a href="Stochasticity.html#cb51-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-10"><a href="Stochasticity.html#cb51-10" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb51-11"><a href="Stochasticity.html#cb51-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Store percentiles in data frame  </span></span>
+<span id="cb51-12"><a href="Stochasticity.html#cb51-12" aria-hidden="true" tabindex="-1"></a>LCPercentiles <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>(<span class="fu">dim</span>(Percentiles1)[<span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb51-13"><a href="Stochasticity.html#cb51-13" aria-hidden="true" tabindex="-1"></a>                                     Percentiles1))</span>
+<span id="cb51-14"><a href="Stochasticity.html#cb51-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-15"><a href="Stochasticity.html#cb51-15" aria-hidden="true" tabindex="-1"></a>LCPercentiles<span class="sc">$</span>Mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">t</span>(simLC_Large[,<span class="sc">-</span><span class="dv">1</span>]),<span class="dv">2</span>, mean)</span>
+<span id="cb51-16"><a href="Stochasticity.html#cb51-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-17"><a href="Stochasticity.html#cb51-17" aria-hidden="true" tabindex="-1"></a><span class="co">#Make long format for plotting</span></span>
+<span id="cb51-18"><a href="Stochasticity.html#cb51-18" aria-hidden="true" tabindex="-1"></a>LCPercentiles.long <span class="ot">&lt;-</span> LCPercentiles <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="sc">-</span>Time),</span>
+<span id="cb51-19"><a href="Stochasticity.html#cb51-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Percentile&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;N&quot;</span>)</span>
+<span id="cb51-20"><a href="Stochasticity.html#cb51-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-21"><a href="Stochasticity.html#cb51-21" aria-hidden="true" tabindex="-1"></a><span class="co">#Make sure the order of the percentiles is correct</span></span>
+<span id="cb51-22"><a href="Stochasticity.html#cb51-22" aria-hidden="true" tabindex="-1"></a>LCPercentiles.long<span class="sc">$</span>Percentile <span class="ot">&lt;-</span> <span class="fu">factor</span>(</span>
+<span id="cb51-23"><a href="Stochasticity.html#cb51-23" aria-hidden="true" tabindex="-1"></a>  LCPercentiles.long<span class="sc">$</span>Percentile, </span>
+<span id="cb51-24"><a href="Stochasticity.html#cb51-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;5%&quot;</span>, <span class="st">&quot;25%&quot;</span>, <span class="st">&quot;50%&quot;</span>, <span class="st">&quot;75%&quot;</span>, <span class="st">&quot;95%&quot;</span>,<span class="st">&quot;Mean&quot;</span>))</span>
+<span id="cb51-25"><a href="Stochasticity.html#cb51-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-26"><a href="Stochasticity.html#cb51-26" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(LCPercentiles.long) <span class="sc">+</span> </span>
+<span id="cb51-27"><a href="Stochasticity.html#cb51-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N, <span class="at">col=</span>Percentile,</span>
+<span id="cb51-28"><a href="Stochasticity.html#cb51-28" aria-hidden="true" tabindex="-1"></a>                <span class="at">linetype=</span>Percentile), <span class="at">lwd=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb51-29"><a href="Stochasticity.html#cb51-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(colors5,<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb51-30"><a href="Stochasticity.html#cb51-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb51-31"><a href="Stochasticity.html#cb51-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb51-32"><a href="Stochasticity.html#cb51-32" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb51-33"><a href="Stochasticity.html#cb51-33" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.title =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb51-34"><a href="Stochasticity.html#cb51-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Population size N&quot;</span>)<span class="sc">+</span></span>
+<span id="cb51-35"><a href="Stochasticity.html#cb51-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:Lewontin3"></span>
+<img src="_main_files/figure-html/Lewontin3-1.png" alt="Percentiles and mean from 10000 simulated trajectories of the Lewontin-Cohen model with normally distributed annual growth rates with mean $\lambda=1.05$ and standard deviation $\sigma=0.1$.  " width="576" />
+<p class="caption">
+Figure 5.3: Percentiles and mean from 10000 simulated trajectories of the Lewontin-Cohen model with normally distributed annual growth rates with mean <span class="math inline">\(\lambda=1.05\)</span> and standard deviation <span class="math inline">\(\sigma=0.1\)</span>.
+</p>
+</div>
+<p><br></p>
+<p>In contrast to the realizations, the percentiles do not fluctuate (the higher the number of realizations, the more smooth they will be). The 50<span class="math inline">\(\%\)</span> percentile represents the median and is therefore a good representation of the ‘typical’ population in the stochastic environment. The mean population size (shown in red on figure <a href="Stochasticity.html#fig:Lewontin3">5.3</a>) is not a good measure of the typical population, because only only one or a few realizations reaching very high values can have a large impact on this value. Thus, for stochastic growth models the long-term growth rate of the median population is a better fitness measure than the long-term growth rate of the mean population. In extreme cases when the variance of the annual growth rates is large, the expected population size can increase exponentially because a few realizations reach extremely high values, while the median population size is declining and each realization will eventually go extinct with probability 1.
+We will get back to this below.</p>
+<p>&lt;br</p>
+</div>
+</div>
+<div id="the-stochastic-growth-rate" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> The stochastic growth rate<a href="Stochasticity.html#the-stochastic-growth-rate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, we consider the growth rate of the mean population size, although we already know this is not the best measure for the typical population. Because we assumed that the <span class="math inline">\(\Lambda_t\)</span>’s are IID (see above), the expected population size after <span class="math inline">\(t\)</span> time steps is given by</p>
+<p><span class="math display" id="eq:MeanGrowth">\[\begin{align}
+\text{E}[N_t]&amp;=N_0\text{E}\left[\prod_{i=0}^{t-1} \Lambda_i\right] =N_0\prod_{i=0}^{t-1}\text{E}[\Lambda_i] =N_0\lambda^t.
+\tag{5.2}
+\end{align}\]</span></p>
+<p>Thus, the expected population size grows at the rate <span class="math inline">\(\lambda\)</span> (the mean of the annual growth rate), just like a population growing exponentially in a constant environment. Note that <span class="math inline">\(\lambda\)</span> does not depend on the variance of the annual growth rates.</p>
+<p>To derive the long-term growth of the ‘typical’ population (the socalled <strong>stochastic growth rate</strong>) we look at the Lewontin-Cohen process (equation <a href="Stochasticity.html#eq:Lewontin1">(5.1)</a>) on log scale:</p>
+<p><span class="math display" id="eq:Lewontin2">\[\begin{align}
+\ln N_t&amp;=\ln \Lambda_{t-1}+\ln\Lambda_{t-2}+...+\ln\Lambda_{1}+\ln\Lambda_0+\ln N_0\\ &amp;=\ln N_0+ \sum_{i=0}^{t-1} \ln \Lambda_i.
+\tag{5.3}
+\end{align}\]</span>
+Here, the first term <span class="math inline">\(\ln N_0\)</span> is a constant (since the initial population size is given). The second term is a sum over all the stochastic growth increments on log scale. Together with the IID assumption, this allows us to take advantage of the central limit theorem (if you need a reminder: <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" class="uri">https://en.wikipedia.org/wiki/Central_limit_theorem</a>): As as the number of time steps <span class="math inline">\(t\)</span> approaches infinity the sum will be normally distributed with mean <span class="math inline">\(t\text{E}[\ln\Lambda_t]\)</span> and variance <span class="math inline">\(t\text{Var}(\ln\Lambda_t)\)</span>.</p>
+<p>Thus, the expected value of <span class="math inline">\(\ln N_t\)</span> is given by</p>
+<p><span class="math display">\[\begin{align}
+\text{E}[\ln N_t]=\ln N_0 + \text{E}\left[\sum_{i=0}^{t-1} \ln \Lambda_i\right]=\ln N_0 + t\text{E}[\ln\Lambda_t]
+\end{align}\]</span>
+This expectation grows (or declines) linearly over time <span class="math inline">\(t\)</span>, and the slope of this line is the mean <span class="math inline">\(\text{E}[\ln\Lambda_t]=r_s\)</span>. The constant <span class="math inline">\(r_s\)</span> is called the <strong>stochastic growth rate</strong> (note that the name can be misleading, as this is a constant, and not a stochastic variable).</p>
+<p>Importantly, the stochastic growth rate is generally lower than the growth rate of the mean population, <span class="math inline">\(r=\ln \lambda=\ln(\text{E}[\Lambda_t])\)</span>, unless the variance of the annual growth rates is zero (then they are the same). The stochastic growth rate describes the growth of the median population size. The population size <span class="math inline">\(N_t\)</span> is lognormally distributed because <span class="math inline">\(\ln N_t\)</span> is lognormally distributed (due to the central limit theorem), and the lognormal distribution is skewed. In the lognormal distribution median is always lower than (or equal to) the mean, and is a better descriptor of the <em>central tendency</em> (or as we put it, it provides a better description of a typical population growth trajectory than the mean).</p>
+<p>How different are the two growth rates, and can we express this difference as a function of the variance of the <span class="math inline">\(\Lambda_t\)</span>, <span class="math inline">\(\sigma^2\)</span>? Yes, <span class="citation">Lewontin and Cohen (<a href="#ref-Lewontin1" role="doc-biblioref">1969</a>)</span> showed (using a Taylor expansion of <span class="math inline">\(\ln \Lambda_t\)</span> around <span class="math inline">\(\lambda\)</span>; not within the scope of this compendium) that the stochastic growth rate <span class="math inline">\(r_S\)</span> can be written as</p>
+<p><span class="math display" id="eq:Taylor">\[\begin{align}
+r_s\approx r-\frac{\sigma^2}{2\lambda^2}.
+\tag{5.4}
+\end{align}\]</span>
+This equation tells us that the difference between the growth rate <span class="math inline">\(r\)</span> in the constant environment and <span class="math inline">\(r_s\)</span> in the stochastic environment is increasing with the value of <span class="math inline">\(\sigma^2\)</span>. Thus, we can have situations where the population growth rate <span class="math inline">\(r\)</span> is positive, but <span class="math inline">\(r_S\)</span> is negative. And in that case, extinction of the population (at some point) is certain.</p>
+<p><br></p>
+</div>
+<div id="arithmetic-and-geometric-mean" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Arithmetic and geometric mean<a href="Stochasticity.html#arithmetic-and-geometric-mean" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The stochastic growth rate <span class="math inline">\(r_s=\text{E}[\ln \Lambda_t]\)</span> and the growth rate of the mean environment <span class="math inline">\(r=\ln \text{E}[\Lambda_t])\)</span> can also be compared by considering the arithmetic and geometric mean of a series of annual growth rates <span class="math inline">\(\Lambda_t\)</span>. The arithmetic mean is given by</p>
+<p><span class="math display">\[\begin{align}
+\lambda=\text{E}[\Lambda_t]=\frac{1}{t}\sum_{i=1}^t\Lambda_i,
+\end{align}\]</span>
+and the log of this value is <span class="math inline">\(r=\ln \lambda\)</span>. The geometric mean is given by</p>
+<p><span class="math display">\[\begin{align}
+e^{\text{E}[\ln\Lambda_t]}=\left(\prod_{i=1}^t \Lambda_i \right)^{1/t},
+\end{align}\]</span>
+and the log of this value corresponds to <span class="math inline">\(r_S=\text{E}[\ln\Lambda_t]\)</span>. In contrast to the arithmetic mean, the geometric mean depends on the variance <span class="math inline">\(\sigma^2\)</span>. The arithmetic mean will always be greater than or equal to the geometric mean, and in this case they are only equal in the constant environment (if <span class="math inline">\(\sigma^2=0\)</span>).</p>
+<p>The code below returns the arithmetic and geometric mean of a sequence of annual growth rates, and plots them along with the sequence:</p>
+<p><br></p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="Stochasticity.html#cb52-1" aria-hidden="true" tabindex="-1"></a>AGMeans <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">Tmax=</span><span class="dv">100</span>, <span class="at">mean.lambda=</span><span class="fl">1.05</span>, <span class="at">sd.lambda=</span>.<span class="dv">3</span>){</span>
+<span id="cb52-2"><a href="Stochasticity.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Use lognormal distribution to avoid negative values</span></span>
+<span id="cb52-3"><a href="Stochasticity.html#cb52-3" aria-hidden="true" tabindex="-1"></a>  Lambdavec <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="at">n=</span>Tmax, </span>
+<span id="cb52-4"><a href="Stochasticity.html#cb52-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">log</span>(mean.lambda)<span class="sc">-</span></span>
+<span id="cb52-5"><a href="Stochasticity.html#cb52-5" aria-hidden="true" tabindex="-1"></a>                        .<span class="dv">5</span><span class="sc">*</span><span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span> sd.lambda<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span></span>
+<span id="cb52-6"><a href="Stochasticity.html#cb52-6" aria-hidden="true" tabindex="-1"></a>                                 (mean.lambda<span class="sc">^</span><span class="dv">2</span>)), </span>
+<span id="cb52-7"><a href="Stochasticity.html#cb52-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sdlog=</span><span class="fu">sqrt</span>(<span class="fu">log</span>(<span class="dv">1</span><span class="sc">+</span>sd.lambda<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span></span>
+<span id="cb52-8"><a href="Stochasticity.html#cb52-8" aria-hidden="true" tabindex="-1"></a>                                       (mean.lambda<span class="sc">^</span><span class="dv">2</span>))))</span>
+<span id="cb52-9"><a href="Stochasticity.html#cb52-9" aria-hidden="true" tabindex="-1"></a>   geomLambda <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">mean</span>(<span class="fu">log</span>(Lambdavec)))</span>
+<span id="cb52-10"><a href="Stochasticity.html#cb52-10" aria-hidden="true" tabindex="-1"></a>   meanLambda <span class="ot">&lt;-</span> <span class="fu">mean</span>(Lambdavec)</span>
+<span id="cb52-11"><a href="Stochasticity.html#cb52-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>(<span class="fu">length</span>(Lambdavec)<span class="sc">-</span><span class="dv">1</span>), </span>
+<span id="cb52-12"><a href="Stochasticity.html#cb52-12" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Lambda&quot;</span><span class="ot">=</span>Lambdavec,</span>
+<span id="cb52-13"><a href="Stochasticity.html#cb52-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Geometric&quot;</span><span class="ot">=</span>geomLambda, </span>
+<span id="cb52-14"><a href="Stochasticity.html#cb52-14" aria-hidden="true" tabindex="-1"></a>             <span class="st">&quot;Arithmetic&quot;</span><span class="ot">=</span>meanLambda)</span>
+<span id="cb52-15"><a href="Stochasticity.html#cb52-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb52-16"><a href="Stochasticity.html#cb52-16" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>) </span>
+<span id="cb52-17"><a href="Stochasticity.html#cb52-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-18"><a href="Stochasticity.html#cb52-18" aria-hidden="true" tabindex="-1"></a>GetMeans <span class="ot">&lt;-</span> <span class="fu">AGMeans</span>()</span>
+<span id="cb52-19"><a href="Stochasticity.html#cb52-19" aria-hidden="true" tabindex="-1"></a>Geometric <span class="ot">&lt;-</span> GetMeans<span class="sc">$</span>Geometric[<span class="dv">1</span>]</span>
+<span id="cb52-20"><a href="Stochasticity.html#cb52-20" aria-hidden="true" tabindex="-1"></a>Arithmetic <span class="ot">&lt;-</span> GetMeans<span class="sc">$</span>Arithmetic[<span class="dv">1</span>]</span>
+<span id="cb52-21"><a href="Stochasticity.html#cb52-21" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(GetMeans) <span class="sc">+</span> </span>
+<span id="cb52-22"><a href="Stochasticity.html#cb52-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>Lambda), <span class="at">size=</span><span class="dv">2</span>, <span class="at">col=</span><span class="dv">8</span>)<span class="sc">+</span></span>
+<span id="cb52-23"><a href="Stochasticity.html#cb52-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span> Geometric,<span class="at">lwd=</span><span class="fl">1.2</span>, </span>
+<span id="cb52-24"><a href="Stochasticity.html#cb52-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">linetype=</span><span class="dv">2</span>,<span class="at">col=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb52-25"><a href="Stochasticity.html#cb52-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">10</span>, Geometric, </span>
+<span id="cb52-26"><a href="Stochasticity.html#cb52-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">&quot;Geometric mean&quot;</span>, </span>
+<span id="cb52-27"><a href="Stochasticity.html#cb52-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">vjust=</span><span class="dv">2</span>), <span class="at">col=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb52-28"><a href="Stochasticity.html#cb52-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span>Arithmetic,<span class="at">lwd=</span><span class="fl">1.2</span>,</span>
+<span id="cb52-29"><a href="Stochasticity.html#cb52-29" aria-hidden="true" tabindex="-1"></a>             <span class="at">col=</span><span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb52-30"><a href="Stochasticity.html#cb52-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="dv">10</span>,  Arithmetic, </span>
+<span id="cb52-31"><a href="Stochasticity.html#cb52-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">label =</span> <span class="st">&quot;Arithmetic mean&quot;</span>, </span>
+<span id="cb52-32"><a href="Stochasticity.html#cb52-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">vjust=</span><span class="sc">-</span><span class="dv">2</span>),<span class="at">col=</span><span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb52-33"><a href="Stochasticity.html#cb52-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb52-34"><a href="Stochasticity.html#cb52-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span> )<span class="sc">+</span></span>
+<span id="cb52-35"><a href="Stochasticity.html#cb52-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="fu">expression</span>(Lambda[t])) </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:arithmetic"></span>
+<img src="_main_files/figure-html/arithmetic-1.png" alt="Arithmetic and geometric mean of a sequence of annual growth rates $\Lambda_t$, with annual mean $\lambda=1.05$ and annual standard deviation $\sigma=0.3$ " width="576" />
+<p class="caption">
+Figure 5.4: Arithmetic and geometric mean of a sequence of annual growth rates <span class="math inline">\(\Lambda_t\)</span>, with annual mean <span class="math inline">\(\lambda=1.05\)</span> and annual standard deviation <span class="math inline">\(\sigma=0.3\)</span>
+</p>
+</div>
+<p><br></p>
+</div>
+<div id="bet-hedging" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Bet-hedging<a href="Stochasticity.html#bet-hedging" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From an evolutionary perspective, the Lewontin-Cohen model is an important starting point to describe fitness in a stochastic environment (<span class="math inline">\(r_S\)</span>), and understand how it differs from the fitness in a the mean environment (<span class="math inline">\(r\)</span>). In particular, it provides a baseline model to describe strategies of bet-hedging. Since <span class="math inline">\(r_S\)</span> depends on both <span class="math inline">\(r\)</span> and <span class="math inline">\(\sigma^2\)</span>, organisms in stochastic environments can improve their fitness through increasing the mean <span class="math inline">\(r\)</span>, or reducing the variance <span class="math inline">\(\sigma^2\)</span>. <strong>Bet-hedging</strong> strategies <em>reduce the variance, at the cost of also reducing the arithmetic mean fitness</em>. As a result the fitness in the stochastic environment <span class="math inline">\(r_S\)</span> is optimized.</p>
+<p>The study of bet-hedging started with the work of <span class="citation">Cohen (<a href="#ref-Cohen7" role="doc-biblioref">1966</a>)</span> to understand the fitness of plants in unpredictable environments like a desert. Bet-hedging can operate through two main mechanisms, or a combination <span class="citation">(<a href="#ref-Starrfelt1" role="doc-biblioref">Starrfelt and Kokko 2012</a>)</span>:</p>
+<ul>
+<li><p><strong>Conservative bet hedging</strong> refers to strategies that ‘play it safe’, where the organism does not optimize its fitness for any given environment, but in the long run still come out with a higher geometric mean fitness. For instance, a bird could lay a low number of eggs at each reproduction to improve the survival of their offspring, thus reducing the variance but at the cost of a lower than optimum clutch size in the mean environment.</p></li>
+<li><p><strong>Diversifying bet-hedging</strong> are strategies that avoid risk by ‘not putting all eggs in one basket’, for instance by producing offspring with a high diversity of phenotypes. While this will certainly increase the variance in fitness among the offspring, it reduces the variance of the parent. Again, it is not truly bet-hedging unless the parent also pays a cost in terms of lowered arithmetic mean fitness (here corresponding to producing offspring of just one type optimal for the mean environment).</p></li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="stochastic-growth-of-structured-populations" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Stochastic growth of structured populations<a href="Stochasticity.html#stochastic-growth-of-structured-populations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In structured populations, the stochastic population dynamics are more complex because the annual population growth rates are no longer ‘IID’ (Independently and Identically Distributed). For the Lewontin-Cohen model this was a key assumption that allowed us to use the central limit theorem to derive the stochastic growth rate. But in structured populations, the annual growth rates will show <em>autocorrelation</em> (a memory in the process) because the population structure itself generates lags in the growth process. Even if there is some stochastic environmental variable that is IID and gives rise to stochasticity in the population growth, the population growth rates will not be IID.</p>
+<p>For instance, if the environment is particularly good for reproduction one year, this can lead to a ‘strong’ year class (cohort) that persists in the population over time and affects the population growth rate for potentially many years. We get ‘waves’ of such cohorts that generate long-term fluctuations in the stage structure on top of the year-to-year fluctuations due to stochasticity. The long-term fluctuations create autocorrelation in the population growth process. In contrast to the population growth in a constant environment, where the transient initial fluctuations disappear over time (chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a>), the transients will never really disappear in a stochastic environment Instead, the population structure will fluctuate around the stable structure.</p>
+<p>How can we then study population growth and fitness of structured populations in stochastic environments? We can always do simulations (projections) of the population growth process, as we did for the Lewontin-Cohen model, and we can define the stochastic growth rate based on a (long) sequence of generated populaton sizes. In addition, under the assumption of small fluctuations it is possible to approximate the stochastic growth rate as a function of the mean, variance and covariance of matrix elements, as we will see below. First we will define a general model to describe the growth of structured populations in a time-varying environment.</p>
+<p><br></p>
+<div id="defining-the-process-1" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Defining the process<a href="Stochasticity.html#defining-the-process-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In a fluctuating environment, the projection matrix <span class="math inline">\(\mathbf{A}\)</span> will take a new value each time step, so that the population growth over many time steps is given by matrix multiplication from time 0:</p>
+<p><span class="math display">\[\mathbf{n}_{t+1}=\mathbf{A}_{t}\mathbf{n}_{t}=\mathbf{A}_{t}\mathbf{A}_{t-1}\mathbf{A}_{t-2}\cdots\mathbf{A}_{0}\mathbf{n}_{t}\]</span></p>
+<p>When these time-dependent projection matrices <span class="math inline">\(\mathbf{A}_t\)</span> are generated by a random process each time step, we have a <strong>stochastic matrix model</strong>. There are two main approaches to study the dynamics of such a model:</p>
+<ul>
+<li><p>The <em>environment-blind</em> approach generates a set of projection matrices e.g. from each year of a study, and then samples among these to generate a new stochastic sequence of matrices according to a given sampling model (e.g. a Markov process). In this case, correlation between vital rates of the projection matrix are automatically incorporated since the entire matrix is sampled.</p></li>
+<li><p>The <em>environment-specific</em> approach specifies each matrix element (e.g. fertility and survival coefficients) as a stochastic variable with a mean, variance and potentially covariance among matrix elements. Together, all the stochastic elements in the model define a multivariate vector with a given distribution (specified by a vector of means and a variance-covariance matrix). This approach is more complex, but often better suited to account for explicit relationships between the vital rates and environmental variables such as temperature.</p></li>
+</ul>
+<p><br></p>
+<div id="bird-example-16" class="section level4 unnumbered hasAnchor">
+<h4>Bird example<a href="Stochasticity.html#bird-example-16" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We will again use the bird example introduced in @ref{birdtable} and following chapters, and now consider a stochastic version of the matrix model for this bird with pre-reproductive census (chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a>).</p>
+<p>In the constant environment, the pre-reproductive projection matrix for the songbird was given by (<a href="s03-MatrixModels.html#eq:Prerep">(3.6)</a>):</p>
+<p><br></p>
+<p><span class="math display">\[\begin{align}
+\begin{split}
+\mathbf{A}=\left[\begin{matrix} f_1 &amp; f_2 &amp;f_3  \\ s_1 &amp;0&amp;0\\ 0 &amp; s_2 &amp;0  \\  \end{matrix}\right]=\left[\begin{matrix} 0 &amp;0.6 &amp;1.2  \\ 0.9 &amp;0&amp;0\\ 0 &amp; 0.6 &amp;0  \\  \end{matrix}\right].
+\end{split}
+\end{align}\]</span></p>
+<p><br></p>
+<p>We will now add stochasticity to the elements of this matrix, by allowing the fertilities and survival probabilities to fluctuate randomly. Adding stochasticity needs to be done with some care: Survival probabilities are restricted to be between 0 and 1, and fertilities must always be non-negative. A good idea is to use appropriate <em>scaling functions</em> (link functions) where stochasticity can be added as a normally distributed variable on the link scale. For this example, we will assume a log-link function for the fertilities, and a log log link function for the survival (but in general many other kinds of functions are also possible):</p>
+<p><span class="math display">\[f_{it}=\exp(\beta_{fi}+\varepsilon_{fit})\]</span></p>
+<p><span class="math display">\[s_{it}=\exp(-\exp(-\beta_{si}-\varepsilon_{sit}))).\]</span></p>
+<p>Here <span class="math inline">\(\varepsilon_{fi}\)</span> and <span class="math inline">\(\varepsilon_{si}\)</span> are random (stochastic) variables assumed to follow a normal distribution with mean 0 and standard deviation <span class="math inline">\(\sigma_{fi}\)</span> and <span class="math inline">\(\sigma_{si}\)</span>, respectively. The constants <span class="math inline">\(\beta_{fi}\)</span> and <span class="math inline">\(\beta_{si}\)</span> define the fertility and survival when the standard deviations (and thus the <span class="math inline">\(\varepsilon\)</span>’s) are zero. Note that this is just one of several ways to model stochasticity in survival and fertility.</p>
+<p><br></p>
+</div>
+</div>
+<div id="plot-one-realization-of-the-process-1" class="section level3 unnumbered hasAnchor">
+<h3>Plot one realization of the process<a href="Stochasticity.html#plot-one-realization-of-the-process-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To add stochasticity to the fertilities and survival probabilities in the projection matrix, we will use the function <code>mvrnorm()</code> from the package <code>MASS</code>, which generates values from the multivariate normal distribution. The function <code>mvrnorm</code> uses a variance-covariance matrix as one of its input variables, and here we will for simplicity assume no covariance. We also assume that stochasticity only affects survival and fertility coefficients, and that these follow log-log link and log-link functions, respectively.</p>
+<p>The following function generates a series of random projection matrices using the <code>mvrnorm()</code> function from the package <code>MASS</code> to add stochasticity in survival and fecundity. The matrices are returned as an array, which is an extension of the ´matrix´ object to multiple dimensions. Here we have three dimensions: Time (<code>Tmax</code>), <span class="math inline">\(k\)</span> and <span class="math inline">\(k\)</span>, where <span class="math inline">\(k\)</span> is the number of rows and columns of the projection matrix.</p>
+<p>Inputs to the function are the projection matrix in the constant environment <span class="math inline">\(\mathbf{A}\)</span>, its main components <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span> (used to separate out survival coefficients and fertilities), and two vectors defining the variance in scaled fertility and survival. Each vector needs to be of length <span class="math inline">\(k\)</span> corresponding to the number of stages in the population.</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="Stochasticity.html#cb53-1" aria-hidden="true" tabindex="-1"></a>Amat.array <span class="ot">&lt;-</span> <span class="cf">function</span>(MatA, </span>
+<span id="cb53-2"><a href="Stochasticity.html#cb53-2" aria-hidden="true" tabindex="-1"></a>                       MatU, </span>
+<span id="cb53-3"><a href="Stochasticity.html#cb53-3" aria-hidden="true" tabindex="-1"></a>                       MatF, </span>
+<span id="cb53-4"><a href="Stochasticity.html#cb53-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">tmax=</span><span class="dv">30</span>, </span>
+<span id="cb53-5"><a href="Stochasticity.html#cb53-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb53-6"><a href="Stochasticity.html#cb53-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>)){</span>
+<span id="cb53-7"><a href="Stochasticity.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Split survival/transition matrix:</span></span>
+<span id="cb53-8"><a href="Stochasticity.html#cb53-8" aria-hidden="true" tabindex="-1"></a>  SplitU <span class="ot">&lt;-</span> <span class="fu">DecomposeU</span>(MatU) </span>
+<span id="cb53-9"><a href="Stochasticity.html#cb53-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Split fertility matrix:</span></span>
+<span id="cb53-10"><a href="Stochasticity.html#cb53-10" aria-hidden="true" tabindex="-1"></a>  SplitF <span class="ot">&lt;-</span> <span class="fu">DecomposeF</span>(MatF) </span>
+<span id="cb53-11"><a href="Stochasticity.html#cb53-11" aria-hidden="true" tabindex="-1"></a>   <span class="co">#Transition matrix:</span></span>
+<span id="cb53-12"><a href="Stochasticity.html#cb53-12" aria-hidden="true" tabindex="-1"></a>  Gmat <span class="ot">&lt;-</span> SplitU<span class="sc">$</span>Gmat</span>
+<span id="cb53-13"><a href="Stochasticity.html#cb53-13" aria-hidden="true" tabindex="-1"></a>   <span class="co">#Survival vector:</span></span>
+<span id="cb53-14"><a href="Stochasticity.html#cb53-14" aria-hidden="true" tabindex="-1"></a>  Svec <span class="ot">&lt;-</span> SplitU<span class="sc">$</span>Survival</span>
+<span id="cb53-15"><a href="Stochasticity.html#cb53-15" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Define beta (log-log link function):</span></span>
+<span id="cb53-16"><a href="Stochasticity.html#cb53-16" aria-hidden="true" tabindex="-1"></a>  Beta.S <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">log</span>(<span class="sc">-</span><span class="fu">log</span>(Svec))</span>
+<span id="cb53-17"><a href="Stochasticity.html#cb53-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Offspring transition matrix:</span></span>
+<span id="cb53-18"><a href="Stochasticity.html#cb53-18" aria-hidden="true" tabindex="-1"></a>  Qmat <span class="ot">&lt;-</span> SplitF<span class="sc">$</span>Qmat </span>
+<span id="cb53-19"><a href="Stochasticity.html#cb53-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Fertility vector:</span></span>
+<span id="cb53-20"><a href="Stochasticity.html#cb53-20" aria-hidden="true" tabindex="-1"></a>  Fvec <span class="ot">&lt;-</span> SplitF<span class="sc">$</span>Fertility </span>
+<span id="cb53-21"><a href="Stochasticity.html#cb53-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Define beta (log link function):</span></span>
+<span id="cb53-22"><a href="Stochasticity.html#cb53-22" aria-hidden="true" tabindex="-1"></a>  Beta.F <span class="ot">&lt;-</span> <span class="fu">log</span>(Fvec) </span>
+<span id="cb53-23"><a href="Stochasticity.html#cb53-23" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb53-24"><a href="Stochasticity.html#cb53-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">#variance covariance matrix </span></span>
+<span id="cb53-25"><a href="Stochasticity.html#cb53-25" aria-hidden="true" tabindex="-1"></a>  SigMat <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="fu">c</span>(VarS, VarF))</span>
+<span id="cb53-26"><a href="Stochasticity.html#cb53-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Draw random (scaled) values for S and F:</span></span>
+<span id="cb53-27"><a href="Stochasticity.html#cb53-27" aria-hidden="true" tabindex="-1"></a>  SFTime <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(tmax, <span class="at">mu=</span><span class="fu">c</span>(Beta.S, Beta.F), <span class="at">Sigma=</span>SigMat)</span>
+<span id="cb53-28"><a href="Stochasticity.html#cb53-28" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Number of matrix classes </span></span>
+<span id="cb53-29"><a href="Stochasticity.html#cb53-29" aria-hidden="true" tabindex="-1"></a>  k <span class="ot">&lt;-</span> <span class="fu">length</span>(Svec) </span>
+<span id="cb53-30"><a href="Stochasticity.html#cb53-30" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Rescaled survival probabilities (loglog link):</span></span>
+<span id="cb53-31"><a href="Stochasticity.html#cb53-31" aria-hidden="true" tabindex="-1"></a>  SvecTime<span class="ot">&lt;-</span>   <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span>SFTime[,<span class="dv">1</span><span class="sc">:</span>k])) </span>
+<span id="cb53-32"><a href="Stochasticity.html#cb53-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Rescaled fertilities  (log link):</span></span>
+<span id="cb53-33"><a href="Stochasticity.html#cb53-33" aria-hidden="true" tabindex="-1"></a>  FvecTime<span class="ot">&lt;-</span> <span class="fu">exp</span>(SFTime[,(k<span class="sc">+</span><span class="dv">1</span>)<span class="sc">:</span>(<span class="dv">2</span><span class="sc">*</span>k)]) </span>
+<span id="cb53-34"><a href="Stochasticity.html#cb53-34" aria-hidden="true" tabindex="-1"></a><span class="co">#Build  projection matrix for each time step:</span></span>
+<span id="cb53-35"><a href="Stochasticity.html#cb53-35" aria-hidden="true" tabindex="-1"></a>  A.array <span class="ot">&lt;-</span> <span class="fu">array</span>(<span class="cn">NA</span>,<span class="at">dim=</span><span class="fu">c</span>(k,k,tmax))</span>
+<span id="cb53-36"><a href="Stochasticity.html#cb53-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>tmax){</span>
+<span id="cb53-37"><a href="Stochasticity.html#cb53-37" aria-hidden="true" tabindex="-1"></a>    Smat <span class="ot">&lt;-</span> <span class="fu">diag</span>(SvecTime[i,])</span>
+<span id="cb53-38"><a href="Stochasticity.html#cb53-38" aria-hidden="true" tabindex="-1"></a>    Fmat <span class="ot">&lt;-</span> <span class="fu">diag</span>(FvecTime[i,])</span>
+<span id="cb53-39"><a href="Stochasticity.html#cb53-39" aria-hidden="true" tabindex="-1"></a>    A.array[,,i] <span class="ot">&lt;-</span>   Gmat<span class="sc">%*%</span>Smat<span class="sc">+</span>Qmat<span class="sc">%*%</span>Fmat</span>
+<span id="cb53-40"><a href="Stochasticity.html#cb53-40" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb53-41"><a href="Stochasticity.html#cb53-41" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(<span class="st">&quot;Amats&quot;</span> <span class="ot">=</span> A.array)</span>
+<span id="cb53-42"><a href="Stochasticity.html#cb53-42" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>Using this function to generate a sequence of stochastic projection matrices, we can make another function to project the population growth over time. This projection is similar to the one we used for the constant environment (chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a>), except that for each time step we now use a new different matrix due to stochasticity. The function below returns a data frame with the size of each stage over time, including the initial sizes provided in <code>n0</code>.</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="Stochasticity.html#cb54-1" aria-hidden="true" tabindex="-1"></a>projection.stochastic <span class="ot">&lt;-</span><span class="cf">function</span>(Amats, n0){</span>
+<span id="cb54-2"><a href="Stochasticity.html#cb54-2" aria-hidden="true" tabindex="-1"></a>    Tmax <span class="ot">&lt;-</span> <span class="fu">dim</span>(Amats)[<span class="dv">3</span>]</span>
+<span id="cb54-3"><a href="Stochasticity.html#cb54-3" aria-hidden="true" tabindex="-1"></a>    k <span class="ot">&lt;-</span> <span class="fu">dim</span>(Amats)[<span class="dv">1</span>]</span>
+<span id="cb54-4"><a href="Stochasticity.html#cb54-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(<span class="fu">length</span>(n0)<span class="sc">!=</span>k){</span>
+<span id="cb54-5"><a href="Stochasticity.html#cb54-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">warning</span>(<span class="st">&quot;n0 should have length k </span></span>
+<span id="cb54-6"><a href="Stochasticity.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="st">              corresponding to number of </span></span>
+<span id="cb54-7"><a href="Stochasticity.html#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="st">              stages in the Amats object&quot;</span>)</span>
+<span id="cb54-8"><a href="Stochasticity.html#cb54-8" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb54-9"><a href="Stochasticity.html#cb54-9" aria-hidden="true" tabindex="-1"></a>    Nmat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="cn">NA</span>,<span class="at">nrow=</span> Tmax<span class="sc">+</span><span class="dv">1</span>, <span class="at">ncol=</span>k)</span>
+<span id="cb54-10"><a href="Stochasticity.html#cb54-10" aria-hidden="true" tabindex="-1"></a>    Nmat[<span class="dv">1</span>,] <span class="ot">&lt;-</span> n0</span>
+<span id="cb54-11"><a href="Stochasticity.html#cb54-11" aria-hidden="true" tabindex="-1"></a>  cnames <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;n&quot;</span>, <span class="dv">1</span><span class="sc">:</span>k, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb54-12"><a href="Stochasticity.html#cb54-12" aria-hidden="true" tabindex="-1"></a>  timesteps <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>Tmax</span>
+<span id="cb54-13"><a href="Stochasticity.html#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>(Tmax<span class="sc">+</span><span class="dv">1</span>)){  </span>
+<span id="cb54-14"><a href="Stochasticity.html#cb54-14" aria-hidden="true" tabindex="-1"></a>        Nmat[i,] <span class="ot">&lt;-</span> Amats[,,i<span class="dv">-1</span>] <span class="sc">%*%</span> Nmat[i<span class="dv">-1</span>,]</span>
+<span id="cb54-15"><a href="Stochasticity.html#cb54-15" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb54-16"><a href="Stochasticity.html#cb54-16" aria-hidden="true" tabindex="-1"></a>  frame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(timesteps,Nmat)</span>
+<span id="cb54-17"><a href="Stochasticity.html#cb54-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(frame) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;time&quot;</span>, cnames)</span>
+<span id="cb54-18"><a href="Stochasticity.html#cb54-18" aria-hidden="true" tabindex="-1"></a>  frame</span>
+<span id="cb54-19"><a href="Stochasticity.html#cb54-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<div id="bird-example-17" class="section level4 unnumbered hasAnchor">
+<h4>Bird example<a href="Stochasticity.html#bird-example-17" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="Stochasticity.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
+<span id="cb55-2"><a href="Stochasticity.html#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="Stochasticity.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate sequence of stochastic matrices:</span></span>
+<span id="cb55-4"><a href="Stochasticity.html#cb55-4" aria-hidden="true" tabindex="-1"></a>Amats.bird <span class="ot">&lt;-</span> <span class="fu">Amat.array</span>(<span class="at">MatA=</span>Abird.pre, </span>
+<span id="cb55-5"><a href="Stochasticity.html#cb55-5" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MatU=</span>Ubird.pre, </span>
+<span id="cb55-6"><a href="Stochasticity.html#cb55-6" aria-hidden="true" tabindex="-1"></a>                         <span class="at">MatF=</span>Fbird.pre, </span>
+<span id="cb55-7"><a href="Stochasticity.html#cb55-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tmax=</span><span class="dv">20</span>, </span>
+<span id="cb55-8"><a href="Stochasticity.html#cb55-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb55-9"><a href="Stochasticity.html#cb55-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>)) </span>
+<span id="cb55-10"><a href="Stochasticity.html#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="Stochasticity.html#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Project growth:</span></span>
+<span id="cb55-12"><a href="Stochasticity.html#cb55-12" aria-hidden="true" tabindex="-1"></a>stochastic.bird <span class="ot">&lt;-</span> <span class="fu">projection.stochastic</span>(<span class="at">Amats =</span> Amats.bird, </span>
+<span id="cb55-13"><a href="Stochasticity.html#cb55-13" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">n0=</span><span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">3</span>))</span>
+<span id="cb55-14"><a href="Stochasticity.html#cb55-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-15"><a href="Stochasticity.html#cb55-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Long format for plotting:</span></span>
+<span id="cb55-16"><a href="Stochasticity.html#cb55-16" aria-hidden="true" tabindex="-1"></a>stochastic.bird.long <span class="ot">&lt;-</span> stochastic.bird <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="sc">-</span>time),</span>
+<span id="cb55-17"><a href="Stochasticity.html#cb55-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;AgeClass&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;Value&quot;</span>)</span>
+<span id="cb55-18"><a href="Stochasticity.html#cb55-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-19"><a href="Stochasticity.html#cb55-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot:</span></span>
+<span id="cb55-20"><a href="Stochasticity.html#cb55-20" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(stochastic.bird.long) <span class="sc">+</span> </span>
+<span id="cb55-21"><a href="Stochasticity.html#cb55-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>Value, <span class="at">col=</span>AgeClass, </span>
+<span id="cb55-22"><a href="Stochasticity.html#cb55-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">linetype=</span>AgeClass), <span class="at">lwd=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb55-23"><a href="Stochasticity.html#cb55-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>Value, <span class="at">col=</span>AgeClass), <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb55-24"><a href="Stochasticity.html#cb55-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb55-25"><a href="Stochasticity.html#cb55-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span>colors3)<span class="sc">+</span> </span>
+<span id="cb55-26"><a href="Stochasticity.html#cb55-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>))<span class="sc">+</span>  </span>
+<span id="cb55-27"><a href="Stochasticity.html#cb55-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Age class size&quot;</span>)<span class="sc">+</span></span>
+<span id="cb55-28"><a href="Stochasticity.html#cb55-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span> )</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:birdstochastic1"></span>
+<img src="_main_files/figure-html/birdstochastic1-1.png" alt="One realization of stochastic growth in the bird example with pre-reproductive census, with stochastic survival and fertility coefficients." width="576" />
+<p class="caption">
+Figure 5.5: One realization of stochastic growth in the bird example with pre-reproductive census, with stochastic survival and fertility coefficients.
+</p>
+</div>
+<p><br></p>
+<p>Figure (fig:birdstochastic1) shows the growth of each stage of the bird population over 20 years, starting from a population with 10 birds in each age class.The highest number of fluctuations is found for the first age class, and we can see that the peaks in this age class are followed by peaks in year class 2 and 3 in the following years, as the cohort grows through the population.</p>
+<p>We can also plot the total population size, by summing up the values of the age classes for each year, as shown in figure <a href="Stochasticity.html#fig:birdstochastic2">5.6</a>:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="Stochasticity.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sum up population sizes</span></span>
+<span id="cb56-2"><a href="Stochasticity.html#cb56-2" aria-hidden="true" tabindex="-1"></a>stochastic.bird<span class="sc">$</span>Ntot <span class="ot">&lt;-</span> <span class="fu">apply</span>(stochastic.bird[,<span class="sc">-</span><span class="dv">1</span>],<span class="dv">1</span>,sum)</span>
+<span id="cb56-3"><a href="Stochasticity.html#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="Stochasticity.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(stochastic.bird) <span class="sc">+</span> </span>
+<span id="cb56-5"><a href="Stochasticity.html#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>Ntot), <span class="at">lwd=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb56-6"><a href="Stochasticity.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x=</span>time, <span class="at">y=</span>Ntot), <span class="at">size=</span><span class="dv">3</span>)<span class="sc">+</span></span>
+<span id="cb56-7"><a href="Stochasticity.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-8"><a href="Stochasticity.html#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Populatipn size N&quot;</span>)  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:birdstochastic2"></span>
+<img src="_main_files/figure-html/birdstochastic2-1.png" alt="Same process as in figure \@ref(fig:birdstochastic1), with age classes summed up to get the total population size." width="576" />
+<p class="caption">
+Figure 5.6: Same process as in figure <a href="Stochasticity.html#fig:birdstochastic1">5.5</a>, with age classes summed up to get the total population size.
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="plot-many-realizations-of-the-process-1" class="section level3 unnumbered hasAnchor">
+<h3>Plot many realizations of the process<a href="Stochasticity.html#plot-many-realizations-of-the-process-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Instead of looking at just one realization of the stochastic growth process, it is often useful to generate multiple realizations and look at summary statistics and properties for these, as we have seen already for the Lewontin-Cohen-process.</p>
+<p>The following function generates a series of matrices <code>nsim</code> times, each series of length <code>Tmax</code>, and returns the projected total population size over time for each series, in a data frame. Other input variables are the constant matrices and variance vectors, and initial population vector.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="Stochasticity.html#cb57-1" aria-hidden="true" tabindex="-1"></a>nsim.stochastic <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">nsim=</span><span class="dv">100</span>, </span>
+<span id="cb57-2"><a href="Stochasticity.html#cb57-2" aria-hidden="true" tabindex="-1"></a>                            <span class="at">tmax=</span><span class="dv">30</span>, </span>
+<span id="cb57-3"><a href="Stochasticity.html#cb57-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">n0=</span><span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">3</span>), </span>
+<span id="cb57-4"><a href="Stochasticity.html#cb57-4" aria-hidden="true" tabindex="-1"></a>                            MatA, </span>
+<span id="cb57-5"><a href="Stochasticity.html#cb57-5" aria-hidden="true" tabindex="-1"></a>                            MatU, </span>
+<span id="cb57-6"><a href="Stochasticity.html#cb57-6" aria-hidden="true" tabindex="-1"></a>                            MatF, </span>
+<span id="cb57-7"><a href="Stochasticity.html#cb57-7" aria-hidden="true" tabindex="-1"></a>                            VarF, </span>
+<span id="cb57-8"><a href="Stochasticity.html#cb57-8" aria-hidden="true" tabindex="-1"></a>                            VarS){</span>
+<span id="cb57-9"><a href="Stochasticity.html#cb57-9" aria-hidden="true" tabindex="-1"></a>  frame <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>tmax)</span>
+<span id="cb57-10"><a href="Stochasticity.html#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(m <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>nsim){</span>
+<span id="cb57-11"><a href="Stochasticity.html#cb57-11" aria-hidden="true" tabindex="-1"></a>  AMATS <span class="ot">&lt;-</span> <span class="fu">Amat.array</span>(<span class="at">MatA=</span>MatA, </span>
+<span id="cb57-12"><a href="Stochasticity.html#cb57-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">MatU=</span>MatU, </span>
+<span id="cb57-13"><a href="Stochasticity.html#cb57-13" aria-hidden="true" tabindex="-1"></a>                      <span class="at">MatF=</span>MatF, </span>
+<span id="cb57-14"><a href="Stochasticity.html#cb57-14" aria-hidden="true" tabindex="-1"></a>                      <span class="at">VarF=</span>VarF, </span>
+<span id="cb57-15"><a href="Stochasticity.html#cb57-15" aria-hidden="true" tabindex="-1"></a>                      <span class="at">VarS=</span>VarS, </span>
+<span id="cb57-16"><a href="Stochasticity.html#cb57-16" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tmax=</span>tmax)</span>
+<span id="cb57-17"><a href="Stochasticity.html#cb57-17" aria-hidden="true" tabindex="-1"></a>   projectN <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">projection.stochastic</span>(<span class="at">Amats=</span>AMATS, </span>
+<span id="cb57-18"><a href="Stochasticity.html#cb57-18" aria-hidden="true" tabindex="-1"></a>                                           <span class="at">n0=</span>n0)[,<span class="sc">-</span><span class="dv">1</span>],<span class="dv">1</span>,sum)</span>
+<span id="cb57-19"><a href="Stochasticity.html#cb57-19" aria-hidden="true" tabindex="-1"></a>  frame <span class="ot">&lt;-</span> <span class="fu">cbind</span>(frame, projectN)</span>
+<span id="cb57-20"><a href="Stochasticity.html#cb57-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">names</span>(frame)[m<span class="sc">+</span><span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;Rep&quot;</span>,m,<span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb57-21"><a href="Stochasticity.html#cb57-21" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb57-22"><a href="Stochasticity.html#cb57-22" aria-hidden="true" tabindex="-1"></a>  frame</span>
+<span id="cb57-23"><a href="Stochasticity.html#cb57-23" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<div id="bird-example-18" class="section level4 unnumbered hasAnchor">
+<h4>Bird example<a href="Stochasticity.html#bird-example-18" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We can now plot multiple realizations also in the bird example, as shown in figure <a href="Stochasticity.html#fig:birdstochastic3">5.7</a></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="Stochasticity.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
+<span id="cb58-2"><a href="Stochasticity.html#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="Stochasticity.html#cb58-3" aria-hidden="true" tabindex="-1"></a>nsim.bird <span class="ot">&lt;-</span> <span class="fu">nsim.stochastic</span>(<span class="at">MatA=</span>Abird.pre,</span>
+<span id="cb58-4"><a href="Stochasticity.html#cb58-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">MatU=</span>Ubird.pre, </span>
+<span id="cb58-5"><a href="Stochasticity.html#cb58-5" aria-hidden="true" tabindex="-1"></a>                             <span class="at">MatF=</span>Fbird.pre,</span>
+<span id="cb58-6"><a href="Stochasticity.html#cb58-6" aria-hidden="true" tabindex="-1"></a>                             <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb58-7"><a href="Stochasticity.html#cb58-7" aria-hidden="true" tabindex="-1"></a>                             <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb58-8"><a href="Stochasticity.html#cb58-8" aria-hidden="true" tabindex="-1"></a>                             <span class="at">tmax=</span><span class="dv">20</span>, <span class="at">nsim=</span><span class="dv">100</span>, </span>
+<span id="cb58-9"><a href="Stochasticity.html#cb58-9" aria-hidden="true" tabindex="-1"></a>                             <span class="at">n0=</span><span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">3</span>))</span>
+<span id="cb58-10"><a href="Stochasticity.html#cb58-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-11"><a href="Stochasticity.html#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="Stochasticity.html#cb58-12" aria-hidden="true" tabindex="-1"></a>nsim.bird.long <span class="ot">&lt;-</span> nsim.bird <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="sc">-</span>Time),</span>
+<span id="cb58-13"><a href="Stochasticity.html#cb58-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Rep&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;N&quot;</span>)</span>
+<span id="cb58-14"><a href="Stochasticity.html#cb58-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-15"><a href="Stochasticity.html#cb58-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nsim.bird.long) <span class="sc">+</span> </span>
+<span id="cb58-16"><a href="Stochasticity.html#cb58-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N, <span class="at">col=</span>Rep), <span class="at">lwd=</span>.<span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb58-17"><a href="Stochasticity.html#cb58-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">100</span>))<span class="sc">+</span></span>
+<span id="cb58-18"><a href="Stochasticity.html#cb58-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb58-19"><a href="Stochasticity.html#cb58-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span> )<span class="sc">+</span></span>
+<span id="cb58-20"><a href="Stochasticity.html#cb58-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Population size N&quot;</span>) </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:birdstochastic3"></span>
+<img src="_main_files/figure-html/birdstochastic3-1.png" alt="100 realizations of the stochastic bird growth process with same parameters as in figure \@ref(fig:birdstochastic2)." width="576" />
+<p class="caption">
+Figure 5.7: 100 realizations of the stochastic bird growth process with same parameters as in figure <a href="Stochasticity.html#fig:birdstochastic2">5.6</a>.
+</p>
+</div>
+<p><br></p>
+<p>To estimate the stochastic growth rate <span class="math inline">\(r_S\)</span> from multiple realisations, we can use the following function (this measure is based on the mean of the annual growth increments of <span class="math inline">\(\ln N\)</span>):</p>
+<p><br></p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="Stochasticity.html#cb59-1" aria-hidden="true" tabindex="-1"></a>diffmat <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">log</span>(nsim.bird[,<span class="sc">-</span><span class="dv">1</span>]),<span class="dv">2</span>,diff)</span>
+<span id="cb59-2"><a href="Stochasticity.html#cb59-2" aria-hidden="true" tabindex="-1"></a>rS <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">apply</span>(diffmat,<span class="dv">2</span>,mean))</span></code></pre></div>
+<p>In this example, the stochastic growth rate is <span class="math inline">\(r_S\approx\)</span> 0.07.</p>
+<p><br></p>
+</div>
+</div>
+<div id="plot-percentiles-from-many-realizations-1" class="section level3 unnumbered hasAnchor">
+<h3>Plot percentiles from many realizations<a href="Stochasticity.html#plot-percentiles-from-many-realizations-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As shown for the Lewontin-Cohen model we can also plot percentiles of the stochastic population trajectories from a structured model, after running multiple realizations.</p>
+<p><br></p>
+<div id="bird-example-19" class="section level4 unnumbered hasAnchor">
+<h4>Bird example<a href="Stochasticity.html#bird-example-19" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>For the bird example with 20 time steps, we get</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="Stochasticity.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20</span>)</span>
+<span id="cb60-2"><a href="Stochasticity.html#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="Stochasticity.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Apply function to get 10 0000 realizations (can take some time)</span></span>
+<span id="cb60-4"><a href="Stochasticity.html#cb60-4" aria-hidden="true" tabindex="-1"></a>simbird_Large <span class="ot">&lt;-</span> <span class="fu">nsim.stochastic</span>(<span class="at">MatA=</span>Abird.pre, </span>
+<span id="cb60-5"><a href="Stochasticity.html#cb60-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">MatU=</span>Ubird.pre, </span>
+<span id="cb60-6"><a href="Stochasticity.html#cb60-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">MatF=</span>Fbird.pre, </span>
+<span id="cb60-7"><a href="Stochasticity.html#cb60-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb60-8"><a href="Stochasticity.html#cb60-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>), </span>
+<span id="cb60-9"><a href="Stochasticity.html#cb60-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">tmax=</span><span class="dv">20</span>, </span>
+<span id="cb60-10"><a href="Stochasticity.html#cb60-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">nsim=</span><span class="dv">10000</span>, </span>
+<span id="cb60-11"><a href="Stochasticity.html#cb60-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">n0=</span><span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">3</span>))</span>
+<span id="cb60-12"><a href="Stochasticity.html#cb60-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-13"><a href="Stochasticity.html#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the 5, 25, 50, 75, and 95 percentiles:</span></span>
+<span id="cb60-14"><a href="Stochasticity.html#cb60-14" aria-hidden="true" tabindex="-1"></a>Percentiles2  <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">apply</span>(<span class="fu">t</span>(simbird_Large[,<span class="sc">-</span><span class="dv">1</span>]),</span>
+<span id="cb60-15"><a href="Stochasticity.html#cb60-15" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">2</span>, </span>
+<span id="cb60-16"><a href="Stochasticity.html#cb60-16" aria-hidden="true" tabindex="-1"></a>                         quantile, </span>
+<span id="cb60-17"><a href="Stochasticity.html#cb60-17" aria-hidden="true" tabindex="-1"></a>                         <span class="at">probs=</span><span class="fu">c</span>(.<span class="dv">05</span>, .<span class="dv">25</span>, .<span class="dv">5</span>, .<span class="dv">75</span>,.<span class="dv">95</span>)))</span>
+<span id="cb60-18"><a href="Stochasticity.html#cb60-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-19"><a href="Stochasticity.html#cb60-19" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb60-20"><a href="Stochasticity.html#cb60-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Store percentiles in data frame  </span></span>
+<span id="cb60-21"><a href="Stochasticity.html#cb60-21" aria-hidden="true" tabindex="-1"></a>BirdPercentiles <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(<span class="st">&quot;Time&quot;</span><span class="ot">=</span><span class="dv">0</span><span class="sc">:</span>(<span class="fu">dim</span>(Percentiles2)[<span class="dv">1</span>]<span class="sc">-</span><span class="dv">1</span>),  </span>
+<span id="cb60-22"><a href="Stochasticity.html#cb60-22" aria-hidden="true" tabindex="-1"></a>                                       Percentiles2))</span>
+<span id="cb60-23"><a href="Stochasticity.html#cb60-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-24"><a href="Stochasticity.html#cb60-24" aria-hidden="true" tabindex="-1"></a>BirdPercentiles<span class="sc">$</span>Mean <span class="ot">&lt;-</span> <span class="fu">apply</span>(<span class="fu">t</span>(simbird_Large[,<span class="sc">-</span><span class="dv">1</span>]),<span class="dv">2</span>, mean)</span>
+<span id="cb60-25"><a href="Stochasticity.html#cb60-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-26"><a href="Stochasticity.html#cb60-26" aria-hidden="true" tabindex="-1"></a><span class="co">#Make long format for plotting</span></span>
+<span id="cb60-27"><a href="Stochasticity.html#cb60-27" aria-hidden="true" tabindex="-1"></a>BirdPercentiles.long <span class="ot">&lt;-</span> BirdPercentiles <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="fu">c</span>(<span class="sc">-</span>Time),</span>
+<span id="cb60-28"><a href="Stochasticity.html#cb60-28" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Percentile&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;N&quot;</span>)</span>
+<span id="cb60-29"><a href="Stochasticity.html#cb60-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-30"><a href="Stochasticity.html#cb60-30" aria-hidden="true" tabindex="-1"></a><span class="co">#Make sure the order of the percentiles is correct</span></span>
+<span id="cb60-31"><a href="Stochasticity.html#cb60-31" aria-hidden="true" tabindex="-1"></a>BirdPercentiles.long<span class="sc">$</span>Percentile <span class="ot">&lt;-</span> <span class="fu">factor</span>(BirdPercentiles.long<span class="sc">$</span>Percentile, </span>
+<span id="cb60-32"><a href="Stochasticity.html#cb60-32" aria-hidden="true" tabindex="-1"></a>                    <span class="at">levels=</span><span class="fu">c</span>(<span class="st">&quot;5%&quot;</span>, <span class="st">&quot;25%&quot;</span>, <span class="st">&quot;50%&quot;</span>, <span class="st">&quot;75%&quot;</span>, <span class="st">&quot;95%&quot;</span>,<span class="st">&quot;Mean&quot;</span>))</span>
+<span id="cb60-33"><a href="Stochasticity.html#cb60-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-34"><a href="Stochasticity.html#cb60-34" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(BirdPercentiles.long) <span class="sc">+</span> </span>
+<span id="cb60-35"><a href="Stochasticity.html#cb60-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x=</span>Time, <span class="at">y=</span>N, <span class="at">col=</span>Percentile,</span>
+<span id="cb60-36"><a href="Stochasticity.html#cb60-36" aria-hidden="true" tabindex="-1"></a>                <span class="at">linetype=</span>Percentile), <span class="at">lwd=</span><span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb60-37"><a href="Stochasticity.html#cb60-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values=</span><span class="fu">c</span>(colors5,<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb60-38"><a href="Stochasticity.html#cb60-38" aria-hidden="true" tabindex="-1"></a>   <span class="fu">scale_linetype_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="dv">2</span>))<span class="sc">+</span></span>
+<span id="cb60-39"><a href="Stochasticity.html#cb60-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb60-40"><a href="Stochasticity.html#cb60-40" aria-hidden="true" tabindex="-1"></a>   <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>,</span>
+<span id="cb60-41"><a href="Stochasticity.html#cb60-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">legend.title =</span> <span class="fu">element_blank</span>())<span class="sc">+</span></span>
+<span id="cb60-42"><a href="Stochasticity.html#cb60-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>( <span class="at">x=</span><span class="st">&quot;Time (year)&quot;</span>, <span class="at">y=</span><span class="st">&quot;Population size N&quot;</span>) <span class="sc">+</span></span>
+<span id="cb60-43"><a href="Stochasticity.html#cb60-43" aria-hidden="true" tabindex="-1"></a>   <span class="fu">guides</span>(<span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">1</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:Birdstochastic4"></span>
+<img src="_main_files/figure-html/Birdstochastic4-1.png" alt="Percentiles and mean from 10000 simulated trajectories of the stochastic bird model, with same parameter values as in figure \@ref(fig:birdstochastic2)." width="576" />
+<p class="caption">
+Figure 5.8: Percentiles and mean from 10000 simulated trajectories of the stochastic bird model, with same parameter values as in figure <a href="Stochasticity.html#fig:birdstochastic2">5.6</a>.
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="stochastic-growth-rate" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> Stochastic growth rate<a href="Stochasticity.html#stochastic-growth-rate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>When a stochastic sequence of projection matrices is available, it can be used to project the population size over time, and the stochastic growth rate can be defined from the resulting population process as the asymptotic time-averaged growth rate:</p>
+<p><span class="math display" id="eq:StochasticRate">\[\begin{align}
+r_S=\lim_{t\to\infty}\frac{1}{t}[\ln N_t-\ln N_0],
+\tag{5.5}
+\end{align}\]</span>
+This value can easily estimated from simulations, once the sequence of stochastic matrices is determined.</p>
+<p><br></p>
+<p>The following code can be used to calculate the stochastic growth rate following the definition of equation <a href="Stochasticity.html#eq:StochasticRate">(5.5)</a>, given a sequence of projection matrices. The cutoff argument removes the first time steps (corresponding to cutoff number), where transient fluctuations can be large unless the population starts at the stable distribution.</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="Stochasticity.html#cb61-1" aria-hidden="true" tabindex="-1"></a>EstimateSGR <span class="ot">&lt;-</span> <span class="cf">function</span>(Amats, n0, <span class="at">cutoff=</span><span class="dv">20</span>){</span>
+<span id="cb61-2"><a href="Stochasticity.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  Tmax <span class="ot">&lt;-</span> <span class="fu">dim</span>(Amats)[<span class="dv">3</span>]</span>
+<span id="cb61-3"><a href="Stochasticity.html#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(cutoff<span class="sc">&gt;=</span>Tmax){</span>
+<span id="cb61-4"><a href="Stochasticity.html#cb61-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">warning</span>(<span class="st">&quot;cutoff must be lower </span></span>
+<span id="cb61-5"><a href="Stochasticity.html#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="st">              than the number of </span></span>
+<span id="cb61-6"><a href="Stochasticity.html#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="st">              matrices in Amats&quot;</span>)</span>
+<span id="cb61-7"><a href="Stochasticity.html#cb61-7" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb61-8"><a href="Stochasticity.html#cb61-8" aria-hidden="true" tabindex="-1"></a>  project <span class="ot">&lt;-</span> <span class="fu">projection.stochastic</span>(<span class="at">Amats=</span>Amats, <span class="at">n0=</span>n0) </span>
+<span id="cb61-9"><a href="Stochasticity.html#cb61-9" aria-hidden="true" tabindex="-1"></a>  Ntot <span class="ot">&lt;-</span> <span class="fu">apply</span>(project[,<span class="sc">-</span><span class="dv">1</span>],<span class="dv">1</span>,sum)</span>
+<span id="cb61-10"><a href="Stochasticity.html#cb61-10" aria-hidden="true" tabindex="-1"></a>  logN <span class="ot">&lt;-</span> <span class="fu">log</span>(Ntot[cutoff<span class="sc">:</span><span class="fu">length</span>(Ntot)])</span>
+<span id="cb61-11"><a href="Stochasticity.html#cb61-11" aria-hidden="true" tabindex="-1"></a>  TM <span class="ot">&lt;-</span> <span class="fu">length</span>(logN)</span>
+<span id="cb61-12"><a href="Stochasticity.html#cb61-12" aria-hidden="true" tabindex="-1"></a>  (logN[TM]<span class="sc">-</span>logN[<span class="dv">1</span>])<span class="sc">/</span>TM</span>
+<span id="cb61-13"><a href="Stochasticity.html#cb61-13" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Note that the estimate becomes more accurate the longer the sequence, and the closer the initial population vector is to the stable distribution from the constant (mean) environment (or the higher the cutoff). If the growth rate is very large or small, numerical issues can arise affecting the estimation.</p>
+<p>This estimate is based on only one run of the process, and the accuracy can be improved by running it many times.</p>
+<p><br></p>
+<div id="bird-example-20" class="section level4 unnumbered hasAnchor">
+<h4>Bird example<a href="Stochasticity.html#bird-example-20" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Applying the function in the bird example (for a longer sequence of 1000 projection matrices), we get the following estimate of the stochastic growth rate:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="Stochasticity.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">25</span>)</span>
+<span id="cb62-2"><a href="Stochasticity.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate sequence of stochastic matrices:</span></span>
+<span id="cb62-3"><a href="Stochasticity.html#cb62-3" aria-hidden="true" tabindex="-1"></a>Amats.bird2 <span class="ot">&lt;-</span> <span class="fu">Amat.array</span>(<span class="at">MatA=</span>Abird.pre, </span>
+<span id="cb62-4"><a href="Stochasticity.html#cb62-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">MatU=</span>Ubird.pre, </span>
+<span id="cb62-5"><a href="Stochasticity.html#cb62-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">MatF=</span>Fbird.pre, </span>
+<span id="cb62-6"><a href="Stochasticity.html#cb62-6" aria-hidden="true" tabindex="-1"></a>                          <span class="at">tmax=</span><span class="dv">1000</span>, </span>
+<span id="cb62-7"><a href="Stochasticity.html#cb62-7" aria-hidden="true" tabindex="-1"></a>                          <span class="at">VarF=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>),</span>
+<span id="cb62-8"><a href="Stochasticity.html#cb62-8" aria-hidden="true" tabindex="-1"></a>                          <span class="at">VarS=</span><span class="fu">rep</span>(<span class="fl">0.03</span>, <span class="dv">3</span>)) </span>
+<span id="cb62-9"><a href="Stochasticity.html#cb62-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-10"><a href="Stochasticity.html#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Estimate growth rate</span></span>
+<span id="cb62-11"><a href="Stochasticity.html#cb62-11" aria-hidden="true" tabindex="-1"></a>rs.bird <span class="ot">&lt;-</span> <span class="fu">EstimateSGR</span>(<span class="at">Amats =</span> Amats.bird2, </span>
+<span id="cb62-12"><a href="Stochasticity.html#cb62-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">n0=</span><span class="fu">rep</span>(<span class="dv">10</span>,<span class="dv">3</span>))</span>
+<span id="cb62-13"><a href="Stochasticity.html#cb62-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-14"><a href="Stochasticity.html#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(rs.bird, <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 0.0704</code></pre>
+<p>This means that <span class="math inline">\(r_s\approx\)</span> 0.0704 for the bird example. In the constant environment we had <span class="math inline">\(r= \ln\lambda\approx\)</span> 0.068 (you can check that you get approximately this value by setting the variances to zero in the above function).</p>
+<p><br></p>
+</div>
+</div>
+<div id="small-noise-approximation" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> Small noise approximation<a href="Stochasticity.html#small-noise-approximation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>So far we have relied on simulations of the population process to estimate the stochastic growth rate, which does not provide a good understanding of how it depends on the variance and covariance of the underlying matrix elements.</p>
+<p>Assuming small environmental fluctuations (i.e. that no projection matrix would be very different from the mean matrix), <span class="citation">Tuljapurkar (<a href="#ref-Tuljapurkar7" role="doc-biblioref">1982</a>)</span> derived the following useful approximation for the stochastic growth rate that links it to the underlying matrix elements:</p>
+<p><span class="math display" id="eq:Tulja">\[\begin{align}
+r_S&amp;\approx r-\frac{1}{2\lambda^2}\sum_{i}\sum_{j}\sum_{k}\sum_{l}\frac{\partial\lambda}{\partial a_{ij}}\frac{\partial\lambda}{\partial a_{kl}}\text{Cov}(A_{ij},A_{kl})\\
+&amp;= r-\frac{1}{2\lambda^2}\sigma_e^2.
+\tag{5.6}
+\end{align}\]</span></p>
+<p>We see that equation <a href="Stochasticity.html#eq:Tulja">(5.6)</a> is similar to the approximation of the Lewontin-Cohen model (equation <a href="Stochasticity.html#eq:Taylor">(5.4)</a>), which is not strange since they are both based on a Taylor approximation (mathemtacal details are outside the scope of this compendium). THe small noise approximation is useful because it shows how the stochastic growth rate is related to the sensitivities of the mean projection matrix, and the variances (and covariances) between matrix elements.</p>
+<p>The small noise approximation is relevant to the topic of <strong>demographic buffering</strong>. Demographic buffering, or simply ‘buffering’, refers to the common observation that vital rates to which <span class="math inline">\(\lambda\)</span> (in the mean environment) shows a high sensitivity in the mean environment often show low temporal variability. This is often seen as a strategy to mitigate negative impacts of variability, which would be most severe if it affected these vital rates that are so important to the growth in the average environment. However, because the variance of vital rates is mathematically constrained by the mean (e.g. for survival, a high mean automatically implies that the variance must be low) it is difficult to tease appart the underlying mechanisms behind an observed low variance and high mean for any given vital rate. In contrast to bet-hedging, buffering refers to any case of low variation in vital rates, without any assumption about any cost to the mean.</p>
+<p><br></p>
+</div>
+</div>
+<div id="exercises-4" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Exercises<a href="Stochasticity.html#exercises-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-5.1" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 5.1<a href="Stochasticity.html#exercise-5.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Start with the flowering plant from exercise 2.2 and exercise 3.2. Assume a pre-reproductive census, and use the following projection matrix for the mean environment (increased fecundity to get <span class="math inline">\(\lambda&gt;1\)</span>):</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="Stochasticity.html#cb64-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">4</span> </span>
+<span id="cb64-2"><a href="Stochasticity.html#cb64-2" aria-hidden="true" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">12376</span>, <span class="dv">4233</span>, <span class="dv">1790</span>, <span class="dv">340</span>, <span class="dv">268</span>)</span>
+<span id="cb64-3"><a href="Stochasticity.html#cb64-3" aria-hidden="true" tabindex="-1"></a>mx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">2.1</span>, <span class="fl">3.2</span>)</span>
+<span id="cb64-4"><a href="Stochasticity.html#cb64-4" aria-hidden="true" tabindex="-1"></a>lx <span class="ot">&lt;-</span> nx<span class="sc">/</span>nx[<span class="dv">1</span>]  </span>
+<span id="cb64-5"><a href="Stochasticity.html#cb64-5" aria-hidden="true" tabindex="-1"></a>px <span class="ot">&lt;-</span> <span class="fu">c</span>(lx[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]<span class="sc">/</span>lx[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>],<span class="dv">0</span>) </span>
+<span id="cb64-6"><a href="Stochasticity.html#cb64-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-7"><a href="Stochasticity.html#cb64-7" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="dv">8</span> </span>
+<span id="cb64-8"><a href="Stochasticity.html#cb64-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-9"><a href="Stochasticity.html#cb64-9" aria-hidden="true" tabindex="-1"></a>APlant <span class="ot">&lt;-</span> <span class="fu">Create.Amat</span>(<span class="at">Svec=</span>px[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>] , <span class="at">Fvec=</span>px[<span class="dv">1</span>]<span class="sc">*</span>mx[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>]<span class="sc">*</span>C)</span>
+<span id="cb64-10"><a href="Stochasticity.html#cb64-10" aria-hidden="true" tabindex="-1"></a>FPlant<span class="ot">&lt;-</span> UPlant<span class="ot">&lt;-</span> APlant</span>
+<span id="cb64-11"><a href="Stochasticity.html#cb64-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-12"><a href="Stochasticity.html#cb64-12" aria-hidden="true" tabindex="-1"></a>FPlant[<span class="sc">-</span><span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="dv">0</span> </span>
+<span id="cb64-13"><a href="Stochasticity.html#cb64-13" aria-hidden="true" tabindex="-1"></a>UPlant[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="dv">0</span>  </span>
+<span id="cb64-14"><a href="Stochasticity.html#cb64-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-15"><a href="Stochasticity.html#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(APlant,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##       [,1] [,2]  [,3]  [,4]
+## [1,] 0.000 0.00 5.746 8.756
+## [2,] 0.423 0.00 0.000 0.000
+## [3,] 0.000 0.19 0.000 0.000
+## [4,] 0.000 0.00 0.788 0.000</code></pre>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p>Add stochasticity to the fertility coefficients using the same approach as for the bird example in this chapter, and make some plots of the projected growth of the age classes for different values of the variances. Interpret what happens.</p></li>
+<li><p>Add stochasticity to the survival coefficients instead (but not in fertility) and make some plots of the projected growth as in the previous point. Do you notice a difference?</p></li>
+<li><p>Think about possible bet hedging strategies the plant could use to optimize fitness in a varying environment. Do you see any signs of bet-hedging in its current life history?</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="exercise-5.2" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 5.2<a href="Stochasticity.html#exercise-5.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider the black-headed gull example from chapter <a href="s04-Stage.html#agestage">4.4.2</a>, with two different habitats. Instead of the migration pattern described in the example (where offspring migrate), assume that migration is random between the two environments, so that each year each gull ends up in either habitat by chance. The two projection matrices describing each habitat are given by</p>
+<p><br></p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{A}_{\text{good}}
+&amp;=\left[\begin{matrix}
+0&amp;0.096&amp; 0.16&amp;0.224&amp;0.32\\
+0.8&amp;0&amp; 0&amp; 0&amp;0\\
+0&amp;0.82&amp; 0&amp; 0&amp;0\\
+0&amp;0&amp; 0.82&amp; 0&amp;0\\
+0&amp;0&amp; 0&amp; 0.82&amp;0.82
+\end{matrix}\right],
+\end{align*}\]</span></p>
+<p><br></p>
+<p>and</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{A}_{\text{poor}}
+&amp;=\left[\begin{matrix}
+0&amp;0.1&amp; 0.16&amp;0.2&amp;0.2\\
+0.8&amp;0&amp; 0&amp; 0&amp;0\\
+0&amp;0.82&amp; 0&amp; 0&amp;0\\
+0&amp;0&amp; 0.82&amp; 0&amp;0\\
+0&amp;0&amp; 0&amp; 0.82&amp;0.82
+\end{matrix}\right].
+\end{align*}\]</span></p>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p>What is the value of <span class="math inline">\(\lambda\)</span> in each habitat?</p></li>
+<li><p>Write an R function that returns a series of gull projection matrices for a given number of time steps (returned as an array where the third dimension is time), assuming a random draw each year (hint: the function <code>sample()</code> can be used to make random draws. For instance, <code>sample(c("A", "B"), 10, replace=TRUE)</code> will return a vector of 10 values of either “A” or “B”.).</p></li>
+<li><p>Calculate the mean growth rate and the stochastic growth rate for the black-headed gull assuming such random migration between the habitats. Make a quantile plot of population growth and highlight the growth trajectories corresponding to growth of the median and mean population.</p></li>
+<li><p>In the <code>sample()</code> function there is an argument <code>prob</code> that can be used to set different probabilities for each environment. For instance, with <code>sample(c("A", "B"), 100, replace=TRUE,prob=c(.8, .2))</code> there is a probability of 0.8 of drawing an “A” and 0.2 of drawing a “B” for each sampling event, resulting in many more “A”’s over time. Modify the previous code and consider what happens to the population growth if the probability of ending up in the good environment is higher, or lower.</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Cohen7" class="csl-entry">
+Cohen, D. 1966. <span>“Optimizing Reproduction in a Randomly Varying Environment.”</span> <em>Journal of Theoretical Biology</em> 12: 119–29.
+</div>
+<div id="ref-Lewontin1" class="csl-entry">
+Lewontin, R. C., and D. Cohen. 1969. <span>“On Population Growth in a Randomly Varying Environment.”</span> <em>Proc. Natl. Acad. Sci. U.S.A.</em> 62: 1056–60.
+</div>
+<div id="ref-Starrfelt1" class="csl-entry">
+Starrfelt, J., and Hanna Kokko. 2012. <span>“Bet-Hedging—a Triple Trade-Off Between Means, Variances and Correlations.”</span> <em>Biol. Rev.</em> 87: 742–55.
+</div>
+<div id="ref-Tuljapurkar7" class="csl-entry">
+Tuljapurkar, Shripad. 1982. <span>“Population Dynamics in Variable Environments. <span>III</span>. <span>E</span>volutionary Dynamics of <em>r</em>-Selection.”</span> <em>Theor. Popul. Biol.</em> 21: 114–40.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="s04-Stage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="id_06-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

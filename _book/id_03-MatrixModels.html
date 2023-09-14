@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Age-structured matrix population models | Demography and matrix models</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Age-structured matrix population models | Demography and matrix models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Age-structured matrix population models | Demography and matrix models" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_02-life-tables.html"/>
+<link rel="next" href="id_04-Stage.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#baseline-model-for-population-growth"><i class="fa fa-check"></i><b>1.2</b> Baseline model for population growth</a></li>
+<li class="chapter" data-level="1.3" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#the-exponential-growth-model-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> The exponential growth model in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="2.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#what-is-a-life-table"><i class="fa fa-check"></i><b>2.1</b> What is a life table?</a></li>
+<li class="chapter" data-level="2.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.2</b> A basic life table</a></li>
+<li class="chapter" data-level="2.3" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.3</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.4" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.4</b> Life table calculations</a></li>
+<li class="chapter" data-level="2.5" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-euler-lotka-equation"><i class="fa fa-check"></i><b>2.5</b> The Euler-Lotka equation</a></li>
+<li class="chapter" data-level="2.6" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.6</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.7" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-fictive-bird-example"><i class="fa fa-check"></i><b>2.7</b> A fictive bird example</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-by-hand"><i class="fa fa-check"></i><b>2.7.1</b> Calculations ‘by hand’</a></li>
+<li class="chapter" data-level="2.7.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-in-r"><i class="fa fa-check"></i><b>2.7.2</b> Calculations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.9.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#why-matrix-models"><i class="fa fa-check"></i><b>3.1</b> Why matrix models?</a></li>
+<li class="chapter" data-level="3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth and the Leslie matrix</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes when constructing matrix models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#asymptotic-properties"><i class="fa fa-check"></i><b>3.5</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.5.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.5.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.5.2</b> Calculations using eigen analysis</a></li>
+<li class="chapter" data-level="3.5.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.5.3</b> Net reproductive rate and generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#sensitivity-analysis-of-lambda"><i class="fa fa-check"></i><b>3.6</b> Sensitivity analysis of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.6.1</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>3.7</b> Life table response experiments</a></li>
+<li class="chapter" data-level="3.8" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+<li class="chapter" data-level="3.8.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="id_04-Stage.html"><a href="id_04-Stage.html"><i class="fa fa-check"></i><b>4</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_04-Stage.html"><a href="id_04-Stage.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="id_04-Stage.html"><a href="id_04-Stage.html#flexibility-of-matrix-models"><i class="fa fa-check"></i><b>4.1</b> Flexibility of matrix models</a></li>
+<li class="chapter" data-level="4.2" data-path="id_04-Stage.html"><a href="id_04-Stage.html#life-cycle-stages"><i class="fa fa-check"></i><b>4.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="id_04-Stage.html"><a href="id_04-Stage.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>4.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="id_04-Stage.html"><a href="id_04-Stage.html#age-by-stage-models"><i class="fa fa-check"></i><b>4.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4" data-path="id_04-Stage.html"><a href="id_04-Stage.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>4.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>5</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>5.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="5.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>5.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>5.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="5.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>5.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>5.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> Appendix A. R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>A.2.5</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="A.2.6" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Appendix B. Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="id_09-Solutions.html"><a href="id_09-Solutions.html"><i class="fa fa-check"></i><b>C</b> Appendix C. Solution to exercises</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="id_03-MatrixModels" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">3</span> Age-structured matrix population models<a href="id_03-MatrixModels.html#id_03-MatrixModels" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-goals-2" class="section level2 unnumbered hasAnchor">
+<h2>Learning goals<a href="id_03-MatrixModels.html#learning-goals-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Define a projection matrix for age- or stage-structured populations.</p></li>
+<li><p>Explain the main differences between a pre- and post-reproductive census.</p></li>
+<li><p>Draw a life cycle graph and explain how it is related to the projection matrix.</p></li>
+<li><p>Calculate asymptotic parameters from a matrix model (using projection or eigen analysis), and explain their biological meaning.</p></li>
+<li><p>Calculate sensitivities of <span class="math inline">\(\lambda\)</span> with respect to projection matrix elements, and explain their meaning and some applications.</p></li>
+<li><p>Do an LTRE analysis for a structured population in two different environments.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="why-matrix-models" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Why matrix models?<a href="id_03-MatrixModels.html#why-matrix-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Matrix models make it possible to work with systems of multiple equations simultaneously. For instance, if we study a long-lived species with 50 age classes, it becomes very cumbersome to write down the growth equations for each of the 50 age classes separately. With a matrix model we need only one equation to keep track of all of the stages simultaneously.</p>
+<p>The main ‘ingredient’ of an age-structured matrix model is the Leslie matrix, which contains all the information necessary to project the growth of each age class over time. Several life history parameters can also be calculated directly from this matrix, including the long-term population growth rate <span class="math inline">\(\lambda\)</span>.</p>
+<p><br></p>
+</div>
+<div id="age-structured-growth-and-the-leslie-matrix" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Age-structured growth and the Leslie matrix<a href="id_03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>First we will look at the equations of growth for each of the age class, from one time step to the next. We always denote the first class as class 1, the second as class 2, etc., but as we will see in section <a href="id_03-MatrixModels.html#census">3.3</a>, the definition of the parameters depend on census time (when the population is counted within each time step). To keep track of the number of individuals in each of the age classes over time, we define the following <strong>population vector</strong> <span class="math inline">\(\mathbf{n}_t\)</span> of individuals in age class 1 to <span class="math inline">\(k\)</span>:</p>
+<p><span class="math display" id="eq:popvec">\[\begin{align}
+\mathbf{n}_t=\left[\begin{matrix} n_1(t) \\ n_2(t)\\ \vdots \\ n_k(t) \end{matrix} \right].
+\tag{3.1}
+\end{align}\]</span></p>
+<p><br></p>
+<p>The population size at time <span class="math inline">\(t\)</span> is then <span class="math inline">\(N_t=\sum_{j=1}^kn_j(t)\)</span> (note that we now use <span class="math inline">\(j\)</span> or <span class="math inline">\(i\)</span> as index instead of <span class="math inline">\(x\)</span>, following conventional notation for matrix models). Let <span class="math inline">\(s_j\)</span> describe the survival probability of individuals in age class <span class="math inline">\(j\)</span> to the next time step, and <span class="math inline">\(f_j\)</span> the number of offspring produced by each individual in age class <span class="math inline">\(j\)</span> that enters age class 1 at time <span class="math inline">\(t+1\)</span>. Importantly, <span class="math inline">\(s_j\)</span> and <span class="math inline">\(f_j\)</span> of the Leslie matrix are <em>not the same</em> as the age-specific survival probability <span class="math inline">\(p_j\)</span> and fecundity <span class="math inline">\(m_j\)</span> (see section <a href="id_03-MatrixModels.html#census">3.3</a>).</p>
+<p>Then, the equation for age class 1 is given by</p>
+<p><span class="math display" id="eq:AgeGrowth1">\[\begin{equation}
+n_1(t+1)=f_1n_1(t)+f_2n_2(t)+\ldots +f_kn_k(t),
+\tag{3.2}
+\end{equation}\]</span></p>
+<p>while the equations for the other age classes are given by</p>
+<p><span class="math display" id="eq:AgeGrowth2">\[\begin{align}
+\begin{split}
+n_2(t+1)&amp;=s_1n_1(t),\\
+n_3(t+1)&amp;=s_2n_2(t),\\
+\vdots \\
+n_k(t+1)&amp;=s_{k-1}n_{k-1}(t).\\
+\end{split}
+\tag{3.3}
+\end{align}\]</span></p>
+<p><br></p>
+<p>Together, the equations for growth of the age classes constitutes a system of linear equations, which we can summarize with a matrix model:</p>
+<p><span class="math display" id="eq:LeslieGrowth">\[\begin{align}
+\begin{split}
+\mathbf{n}_{t+1}&amp;=\mathbf{A}\mathbf{n}_t\\
+\left[\begin{matrix} n_1 \\n_2 \\ \vdots \\  \\ n_k   \\  \end{matrix}\right]_{t+1}&amp;=\left[\begin{matrix} f_1 &amp; f_2 &amp;&amp; \cdots &amp; f_k \\ s_1 &amp;0 &amp;&amp; \cdots &amp;0\\ 0 &amp;s_2 &amp; &amp;\cdots &amp;0\\ \vdots&amp; &amp;\ddots&amp;&amp;\vdots\\ 0 &amp;\cdots&amp;0 &amp; s_{k-1} &amp;0  \\  \end{matrix}\right]\left[\begin{matrix} n_1 \\n_2 \\ \vdots \\  \\ n_k   \\  \end{matrix}\right]_{t}.
+\end{split}
+\tag{3.4}
+\end{align}\]</span></p>
+<p><br></p>
+<p>This is the age-structured version of the exponential growth model of an unstructured population (section 2). The matrix <span class="math inline">\(\mathbf{A}\)</span> is a square matrix (having the same number of rows and columns), of dimension <span class="math inline">\(k \times k\)</span> (where <span class="math inline">\(k\)</span> is the number of age classes). It is named a <strong>Leslie matrix</strong> after the work of Leslie <span class="citation">(<a href="#ref-Leslie1" role="doc-biblioref">1945</a>, <a href="#ref-Leslie2" role="doc-biblioref">1948</a>)</span>. The elements along the first row represent the production of offspring to next year’s population from each of the age classes, and these terms are often called <strong>fertility coefficients</strong>, while the <strong>survival coefficients</strong> are located along the sub-diagonal. In the last age class no one will survive until next time step, but they can reproduce and contribute with a number <span class="math inline">\(f_k\)</span> to next year’s age class 1.</p>
+<p><br></p>
+<p>The Leslie matrix can be decomposed as the sum of a <strong>survival matrix</strong> <span class="math inline">\(\mathbf{U}\)</span> and a <strong>fertility matrix</strong> <span class="math inline">\(\mathbf{F}\)</span>:</p>
+<p><span class="math display" id="eq:LeslieSplit">\[\begin{align}
+\begin{split}
+\mathbf{A}&amp;=\mathbf{U}+\mathbf{F}\\
+\left[\begin{matrix} f_1 &amp; f_2 &amp;&amp; \cdots &amp; f_k \\ s_1 &amp;0 &amp;&amp; \cdots &amp;0\\ 0 &amp;s_2 &amp; &amp;\cdots &amp;0\\ \vdots&amp; &amp;\ddots&amp;&amp;\vdots\\ 0 &amp;\cdots&amp;0 &amp; s_{k-1} &amp;0  \\  \end{matrix}\right] &amp;= \left[\begin{matrix} 0 &amp; 0 &amp;&amp; \cdots &amp; 0 \\ s_1 &amp;0 &amp;&amp; \cdots &amp;0\\ 0 &amp;s_2 &amp; &amp;\cdots &amp;0\\ \vdots&amp; &amp;\ddots&amp;&amp;\vdots\\ 0 &amp;\cdots&amp;0 &amp; s_{k-1} &amp;0  \\  \end{matrix}\right] \left[\begin{matrix} f_1 &amp; f_2 &amp;&amp; \cdots &amp; f_k \\0  &amp;0 &amp;&amp; \cdots &amp;0\\ 0 &amp;0 &amp; &amp;\cdots &amp;0\\ \vdots&amp; &amp;\ddots&amp;&amp;\vdots\\ 0 &amp;\cdots&amp;0 &amp; 0 &amp;0  \\  \end{matrix} \right]
+\end{split}
+\tag{3.5}
+\end{align}\]</span></p>
+<p><br></p>
+<p>These sub-matrices are used to calculate net reproductive rate <span class="math inline">\(R_0\)</span> and generation time <span class="math inline">\(G\)</span> for a given Leslie matrix.</p>
+<p><br></p>
+<div id="LeslieR" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Creating a Leslie matrix in R<a href="id_03-MatrixModels.html#LeslieR" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following R function creates a Leslie matrix from vectors of survival <span class="math inline">\(\mathbf{s}\)</span> and fertility <span class="math inline">\(\mathbf{f}\)</span> (they must have the same length, corresponding to the number of age classes). The final element of the survival vector should be 0 if the model is purely age-structured (otherwise, individuals are allowed to accumulate in the final class, which is a common extension of age structured models).</p>
+<p><br></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="id_03-MatrixModels.html#cb4-1" aria-hidden="true" tabindex="-1"></a>leslie.matrix <span class="ot">&lt;-</span> <span class="cf">function</span>(Svec, Fvec){</span>
+<span id="cb4-2"><a href="id_03-MatrixModels.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(Svec)</span>
+<span id="cb4-3"><a href="id_03-MatrixModels.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  MatA<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,n,n)</span>
+<span id="cb4-4"><a href="id_03-MatrixModels.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  MatA[<span class="dv">1</span>,] <span class="ot">&lt;-</span> Fvec </span>
+<span id="cb4-5"><a href="id_03-MatrixModels.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>(n<span class="dv">-1</span>)){</span>
+<span id="cb4-6"><a href="id_03-MatrixModels.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    MatA[i<span class="sc">+</span><span class="dv">1</span>,i] <span class="ot">&lt;-</span> Svec[i]</span>
+<span id="cb4-7"><a href="id_03-MatrixModels.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-8"><a href="id_03-MatrixModels.html#cb4-8" aria-hidden="true" tabindex="-1"></a>  MatA[n,n] <span class="ot">&lt;-</span> Svec[n] </span>
+<span id="cb4-9"><a href="id_03-MatrixModels.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  MatA</span>
+<span id="cb4-10"><a href="id_03-MatrixModels.html#cb4-10" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div>
+<p><br></p>
+</div>
+</div>
+<div id="census" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Pre- and post-reproductive census<a href="id_03-MatrixModels.html#census" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The Leslie matrix depends on coefficients of fertility, <span class="math inline">\(f_j\)</span>, and survival probability <span class="math inline">\(s_j\)</span>. However, these coefficients depend on the <em>census type</em> of the model, i.e. at what time point the population is counted during each time interval. For a birth-pulse population (reproducing once per year), there are two main census types: Pre- and post-reproductive census. As the names indicate, they assume that the population is counted either right before (pre) or right after (post) reproduction.</p>
+<p>The reason why census time is important is that a lot can happen to the population also within a time interval. The age-specific parameters describing fecundity (<span class="math inline">\(m_x\)</span>) and survival (<span class="math inline">\(l_x\)</span>, <span class="math inline">\(p_x\)</span>) as a function of actual age <span class="math inline">\(x\)</span> are the same regardless of census time. But the fertility and survival coefficients of the Leslie matrix (<span class="math inline">\(s_j\)</span>, <span class="math inline">\(f_j\)</span>) will be different - see definitions below.</p>
+<p>In general, the size of age class 1 is always larger in the post-reproductive census than with pre-reproductive, because individuals in this class are newborn. For any age-structured population with positive growth rate, the stable age structure (proportion of individuals of each age) will always decline with age. The relative proportion of age class 2 and 3 also changes with census time.</p>
+<p><br></p>
+<p><br></p>
+<p>We assume that the population reproduces only once per year. But different species can have very different modes of reproduction, depending on their life history and environments. Some tropical species can reproduce at all times through the year. Bacteria also reproduce (divide) continuously. Other species can have more than one reproductive events each season, or reproduce only every other season (or even more rarely). It is possible to account for these different types of reproductive mode in a matrix model <span class="citation">(<a href="#ref-Caswell1" role="doc-biblioref">Caswell 2001</a>)</span>, but that requires a different way to estimate the age-specific survival and fertility coefficients, which is beyond the scope of this course.</p>
+<p>Below we go through the parameters of a pre- and post-reproductive census in more detail, using the bird example.</p>
+<p><br></p>
+<div id="pre-reproductive-census" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Pre-reproductive census<a href="id_03-MatrixModels.html#pre-reproductive-census" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><br></p>
+<div class="figure"><span style="display:block;" id="fig:fig3"></span>
+<img src="SurvFecPreRep2.jpg" alt="Overview of the timing of different events of survival and reproduction within each time step, for a pre-reproductive census." width="100%" />
+<p class="caption">
+Figure 3.1: Overview of the timing of different events of survival and reproduction within each time step, for a pre-reproductive census.
+</p>
+</div>
+<p><br></p>
+<p>With a <strong>pre-reproductive census</strong>, offspring will be nearly 1 year old when counted, and age classes correspond to the actual age at counting (e.g. individuals in age class 1 are 1 year old when counted), so that <span class="math inline">\(s_j=p_j\)</span>. The fertility coefficients are then given by <span class="math inline">\(f_j=p_0m_j\)</span>, the product of the fecundity <span class="math inline">\(m_j\)</span> and the first year survival probability <span class="math inline">\(p_0\)</span>. Using the bird example, the Leslie matrix for a pre-reproductive census is given by</p>
+<p><br></p>
+<p><span class="math display" id="eq:Prerep">\[\begin{align}
+\begin{split}
+\mathbf{A}=\left[\begin{matrix} f_1 &amp; f_2 &amp;f_3  \\ s_1 &amp;0&amp;0\\ 0 &amp; s_2 &amp;0  \\  \end{matrix}\right]=\left[\begin{matrix} 0 &amp; p_0m_2 &amp;p_0m_3  \\ p_1 &amp;0&amp;0\\ 0 &amp; p_2 &amp;0  \\  \end{matrix}\right]=\left[\begin{matrix} 0 &amp;0.6 &amp;1.2  \\ 0.9 &amp;0&amp;0\\ 0 &amp; 0.6 &amp;0  \\  \end{matrix}\right].
+\end{split}
+\tag{3.6}
+\end{align}\]</span></p>
+<p><br></p>
+<p>In R, we get</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="id_03-MatrixModels.html#cb5-1" aria-hidden="true" tabindex="-1"></a>leslie.bird.pre <span class="ot">&lt;-</span> <span class="fu">leslie.matrix</span>(Svec <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">9</span>, .<span class="dv">6</span>, <span class="dv">0</span>), <span class="at">Fvec=</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">6</span>, <span class="fl">1.2</span>))  </span></code></pre></div>
+<p><br></p>
+</div>
+<div id="post-reproductive-census" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Post-reproductive census<a href="id_03-MatrixModels.html#post-reproductive-census" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:fig4"></span>
+<img src="SurvFecPostRep2.jpg" alt="Overview of the timing of different events of survival and reproduction within each time step, for a post-reproductive census." width="100%" />
+<p class="caption">
+Figure 3.2: Overview of the timing of different events of survival and reproduction within each time step, for a post-reproductive census.
+</p>
+</div>
+<p><br></p>
+<p>With a <strong>post-reproductive census</strong>, the population is counted right after reproduction. In this case, age class 1 consists of newborn individuals (age 0), and individuals in age class <span class="math inline">\(j\)</span> have the actual age <span class="math inline">\(j-1\)</span>, so that <span class="math inline">\(s_j=p_{j-1}\)</span>. The fertility coefficient <span class="math inline">\(f_j\)</span> now depends on survival of the parent from last time step <span class="math inline">\(s_{j-1}\)</span>, and on fecundity <span class="math inline">\(m_{j}\)</span> of the age <span class="math inline">\(j\)</span>, since individuals reproduce right before next census. Thus, the fertility coefficient of the Leslie matrix is now <span class="math inline">\(f_j=p_{j-1}m_{j}\)</span>. This definition of fertilities can be counter-intuitive, as the contribution from a given age class <span class="math inline">\(j\)</span> to next year’s offspring depends on survival from the previous age <span class="math inline">\(p_{j-1}\)</span>. This may be one of the reasons why many studies using a post-reproductive census have errors in the fertility coefficients in the Leslie matrix <span class="citation">(<a href="#ref-Kendall8" role="doc-biblioref">Kendall et al. 2019</a>)</span>.</p>
+<p>For the bird example, we get the following Leslie matrix with post-reproductive census:</p>
+<p><br></p>
+<p><span class="math display" id="eq:Postrep">\[\begin{align}
+\begin{split}
+\mathbf{A}=\left[\begin{matrix} f_1 &amp; f_2 &amp;f_3  \\ s_1 &amp;0&amp;0\\ 0 &amp; s_2 &amp;0  \\  \end{matrix}\right]=\left[\begin{matrix} 0 &amp; p_1m_2 &amp;p_2m_3  \\ p_0 &amp;0&amp;0\\ 0 &amp; p_1 &amp;0  \\  \end{matrix}\right]=\left[\begin{matrix} 0 &amp;2.7 &amp;3.6  \\ 0.2 &amp;0&amp;0\\ 0 &amp; 0.9 &amp;0  \\  \end{matrix}\right].
+\end{split}
+\tag{3.7}
+\end{align}\]</span></p>
+<p><br></p>
+<p>In R, we get</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="id_03-MatrixModels.html#cb6-1" aria-hidden="true" tabindex="-1"></a>leslie.bird.post <span class="ot">&lt;-</span> <span class="fu">leslie.matrix</span>(Svec <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">2</span>, .<span class="dv">9</span>, <span class="dv">0</span>), <span class="at">Fvec=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">2.7</span>, <span class="fl">3.6</span>))  </span></code></pre></div>
+<p><br></p>
+</div>
+<div id="avoiding-mistakes-when-constructing-matrix-models" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Avoiding mistakes when constructing matrix models<a href="id_03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mistakes in constructing the Leslie matrix are quite common in the literature <span class="citation">(<a href="#ref-Kendall8" role="doc-biblioref">Kendall et al. 2019</a>)</span>, and are often due to issues with census time. Mistakes are easily made, since keeping track of age classes, actual age, and timing of events within each time step requires accurate ‘bookkeeping’. Mistakes are more common for post-reproductive census models than pre-reproductive census models <span class="citation">(<a href="#ref-Kendall8" role="doc-biblioref">Kendall et al. 2019</a>)</span>. The names used for the different coefficients are also not consistent in the literature, for instance our ‘fertility coefficient’ <span class="math inline">\(f_j\)</span> is by some authors referred to as ‘fecundity’ (<span class="math inline">\(m_j\)</span> in our notation). Finally, there is no general consensus on whether to use 0 or 1 as index for the first age class when a post-reproductive census is used (we always use 1 as the index, regardless of census time), and this choice can affect the limits and indexing in different calculations (e.g. the Euler-Lotka equation).</p>
+<p>The only recommendation to avoid such errors when constructing a matrix model, is to take your time and make sure you understand each element and its biological meaning. One way to double check that you have obtained right coefficients is to compare a pre- and post-reproductive census model and Leslie matrix, and check that <span class="math inline">\(\lambda\)</span> is the same for the two cases. If it differs, at least one of the models has an error. Another useful tool is to draw a life cycle graph (see section <a href="id_03-MatrixModels.html#life-cycle-graph">3.4</a>).</p>
+<p>We get the same value for the population growth rate <span class="math inline">\(\lambda\)</span> regardless of census time, but all other results, including the net reproductive rate <span class="math inline">\(R_0\)</span> and generation time <span class="math inline">\(T_C\)</span>, will generally differ. The difference can be big, in particular for species producing a large number of offspring per reproductive event. A female cod, for instance, can produce millions of eggs, but only a few survive the first year. If we count a cod population right after spawning (post-reproductive census), the fertilized eggs would constitute a very high proportion of the population. If we instead counted the population right before spawning (pre-reproductive census), the number of age 1 offspring would be much lower.</p>
+<p><br></p>
+</div>
+</div>
+<div id="life-cycle-graph" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Life cycle graph<a href="id_03-MatrixModels.html#life-cycle-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br></p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:fig5"></span>
+<img src="LifeCycleAgePRE.jpg" alt="Life cycle graph for the songbird example, with a pre-reproductive census." width="60%" />
+<p class="caption">
+Figure 3.3: Life cycle graph for the songbird example, with a pre-reproductive census.
+</p>
+</div>
+</center>
+<p><br></p>
+<p>A structured model can be represented in different ways. You have already seen two: The life table and the matrix model. A third representation, which is a helpful visual tool, is the life cycle graph.This is particularly useful for more complex structures than age structure, but can also be helpful when constructing age structured models, in particular to keep track of parameters for different census time.</p>
+<p>A life cycle graph gives an overview of the possible transitions among age classes each year. For age structured populations, these transitions are quite simple, as they only consist of of survival from one age class to the next, and reproductive contributions from each age class to next year’s offspring. The figure above shows the life cycle graph for the songbird example, with a pre-reproductive census. The first step to make such a graph is to draw a circle for each age class, in this case from 1 to 3. These circles are then connected by arrows representing transitions. The survival of offspring during the first year is included in the reproductive transitions, because of the pre-reproductive census. Comparing the life cycle graph to the Leslie matrix described before, we see that they both describe the same process of change in age classes from one time step to the next.</p>
+<p><br></p>
+</div>
+<div id="asymptotic-properties" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Asymptotic properties<a href="id_03-MatrixModels.html#asymptotic-properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The simplest application of a matrix model is to use it to project the growth of each age class over time, from some given initial population vector <span class="math inline">\(\mathbf{n}_0\)</span> to a desired number of time steps <span class="math inline">\(T_{max}\)</span>. For a given Leslie matrix <span class="math inline">\(\mathbf{A}\)</span>, the following R function performs such a projection, and returns the number of individuals in each age class at each time step:</p>
+<p><br></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="id_03-MatrixModels.html#cb7-1" aria-hidden="true" tabindex="-1"></a>leslie.projection <span class="ot">&lt;-</span> <span class="cf">function</span>(MatA, <span class="at">Tmax =</span> <span class="dv">50</span>, <span class="at">n0=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>)){</span>
+<span id="cb7-2"><a href="id_03-MatrixModels.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  Nmat <span class="ot">=</span>  <span class="fu">matrix</span>(<span class="cn">NA</span>, <span class="at">nrow=</span><span class="fu">length</span>(n0), <span class="at">ncol=</span>Tmax) </span>
+<span id="cb7-3"><a href="id_03-MatrixModels.html#cb7-3" aria-hidden="true" tabindex="-1"></a>  Nmat[,<span class="dv">1</span>] <span class="ot">=</span> n0 </span>
+<span id="cb7-4"><a href="id_03-MatrixModels.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>Tmax){  </span>
+<span id="cb7-5"><a href="id_03-MatrixModels.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    Nmat[,i] <span class="ot">=</span> MatA<span class="sc">%*%</span>Nmat[,i<span class="dv">-1</span>]</span>
+<span id="cb7-6"><a href="id_03-MatrixModels.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-7"><a href="id_03-MatrixModels.html#cb7-7" aria-hidden="true" tabindex="-1"></a>  Nmat</span>
+<span id="cb7-8"><a href="id_03-MatrixModels.html#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-9"><a href="id_03-MatrixModels.html#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="id_03-MatrixModels.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#For the bird example:</span></span>
+<span id="cb7-11"><a href="id_03-MatrixModels.html#cb7-11" aria-hidden="true" tabindex="-1"></a>Pop.bird <span class="ot">&lt;-</span> <span class="fu">leslie.projection</span>(<span class="at">MatA=</span>leslie.bird.pre) <span class="co">#Matrix of rojected growth of each age class overtime</span></span>
+<span id="cb7-12"><a href="id_03-MatrixModels.html#cb7-12" aria-hidden="true" tabindex="-1"></a>Total.pop.bird <span class="ot">&lt;-</span> <span class="fu">apply</span>(Pop.bird,<span class="dv">2</span>,sum) <span class="co">#Vector of  total population size over time</span></span>
+<span id="cb7-13"><a href="id_03-MatrixModels.html#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="id_03-MatrixModels.html#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot of each age class, and the total population size over time:</span></span>
+<span id="cb7-15"><a href="id_03-MatrixModels.html#cb7-15" aria-hidden="true" tabindex="-1"></a>years <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>(<span class="fu">length</span>(Total.pop.bird)<span class="sc">-</span><span class="dv">1</span>) <span class="co">#Get time steps from 0 to Tmax (for plotting)</span></span>
+<span id="cb7-16"><a href="id_03-MatrixModels.html#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="id_03-MatrixModels.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">bty=</span><span class="st">&quot;l&quot;</span>)</span>
+<span id="cb7-18"><a href="id_03-MatrixModels.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">matplot</span>(years, <span class="fu">t</span>(Pop.bird), <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">bty=</span><span class="st">&quot;l&quot;</span>,  <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Age class  &quot;</span>, n[i](t)))) </span>
+<span id="cb7-19"><a href="id_03-MatrixModels.html#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(years,Total.pop.bird, <span class="at">type=</span><span class="st">&quot;l&quot;</span>,<span class="at">bty=</span><span class="st">&quot;l&quot;</span>,  <span class="at">lwd=</span><span class="dv">2</span>, <span class="at">xlab=</span><span class="st">&quot;Years&quot;</span>, <span class="at">ylab=</span><span class="fu">expression</span>(<span class="fu">paste</span>(<span class="st">&quot;Population size &quot;</span>, <span class="fu">N</span>(t)))) </span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><br></p>
+<p>The function returns a matrix where the number of columns correspond to <span class="math inline">\(T_{max}\)</span>, and the number of rows corresponds to <span class="math inline">\(k\)</span> (number of age classes). Each column represents the population vector at the corresponding time point. In R, the operator <span class="math inline">\(\%*\%\)</span> means matrix multiplication, which is done for each time step within a for-loop to calculate the current population vector as a function of the previous one. Note that the default initial population given in the function arguments is <span class="math inline">\(\mathbf{n}_0=[10, 10, 10]\)</span>, these numbers can be changed when you call the function (you can change the length of <span class="math inline">\(\mathbf{n}_0\)</span>, but then the matrix <span class="math inline">\(\mathbf{A}\)</span> should changed accordingly to have the same dimensions. The function also includes the initial population in the returned matrix (the first column). Note that for the bird example, the results of the calculation are stored in a matrix <code>Pop.bird</code> where each row corresponds to one age class, and each column represents a time point. To get a vector of population size in each time step, <code>Total.pop.bird</code>, the above code uses the function <code>apply()</code> to sum up each columns of the matrix. To plot the growth of each age class we use the function <code>matplot()</code>, which lets us plot all rows (or columns) of a matrix with one function call.</p>
+<p>Try some different starting values for each age class and look at what happens to the projected growth, keeping a rather low value for <span class="math inline">\(T_{max}\)</span>. Note the fluctuations in the beginning, that become smoother over time and eventually disappear. These are <strong>transient fluctuations</strong>, meaning that they are temporary. After the time where these fluctuations have become negligible, the population has reached the phase of <strong>stable growth</strong>, where it grows exponentially with a constant rate <span class="math inline">\(\lambda\)</span>. In this situation the population shows <strong>asymptotic dynamics</strong> (the behavior at the limit where the transient fluctuations are gone). There are three properties of the population growth in this case that are of particular relevance: The long-term growth rate <span class="math inline">\(\lambda\)</span>, the stable age structure <span class="math inline">\(\mathbf{u}\)</span>, and the reproductive values <span class="math inline">\(\mathbf{v}\)</span>. The next section below describes how to calculate these properties from the projected population sizes (over a sufficiently long time interval), where the different properties and their biological meaning are discussed in more detail. This is followed by a section showing how to calculate them directly from the Leslie matrix (the most efficient, but perhaps less intuitive way).</p>
+<p><br></p>
+<div id="projected" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Calculations based on projected growth<a href="id_03-MatrixModels.html#projected" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the population projections we can now estimate three important quantities (using R), as shown below.</p>
+<p><br></p>
+<div id="long-term-population-growth-rate" class="section level4 unnumbered hasAnchor">
+<h4>Long-term population growth rate:<a href="id_03-MatrixModels.html#long-term-population-growth-rate" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>This is the same growth rate <span class="math inline">\(\lambda\)</span> that we have already defined using the Euler-Lotka equation. This parameter can also be estimated from projected population size over time, as <span class="math inline">\(\lambda=N_{T+1}/N_T\)</span>, after a sufficiently large number of time steps <span class="math inline">\(T\)</span> (large enough that the estimate of <span class="math inline">\(\lambda\)</span>, to a chosen number of decimal places, does not change if we increase <span class="math inline">\(T\)</span> further).</p>
+<p>For the bird example we can use the following R code:</p>
+<p><br></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="id_03-MatrixModels.html#cb8-1" aria-hidden="true" tabindex="-1"></a>Tmax <span class="ot">&lt;-</span> <span class="fu">length</span>(Total.pop.bird)<span class="co">#Get max time</span></span>
+<span id="cb8-2"><a href="id_03-MatrixModels.html#cb8-2" aria-hidden="true" tabindex="-1"></a>lambda.bird <span class="ot">&lt;-</span> Total.pop.bird[Tmax]<span class="sc">/</span>Total.pop.bird[Tmax<span class="dv">-1</span>]</span></code></pre></div>
+<p>The estimated value from projection over 50 time steps is <span class="math inline">\(\lambda\approx\)</span> 1.07.</p>
+<p><br></p>
+</div>
+<div id="stable-age-structure" class="section level4 unnumbered hasAnchor">
+<h4>Stable age structure:<a href="id_03-MatrixModels.html#stable-age-structure" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The age structure is the proportion of the population constituted by each age class. As you can see from the projected growth, this will also fluctuate in the beginning, before it approaches a <strong>stable age structure</strong> as the transient fluctuations fade out, where the proportions become constant. The stable age structure is denoted by a vector <span class="math inline">\(\mathbf{u}=[u_1, u_2, ..., u_k]\)</span> (where <span class="math inline">\(\sum_{j=1}^{k} u_j=1\)</span>). This vector can be estimated from the projected population, as <span class="math inline">\(u_j\approx n_{j,T}/N_T\)</span>, where again <span class="math inline">\(T\)</span> is a (sufficiently) large number of time steps. For growing age structured populations, the age distribution will always be a monotonically decreasing function of age.</p>
+<p>In R, we can also estimate the stable structure from the projections, here shown for the bird example:</p>
+<p><br></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="id_03-MatrixModels.html#cb9-1" aria-hidden="true" tabindex="-1"></a>stable.structure.bird <span class="ot">&lt;-</span> Pop.bird[,Tmax]<span class="sc">/</span>Total.pop.bird[Tmax]</span></code></pre></div>
+<p>The estimated stable age structure from projection over 50 time steps is <span class="math inline">\(\mathbf{u}=\)</span> [0.432, 0.364, 0.204].</p>
+<p><br></p>
+</div>
+<div id="reproductive-values" class="section level4 unnumbered hasAnchor">
+<h4>Reproductive values:<a href="id_03-MatrixModels.html#reproductive-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Third, we can calculate the age-specific <strong>reproductive values</strong>, using a slightly modified version of the projection. The reproductive value was first defined by <span class="citation">Fisher (<a href="#ref-Fisher1" role="doc-biblioref">1930</a>)</span> who was interested in how much individuals of each age class would contribute to the future population, compared to other age classes. We can think of the reproductive value as a return rate associated with ‘investing’ in different age classes. If could choose individuals from just one age class to start a new population, and wanted this population to be as large as possible after a given number of years - we should choose the age class with the highest reproductive value.</p>
+<p>To calculate the reproductive values from projections, we have two options: One is to do the projection <span class="math inline">\(k\)</span> times (corresponding to the number of age classes), and each time start with the same number of individuals in a different age class. The relative differences in population size after <span class="math inline">\(T\)</span> time steps reflect the reproductive values. The vector <span class="math inline">\(\mathbf{v}\)</span> (a row vector) can be scaled in different ways, here we will use the scaling <span class="math inline">\(\mathbf{vu}=\sum_{j=1}^kv_ju_j=1\)</span>.</p>
+<p>The other approach is to use the transposed Leslie matrix <span class="math inline">\(\mathbf{A}^T\)</span> (taking the transpose means flipping the matrix <span class="math inline">\(\mathbf{A}\)</span> over the diagonal, so that rows and columns are switched) and do the same kind of calculation as for the stable age structure before applying the scaling defined above. In R, this method gives us:</p>
+<p><br></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="id_03-MatrixModels.html#cb10-1" aria-hidden="true" tabindex="-1"></a>Pop.bird.transpose <span class="ot">&lt;-</span> <span class="fu">leslie.projection</span>(<span class="at">MatA=</span><span class="fu">t</span>(leslie.bird.pre)) <span class="co">#Matrix of projected growth using the transpose Leslie matrix.</span></span>
+<span id="cb10-2"><a href="id_03-MatrixModels.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="id_03-MatrixModels.html#cb10-3" aria-hidden="true" tabindex="-1"></a>repvalues.bird <span class="ot">&lt;-</span> Pop.bird.transpose[,Tmax]<span class="sc">/</span><span class="fu">sum</span>(stable.structure.bird<span class="sc">*</span>Pop.bird.transpose[,Tmax])</span></code></pre></div>
+<p>The estimated reproductive values from projection over 50 time steps are <span class="math inline">\(\mathbf{v}=\)</span> [0.914, 1.087, 1.025].</p>
+<p>Note that the reproductive value of an age class only makes sense as a relative measure (compared to the other classes), and that the reproductive value of any given age class depends on properties of other age classes too. For instance, if environmental change alters the survival and fecundity in one age class, this will generally affect the reproductive value of all age classes.</p>
+<p><br></p>
+</div>
+</div>
+<div id="eigen" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Calculations using eigen analysis<a href="id_03-MatrixModels.html#eigen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You have now seen how the Leslie matrix <span class="math inline">\(\mathbf{A}\)</span> (or its transpose) can be used to project the population over time, and how we could calculate <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> based on these projections. This method of estimation works well and is perfectly fine for a given model, such as the bird example, but it does take some time and is not the most elegant way. Sometimes we need to quickly calculate these parameters for multiple species, and then it would be rather cumbersome do projections for each one (although it could be solved with a for-loop). A much more efficient way, however, is to find these properties directly from the projection matrix <span class="math inline">\(\mathbf{A}\)</span>, using the eigenvalues and eigenvectors.</p>
+<p>The mathematical details of these calculations are outside the scope of this course (see e.g. <span class="citation">Caswell (<a href="#ref-Caswell1" role="doc-biblioref">2001</a>)</span> for a more detailed introduction), but they are routinely included in R packages and easily defined in custom functions as well. In short, given that certain properties of <span class="math inline">\(\mathbf{A}\)</span> are fulfilled, <span class="math inline">\(\lambda\)</span> is the dominant eigenvalue of <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\mathbf{u}\)</span> is the right eigenvector associated with <span class="math inline">\(\lambda\)</span>, and <span class="math inline">\(\mathbf{v}\)</span> is the left eigenvector. Although the mathematical details are outside our scope, it is also worth noting that for age-structured populations, the socalled <em>characteristic equation</em> of the matrix <span class="math inline">\(\mathbf{A}\)</span>, from which we all of these parameters are calculated, is actually the Euler-Lotka equation we defined above.</p>
+<p>The following R function takes a Leslie matrix (or any other kind of projection matrix) as the input variable, and returns the value of <span class="math inline">\(\lambda\)</span> along with the vectors <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>, using the scaling defined above.</p>
+<p><br></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="id_03-MatrixModels.html#cb11-1" aria-hidden="true" tabindex="-1"></a>uvlambda <span class="ot">&lt;-</span> <span class="cf">function</span>(MatA){</span>
+<span id="cb11-2"><a href="id_03-MatrixModels.html#cb11-2" aria-hidden="true" tabindex="-1"></a> ev <span class="ot">&lt;-</span> <span class="fu">eigen</span>(MatA)</span>
+<span id="cb11-3"><a href="id_03-MatrixModels.html#cb11-3" aria-hidden="true" tabindex="-1"></a> tev <span class="ot">&lt;-</span> <span class="fu">eigen</span>(<span class="fu">t</span>(MatA))</span>
+<span id="cb11-4"><a href="id_03-MatrixModels.html#cb11-4" aria-hidden="true" tabindex="-1"></a> lmax <span class="ot">&lt;-</span> <span class="fu">which.max</span>(<span class="fu">Re</span>(ev<span class="sc">$</span>values))</span>
+<span id="cb11-5"><a href="id_03-MatrixModels.html#cb11-5" aria-hidden="true" tabindex="-1"></a> U <span class="ot">&lt;-</span> ev<span class="sc">$</span>vectors</span>
+<span id="cb11-6"><a href="id_03-MatrixModels.html#cb11-6" aria-hidden="true" tabindex="-1"></a> V <span class="ot">&lt;-</span> tev<span class="sc">$</span>vectors</span>
+<span id="cb11-7"><a href="id_03-MatrixModels.html#cb11-7" aria-hidden="true" tabindex="-1"></a> u <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">abs</span>(<span class="fu">Re</span>(U[, lmax]))<span class="sc">/</span><span class="fu">sum</span>(<span class="fu">abs</span>(<span class="fu">Re</span>(U[, lmax]))))</span>
+<span id="cb11-8"><a href="id_03-MatrixModels.html#cb11-8" aria-hidden="true" tabindex="-1"></a> u <span class="ot">&lt;-</span> u<span class="sc">/</span>(<span class="fu">sum</span>(u)) <span class="co">#scale u</span></span>
+<span id="cb11-9"><a href="id_03-MatrixModels.html#cb11-9" aria-hidden="true" tabindex="-1"></a> v <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">abs</span>(<span class="fu">Re</span>(V[, lmax])))</span>
+<span id="cb11-10"><a href="id_03-MatrixModels.html#cb11-10" aria-hidden="true" tabindex="-1"></a> v <span class="ot">&lt;-</span> v<span class="sc">/</span><span class="fu">sum</span>(u<span class="sc">*</span>v ) <span class="co">#scale v</span></span>
+<span id="cb11-11"><a href="id_03-MatrixModels.html#cb11-11" aria-hidden="true" tabindex="-1"></a> v <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">ifelse</span>(u<span class="sc">*</span>v <span class="sc">&lt;=</span> <span class="dv">0</span>, <span class="dv">0</span>, v))</span>
+<span id="cb11-12"><a href="id_03-MatrixModels.html#cb11-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">&quot;lambda&quot;</span><span class="ot">=</span><span class="fu">max</span>(<span class="fu">Re</span>(ev<span class="sc">$</span>values)),<span class="st">&quot;u&quot;</span><span class="ot">=</span>u,<span class="st">&quot;v&quot;</span><span class="ot">=</span>v))</span>
+<span id="cb11-13"><a href="id_03-MatrixModels.html#cb11-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-14"><a href="id_03-MatrixModels.html#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="id_03-MatrixModels.html#cb11-15" aria-hidden="true" tabindex="-1"></a>uvlambda.bird <span class="ot">&lt;-</span> <span class="fu">uvlambda</span>(leslie.bird.pre)</span>
+<span id="cb11-16"><a href="id_03-MatrixModels.html#cb11-16" aria-hidden="true" tabindex="-1"></a>lambda.bird2 <span class="ot">&lt;-</span> uvlambda.bird<span class="sc">$</span>lambda</span>
+<span id="cb11-17"><a href="id_03-MatrixModels.html#cb11-17" aria-hidden="true" tabindex="-1"></a>stable.structure.bird2 <span class="ot">&lt;-</span> uvlambda.bird<span class="sc">$</span>u</span>
+<span id="cb11-18"><a href="id_03-MatrixModels.html#cb11-18" aria-hidden="true" tabindex="-1"></a>repvalues.bird2 <span class="ot">&lt;-</span> uvlambda.bird<span class="sc">$</span>v</span></code></pre></div>
+<p>The calculated long-term growth rate is <span class="math inline">\(\lambda=\)</span> [1.07] , the stable age structure is <span class="math inline">\(\mathbf{u}=\)</span> [0.432, 0.364, 0.204], and the reproductive values are <span class="math inline">\(\mathbf{v}=\)</span> [0.914, 1.087, 1.025]. These are the same results as from the projected growth.</p>
+<p><br></p>
+</div>
+<div id="netrate" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Net reproductive rate and generation time<a href="id_03-MatrixModels.html#netrate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the submatrices <span class="math inline">\(\mathbf{U}\)</span> (survival matrix) and <span class="math inline">\(\mathbf{F}\)</span> (fertility matrix), we can calculate the net reproductive rate <span class="math inline">\(R_0\)</span> and another measure of generation time.</p>
+<p>To find <span class="math inline">\(R_0\)</span> we first calculate the ‘generation to generation projection matrix’</p>
+<p><span class="math display" id="eq:Fundamental">\[\begin{align}
+\mathbf{R}=\mathbf{F}(\mathbf{I}-\mathbf{U})^{-1},
+\tag{3.8}
+\end{align}\]</span>
+where <span class="math inline">\(\mathbf{I}\)</span> is an identity matrix (a matrix with 1’s on the main diagonal and 0’s everywhere else) of the same dimension as <span class="math inline">\(\mathbf{F}\)</span> and <span class="math inline">\(\mathbf{U}\)</span>. The matrix <span class="math inline">\(\mathbf{R}\)</span> describes the generation to generation growth of each age class. The column sums of <span class="math inline">\(\mathbf{R}\)</span> represent the expected remaining lifetime reproduction of the age class (with age structure, only the first row elements will be non-zero - but in cases with more than one kind of offspring the matrix becomes more complex). <span class="math inline">\(R_0\)</span> is the dominant eigenvalue of the matrix <span class="math inline">\(\mathbf{R}\)</span>, just like <span class="math inline">\(\lambda\)</span> is the dominant eigenvalue of <span class="math inline">\(\mathbf{A}\)</span> (remember that <span class="math inline">\(R_0\)</span> is the population growth rate per generation).</p>
+<p>In R, we can use the following function to calculate <span class="math inline">\(R_0\)</span> and the column sums of the fundamental matrix, given the survival and fertility matrix. This code uses the bird example, with a pre-reproductive census:</p>
+<p><br></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="id_03-MatrixModels.html#cb12-1" aria-hidden="true" tabindex="-1"></a>R0function  <span class="ot">&lt;-</span>  <span class="cf">function</span>(MatU, MatF){</span>
+<span id="cb12-2"><a href="id_03-MatrixModels.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">dim</span>(MatU)[[<span class="dv">1</span>]]</span>
+<span id="cb12-3"><a href="id_03-MatrixModels.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  Rmat <span class="ot">&lt;-</span> MatF<span class="sc">%*%</span><span class="fu">solve</span>(<span class="fu">diag</span>(<span class="dv">1</span>,n,n)<span class="sc">-</span>MatU)    </span>
+<span id="cb12-4"><a href="id_03-MatrixModels.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  Rvec <span class="ot">&lt;-</span> <span class="fu">apply</span>(Rmat,<span class="dv">2</span>,sum)</span>
+<span id="cb12-5"><a href="id_03-MatrixModels.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  R0 <span class="ot">&lt;-</span> <span class="fu">uvlambda</span>(<span class="at">MatA=</span>Rmat)<span class="sc">$</span>lam</span>
+<span id="cb12-6"><a href="id_03-MatrixModels.html#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="st">&quot;R0&quot;</span><span class="ot">=</span> R0,<span class="st">&quot;Rvec&quot;</span><span class="ot">=</span> Rvec))</span>
+<span id="cb12-7"><a href="id_03-MatrixModels.html#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-8"><a href="id_03-MatrixModels.html#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="id_03-MatrixModels.html#cb12-9" aria-hidden="true" tabindex="-1"></a>Ubird <span class="ot">&lt;-</span> Fbird <span class="ot">&lt;-</span> leslie.bird.pre</span>
+<span id="cb12-10"><a href="id_03-MatrixModels.html#cb12-10" aria-hidden="true" tabindex="-1"></a>Ubird[<span class="dv">1</span>,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-11"><a href="id_03-MatrixModels.html#cb12-11" aria-hidden="true" tabindex="-1"></a>Fbird[<span class="dv">2</span>,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-12"><a href="id_03-MatrixModels.html#cb12-12" aria-hidden="true" tabindex="-1"></a>Fbird[<span class="dv">3</span>,] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb12-13"><a href="id_03-MatrixModels.html#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="id_03-MatrixModels.html#cb12-14" aria-hidden="true" tabindex="-1"></a>R0.Bird <span class="ot">&lt;-</span> <span class="fu">R0function</span>(<span class="at">MatU=</span>Ubird, <span class="at">MatF=</span>Fbird)</span></code></pre></div>
+<p><br></p>
+<p>For the bird example, <span class="math inline">\(R_0\)</span> is 1.19 and the column sums (remaining lifetime reproduction of each class) are 1.19, 1.32, 1.2.</p>
+<p><br></p>
+<p>We can also calculate a measure of generation time from the Leslie matrix and the fertility matrix, using the formula</p>
+<p><span class="math display" id="eq:GTime">\[\begin{align}
+G=\frac{\lambda}{\mathbf{v}\mathbf{F}\mathbf{u}}.
+\tag{3.9}
+\end{align}\]</span>
+This measure assumes stable population growth, and is the expected age of mothers under this assumption. In R, we can use the following function:</p>
+<p><br></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="id_03-MatrixModels.html#cb13-1" aria-hidden="true" tabindex="-1"></a>GenTime  <span class="ot">&lt;-</span>  <span class="cf">function</span>(MatA, MatF){</span>
+<span id="cb13-2"><a href="id_03-MatrixModels.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">uvlambda</span>(<span class="at">MatA=</span>MatA)</span>
+<span id="cb13-3"><a href="id_03-MatrixModels.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  lam <span class="ot">&lt;-</span> res<span class="sc">$</span>lam</span>
+<span id="cb13-4"><a href="id_03-MatrixModels.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">&lt;-</span> res<span class="sc">$</span>u</span>
+<span id="cb13-5"><a href="id_03-MatrixModels.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  v <span class="ot">&lt;-</span> res<span class="sc">$</span>v</span>
+<span id="cb13-6"><a href="id_03-MatrixModels.html#cb13-6" aria-hidden="true" tabindex="-1"></a>  lam<span class="sc">/</span>(v<span class="sc">%*%</span>MatF<span class="sc">%*%</span>u)    </span>
+<span id="cb13-7"><a href="id_03-MatrixModels.html#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb13-8"><a href="id_03-MatrixModels.html#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="id_03-MatrixModels.html#cb13-9" aria-hidden="true" tabindex="-1"></a>GenTimeBird <span class="ot">&lt;-</span> <span class="fu">GenTime</span>(<span class="at">MatA=</span>leslie.bird.pre, <span class="at">MatF=</span>Fbird)</span></code></pre></div>
+<p><br></p>
+<p>For the bird example (pre-reproductive census), the generation time is 2.53 years.</p>
+<p><br></p>
+</div>
+</div>
+<div id="sensitivity-analysis-of-lambda" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Sensitivity analysis of <span class="math inline">\(\lambda\)</span><a href="id_03-MatrixModels.html#sensitivity-analysis-of-lambda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will now turn to another important concept, namely the sensitivities of <span class="math inline">\(\lambda\)</span> with respect to elements of the Leslie matrix. These sensitivities define the <strong>selection gradients</strong> on age-specific survival and fertility, reflecting the strength of selection on different parts of the life cycle.</p>
+<p>The sensitivity of <span class="math inline">\(\lambda\)</span> to a projection matrix element <span class="math inline">\(a_{ij}\)</span> (here <span class="math inline">\(i\)</span> refers to row and <span class="math inline">\(j\)</span> refers to column of <span class="math inline">\(\mathbf{A}\)</span>) is given by the partial derivative</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial  \lambda}{\partial a_{ij}}=v_{i}u_{j}.
+\end{align*}\]</span></p>
+<p><br></p>
+<p>The matrix multiplication <span class="math inline">\(\mathbf{(uv)^T}\)</span> (where <span class="math inline">\(\mathbf{u}\)</span> is a column vector and <span class="math inline">\(\mathbf{v}\)</span> is a row vector, and “T” denotes the transpose) returns the <strong>sensitivity matrix</strong>, i.e. a matrix where each element <span class="math inline">\(i,j\)</span> corresponds to the sensitivity <span class="math inline">\(v_{i}u_{j}\)</span>. The following R code does this calculation for a given Leslie matrix <span class="math inline">\(\mathbf{A}\)</span>, by first finding the stable age structure and reproductive values (using our previous code), and then calculating the sensitivities:</p>
+<p><br></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="id_03-MatrixModels.html#cb14-1" aria-hidden="true" tabindex="-1"></a>sensitivity.matrix <span class="ot">&lt;-</span> <span class="cf">function</span>(MatA, <span class="at">zeroes=</span>T){</span>
+<span id="cb14-2"><a href="id_03-MatrixModels.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">uvlambda</span>(<span class="at">MatA=</span>MatA)</span>
+<span id="cb14-3"><a href="id_03-MatrixModels.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  sensmat <span class="ot">&lt;-</span> <span class="fu">t</span>(res<span class="sc">$</span>u<span class="sc">%*%</span>res<span class="sc">$</span>v)</span>
+<span id="cb14-4"><a href="id_03-MatrixModels.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (zeroes<span class="sc">==</span>T){</span>
+<span id="cb14-5"><a href="id_03-MatrixModels.html#cb14-5" aria-hidden="true" tabindex="-1"></a>    sensmat <span class="ot">&lt;-</span> <span class="fu">ifelse</span> (MatA<span class="sc">==</span><span class="dv">0</span>, <span class="dv">0</span>, sensmat)</span>
+<span id="cb14-6"><a href="id_03-MatrixModels.html#cb14-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb14-7"><a href="id_03-MatrixModels.html#cb14-7" aria-hidden="true" tabindex="-1"></a> sensmat</span>
+<span id="cb14-8"><a href="id_03-MatrixModels.html#cb14-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-9"><a href="id_03-MatrixModels.html#cb14-9" aria-hidden="true" tabindex="-1"></a>sens.mat.bird <span class="ot">&lt;-</span> <span class="fu">sensitivity.matrix</span>(<span class="at">MatA=</span>leslie.bird.pre)</span>
+<span id="cb14-10"><a href="id_03-MatrixModels.html#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(sens.mat.bird,<span class="dv">3</span>)</span></code></pre></div>
+<pre><code>##      [,1]  [,2]  [,3]
+## [1,] 0.00 0.333 0.186
+## [2,] 0.47 0.000 0.000
+## [3,] 0.00 0.373 0.000</code></pre>
+<p><br></p>
+<p>With the default argument <code>zeroes=T</code>, all sensitivity elements corresponding to elements of <span class="math inline">\(\mathbf{A}\)</span> that are zero are also set to zero. If we instead set <code>zeroes=F</code>, the function would return a sensitivity value for each element of the Leslie matrix, including the zero elements representing for instance transitions from age 2 to age 5 which are clearly not realistic within one time step We are usually only interested in the biologically realistic transitions, therefore it is common to set other sensitivities to zero (but whether or not this is done, it has no effect on the calculated sensitivities for the realistic transitions).</p>
+<p>For the songbird example, we see that the highest sensitivities are found for the fertility coefficients (but: remember that this fertility parameter includes survival during the first year as well as fecundity). Overall, the sensitivities decline with age, suggesting that mutations that have an effect in early life are more likely to be favored by selection than those having an effect in late life, which is a well known result in the evolutionary theory of ageing <span class="citation">(<a href="#ref-Hamilton1" role="doc-biblioref">Hamilton 1966</a>)</span>.</p>
+<p><br></p>
+<div id="elasticities" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Elasticities<a href="id_03-MatrixModels.html#elasticities" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A closely related concept to sensitivity is the <strong>elasticity</strong>. The elasticity of <span class="math inline">\(\lambda\)</span> to a projection matrix element <span class="math inline">\(a_{ij}\)</span> is defined as the proportional change in <span class="math inline">\(\lambda\)</span> to a proportional change in the matrix element, and is given by</p>
+<p><span class="math display">\[\begin{align*}
+\frac{\partial  \ln \lambda}{\partial \ln a_{ij}} =\frac{a_{ij}}{\lambda}\frac{\partial  \lambda}{\partial a_{ij}}=\frac{a_{ij}}{\lambda} v_{i}u_{j}.
+\end{align*}\]</span></p>
+<p><br></p>
+</div>
+</div>
+<div id="life-table-response-experiments" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Life table response experiments<a href="id_03-MatrixModels.html#life-table-response-experiments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes we want to compare larger differences in <span class="math inline">\(\lambda\)</span> (or some other response) between two or more different conditions - for instance for populations living in different environments, or populations that have experienced different management treatments. The purpose of a life table response experiment (LTRE) is to understand how different vital rates have contributed to an observed change in fitness. <span class="citation">Caswell (<a href="#ref-Caswell1" role="doc-biblioref">2001</a>)</span>, who introduced this method, describes it in more detail. The LTRE analysis is inspired from experimental approaches and analysis of variance (ANOVA), but does not require any actual experiments to take place. The ‘experiment’ can also be for instance a change in the projection matrix after a sudden environmental change or a management decision.</p>
+<p>In an LTRE we first define a <strong>reference matrix</strong> <span class="math inline">\(\mathbf{A}^{(r)}\)</span>, defining the reference life history with growth rate <span class="math inline">\(\lambda^{(r)}\)</span>. Now assume that we want to compare this to another matrix <span class="math inline">\(\mathbf{A}^{(m)}\)</span> for the same species, where the vital rates are different e.g. because of some environmental impact. This matrix is called a <strong>treatment matrix</strong> and has a corresponding <span class="math inline">\(\lambda^{(m)}\)</span>. We want to understand how much of the difference between <span class="math inline">\(\lambda^{(m)}-\lambda^{(r)}\)</span> is coming from each vital rate. To do this, we first define two useful matrices <span class="citation">(<a href="#ref-Caswell1" role="doc-biblioref">Caswell 2001</a>)</span>:</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{A}^*=(\mathbf{A}^{(m)}+\mathbf{A}^{(r)})/2\)</span> describes the matrix with each element halfway between the treatment matrix and the reference matrix.</p></li>
+<li><p><span class="math inline">\(\mathbf{D}=\mathbf{A}^{(m)}-\mathbf{A}^{(r)}\)</span> is the matrix of differences in each element.</p></li>
+</ul>
+<p>Now we can write the new <span class="math inline">\(\lambda^{(m)}\)</span> as a function of <span class="math inline">\(\lambda^{(r)}\)</span> plus a sum of contributions from each vital rate <span class="citation">(<a href="#ref-Caswell1" role="doc-biblioref">Caswell 2001</a>)</span>:</p>
+<p><span class="math display">\[\lambda^{(m)}\approx \lambda^{(r)}+\sum_{i,j}d_{ij}\left.\frac{\partial\lambda}{\partial a_{ij}}\right|_{\mathbf{A}^*},\]</span></p>
+<p>where the sensitivities are calculated for the matrix <span class="math inline">\(\mathbf{A}^*\)</span>. A common output of such an analysis is to plot these contributions side by side. Doing a life table response analysis for <span class="math inline">\(\lambda\)</span> involves the following steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Define all the relevant projection matrices for each treatment / environment and define a reference matrix, and calculate <span class="math inline">\(\lambda\)</span> for each.</p></li>
+<li><p>Calculate <span class="math inline">\(\mathbf{A}^*\)</span> and <span class="math inline">\(\mathbf{D}\)</span>,</p></li>
+<li><p>Calculate the sensitivity matrix corresponding to the matrix <span class="math inline">\(\mathbf{A}^*\)</span>,</p></li>
+<li><p>Calculate the contributions from each vital rate to the difference in <span class="math inline">\(\lambda\)</span> according to the sum defined above.</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="senescence" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Senescence<a href="id_03-MatrixModels.html#senescence" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The sensitivities of <span class="math inline">\(\lambda\)</span> with respect to age-specific survival and fertilities are important because (among other things) they measure selection pressures. More generally, a <strong>selection gradient</strong> of a trait (survival probability and fertility are also traits) is defined as the slope of fitness as a function of the trait. For a trait with value <span class="math inline">\(\theta\)</span>, the selection gradient is the partial derivative:</p>
+<p><span class="math display">\[\begin{align}
+\text{Gradient}=\frac{\partial \text{Fitness}}{\partial \theta}.
+\end{align}\]</span>
+If the trait is a vector, such as the vector of age-specific survival probability <span class="math inline">\(s_j\)</span>, the gradient is also a vector.</p>
+<p>Based on the Euler-Lotka equation, <span class="citation">Hamilton (<a href="#ref-Hamilton1" role="doc-biblioref">1966</a>)</span> derived the selection gradient of <span class="math inline">\(r\)</span> on (log) age-specific survival probability <span class="math inline">\(p_j\)</span>:</p>
+<p><span class="math display">\[\begin{align}
+\frac{\partial r}{\partial \ln p_i}&amp;=\frac{\sum_{j=i}^ke^{-rj}l_jm_j}{T_C},
+\end{align}\]</span>
+where <span class="math inline">\(T_C\)</span> is the cohort generation time as defined above. The selection gradient on age-specific fecundity <span class="math inline">\(m_j\)</span> is given by</p>
+<p><span class="math display">\[\begin{align}
+\frac{\partial r}{\partial m_j}&amp;=\frac{e^{-rj}l_j}{T_C}.
+\end{align}\]</span>
+The selection gradient on survival will always decrease with age <span class="math inline">\(j\)</span> (after age at first reproduction). For fecundity the selection gradient will usually decrease with age, but there is an exception for declining populations, if <span class="math inline">\(r\)</span> is sufficiently negative relative to survival probability so that the stable age distribution increases with age. This situation (strongly declining populations) is unlikely to be persist for time periods long enough to affect evolution of life history traits.</p>
+<p>Because the selection gradients (nearly) always decline with age, <span class="citation">Hamilton (<a href="#ref-Hamilton1" role="doc-biblioref">1966</a>)</span> concluded that senescence is inevitable for any conceivable organism. With his selection gradients, Hamilton formalized the arguments previously given regarding mutation accumulation hypothesis <span class="citation">Medawar (<a href="#ref-Medawar1" role="doc-biblioref">1952</a>)</span>, and the antagonistic pleiotropy hypothesis <span class="citation">Williams (<a href="#ref-Williams1" role="doc-biblioref">1957</a>)</span>. Any change in the environment that causes the selection gradients to fall off more rapidly with age should select for increased senescence, while changes that make the slope less steep should select for reduced senescence.</p>
+<p><br></p>
+<div id="the-effect-of-extrinsic-mortality-on-senescence" class="section level3 unnumbered hasAnchor">
+<h3>The effect of extrinsic mortality on senescence<a href="id_03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Williams (<a href="#ref-Williams1" role="doc-biblioref">1957</a>)</span> suggested that increased extrinsic mortality could be such a factor leading to steeper gradients, and that simply living in a more risky environment (e.g. with many predators) should select for more rapid senescence. This may seem intuitive, however other researchers have shown that if the extrinsic mortality is age-independent, it has no effect on the slope of the selection gradient and thus no effect on senescence <span class="citation">(<a href="#ref-Hamilton1" role="doc-biblioref">Hamilton 1966</a>; <a href="#ref-Caswell7" role="doc-biblioref">Caswell 2007</a>; <a href="#ref-Wensink1" role="doc-biblioref">Wensink, Caswell, and Baudisch 2017</a>)</span>. The reason is that extra mortality will affect not only the the survivorship <span class="math inline">\(l_x\)</span>, but also parameters that depend on it such as <span class="math inline">\(r\)</span> and the stable age structure. It turns out that when the added mortality is age-independent, effects cancel each other out in the numerator and denominator of Hamilton’s selection gradient, so that there is no effect on senescence. If the extrinsic mortality is age-dependent, however (for instance if only younger individuals are exposed to increased predation), the selection gradients and senescence will also be affected. In general (and all else being equal), increased mortality in early life will then select for reduced senescence, while increased mortality in late life selects for increased senescence.</p>
+<p>An associated common misconception is that senescence occurs ‘because few individuals survive to old age’, and that old-age individuals are therefore evolutionarily unimportant. This argument ignores the role of reproduction: Patterns of senescence cannot be described by declines in survivorship with age alone (the <span class="math inline">\(l_x\)</span> curve; see section <a href="#section2"><strong>??</strong></a>), because life histories are shaped by both survival and reproduction. Think of the life history of a large tree species: Only few individuals survive from seedling to old age, yet senescence is hardly present in many of these species. Even in the hypothetical situation of a species with no mortality at all (a flat <span class="math inline">\(l_x\)</span>-curve), the selection gradients would still decline with age, because of reproduction leading to ever-increasing numbers of newborn individuals compared to older ages.</p>
+<p><br></p>
+</div>
+<div id="exercises-2" class="section level3 hasAnchor" number="3.8.1">
+<h3><span class="header-section-number">3.8.1</span> Exercises<a href="id_03-MatrixModels.html#exercises-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exercise-4.1" class="section level4 unnumbered hasAnchor">
+<h4>Exercise 4.1<a href="id_03-MatrixModels.html#exercise-4.1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Start with the complete life table you calculated in Problem 3.2.</p>
+<ul>
+<li><p>What is the difference between a pre-and post-reproductive census? Draw a life cycle graph for this population (on paper or using a drawing program), assuming a <strong>pre-reproductive census</strong>.</p></li>
+<li><p>Calculate the vector of age-specific fertilities <span class="math inline">\(f_x\)</span> for a pre-reproductive census.</p></li>
+<li><p>Write down the Leslie matrix for this model, using the code from section <a href="id_03-MatrixModels.html#LeslieR">3.2.1</a>.</p></li>
+<li><p>Use the Leslie matrix to project the growth in each age class over 30 time steps, with the R function <code>leslie.projection</code> defined above.</p></li>
+<li><p>Estimate <span class="math inline">\(\lambda\)</span>, the stable age structure <span class="math inline">\(\mathbf{u}\)</span> and the reproductive values <span class="math inline">\(\mathbf{v}\)</span> using 1) the projected population growth as described in section <a href="id_03-MatrixModels.html#projected">3.5.1</a>, and 2) from eigen analysis as described in section <a href="id_03-MatrixModels.html#eigen">3.5.2</a>. Do you get the same values?</p></li>
+<li><p>Estimate the stable age structure <span class="math inline">\(\mathbf{u}\)</span> using 1) the projected population growth as described in section <a href="id_03-MatrixModels.html#projected">3.5.1</a>, and 2) from eigen analysis as described in section <a href="id_03-MatrixModels.html#eigen">3.5.2</a>. Is the stable structure monotonically declining with age for all age classes? If not, can you explain why not?</p></li>
+<li><p>Estimate the reproductive value vector <span class="math inline">\(\mathbf{v}\)</span> using 1) the method from section <a href="id_03-MatrixModels.html#projected">3.5.1</a>, and 2) from eigen analysis as described in section <a href="id_03-MatrixModels.html#eigen">3.5.2</a>. Which age class has the highest value? What does this mean?</p></li>
+<li><p>Calculate the sensitivity matrix for the population, and plot the sensitivity of <span class="math inline">\(\lambda\)</span> with respect to the fertilities and survival coefficients of the Leslie matrix. What do they mean biologically?</p></li>
+<li><p>Assume that you could increase reproduction by multiplying the entire vector of annual fecundities <span class="math inline">\(m_x\)</span> by some constant factor <span class="math inline">\(c_m\)</span>. How large should <span class="math inline">\(c_m\)</span> be to achieve a long-term growth rate <span class="math inline">\(\lambda\)</span> above 1? Plot the resulting stable structure and reproductive values for the model with these updated fertilities values - how have they changed compared to the baseline population?</p></li>
+<li><p>Do the same exercise as the previous point, but increasing the annual survival <span class="math inline">\(p_x\)</span> instead of <span class="math inline">\(m_x\)</span>. Is the resulting survival probability vector biologically realistic? Why/why not?</p></li>
+<li><p>Assume you could multiply the <span class="math inline">\(p_x\)</span> vector with some factor <span class="math inline">\(c_p\)</span>, but keep the maximum value of each survival probability to 1. How large would the value of <span class="math inline">\(c_p\)</span> have to be to get a value of <span class="math inline">\(\lambda&gt;1\)</span>? (hint: use the <code>ifelse()</code> function in R).</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Caswell1" class="csl-entry">
+Caswell, Hal. 2001. <em>Matrix Population Models</em>. 2nd ed. Sunderland, Massachusetts: Sinauer Associates.
+</div>
+<div id="ref-Caswell7" class="csl-entry">
+———. 2007. <span>“Extrinsic Mortality and the Evolution of Senescence.”</span> <em>Trends Ecol. Evol.</em> 22: 173–74.
+</div>
+<div id="ref-Fisher1" class="csl-entry">
+Fisher, Ronald Aylmer. 1930. <em>The Genetical Theory of Natural Selection</em>. Oxford: Clarendon Press.
+</div>
+<div id="ref-Hamilton1" class="csl-entry">
+Hamilton, W. D. 1966. <span>“The Moulding of Senescence by Natural Selection.”</span> <em>J. Theor. Biol.</em> 12: 12–45.
+</div>
+<div id="ref-Kendall8" class="csl-entry">
+Kendall, Bruce E., M. Fujiwara, J. Diaz-Lopez, S. Schneider, J. Voigt, and S. Wiesner. 2019. <span>“Persistent Problems in the Construction of Matrix Population Models.”</span> <em>Ecol. Model.</em> 406: 33–43.
+</div>
+<div id="ref-Leslie1" class="csl-entry">
+Leslie, P. H. 1945. <span>“On the Use of Matrices in Certain Population Mathematics.”</span> <em>Biometrika</em> 33: 183–212.
+</div>
+<div id="ref-Leslie2" class="csl-entry">
+———. 1948. <span>“Some Further Notes on the Use of Matrices in Population Mathematics.”</span> <em>Biometrika</em> 35: 213–45.
+</div>
+<div id="ref-Medawar1" class="csl-entry">
+Medawar, Peter Brian. 1952. <em>An Unsolved Problem of Biology</em>. London: M. K. Lewis.
+</div>
+<div id="ref-Wensink1" class="csl-entry">
+Wensink, Maarten J., H. Caswell, and Annette Baudisch. 2017. <span>“The Rarity of Survival to Old Age Does Not Drive the Evolution of Senescence.”</span> <em>J. Evol. Biol.</em> 44: 5–10.
+</div>
+<div id="ref-Williams1" class="csl-entry">
+Williams, George C. 1957. <span>“Pleiotropy, Natural Selection, and the Evolution of Senescence.”</span> <em>Evolution</em> 11: 398–411.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_02-life-tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="id_04-Stage.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

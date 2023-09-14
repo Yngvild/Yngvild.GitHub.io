@@ -1,0 +1,95 @@
+# Exponential growth  {#s01-Exponential}
+
+Many of the classical population models in ecology (e.g. logistic growth, Lotka-Volterra models for predation and competition) build on the implicit assumption that all individuals are equal: At any given time they all have the same chances of survival and reproduction. Such models are a good starting point for understanding population dynamics, and provide a useful baseline for coparison to more complex models. The simplest model for population growth  is the **exponential growth model** (also known as the geometric growth model), applying to a population in a constant environment, with no density dependence. 
+
+This chapter will cover some basic properties of the exponential growth model. This is a baseline model in much of ecological and evolutionary theory, and provides an important starting point for understanding growth and fitness in structured populations as well.  
+
+<be>
+
+## Learning goals  
+
+* Describe the exponential model for population growth.
+
+* Discuss the importance of this model in ecology and evolutionary biology.
+
+* Do simple calculations and projections in R.
+
+<br>
+
+## The exponential growth model
+
+If $N_t$ is the population size at time $t$, then the next year's population size is given by
+
+\begin{align}
+N_{t+1}=\lambda N_t.
+(\#eq:exp1)
+\end{align}
+
+This model assumes that the population grows with a *constant rate* $\lambda$ each year.  If $\lambda>1$, the population will increase over time, if $\lambda=1$ it remains constant (static), and if  $\lambda<1$ the population will decline over time. After $t$ years, a population starting at size $N_0$ is given by
+
+\begin{align}
+N_t&=\lambda^tN_0=e^{rt}N_0.
+(\#eq:exp2)
+\end{align}
+The parameter $r=\ln \lambda$ is the instantaneous growth rate, sometimes called the *Malthusian growth rate* after the early work of Thomas Malthus [-@Malthus] on human population growth. 
+
+On the logarithmic scale (log scale), we get
+
+\begin{align}
+\ln N_t&=t \ln \lambda +\ln N_0=rt+\ln N_0.
+(\#eq:exp3)
+\end{align}
+Since the exponential growth model is linear on log scale, log scale is often used to study population growth and how the growth rate $r$ depends on environmental  variables. 
+
+ 
+<br>
+
+ 
+
+## Exponential growth in structured populations
+
+The exponential growth model presented above implies that all individuals have the same survival and reproductive output each time step. However, individuals typically differ in a range of properties, such as age, size, and sex, potentially affecting their survival probability and reproductive success.  Demography provides the link between  individual  variation in survival and reproduction arising from such differences, and population level processes like population growth. The matrix population model for a constant environment (covered in chapters \@ref(s03-MatrixModels) and \@ref(s04-Stage)) extends the exponential growth model to structured populations. As long as the parameters governing survival and reproduction in the different stages (i.e. population groups representing differences due to e.g. age) are constant over time, it turns out that structured populations do, after some initial fluctuations, grow exponentially at a constant growth rate $\lambda$ (see chapter \@ref(s03-MatrixModels)). 
+
+ 
+ <br>
+ 
+## The role of  exponential growth in ecology and evolution 
+
+The exponential growth model is simple, yet plays an important role in ecological and evolutionary theory.  It assumes no density regulation, which cannot be true for any population over longer time intervals.  However, the purpose of the exponential growth model is generally *not* to describe exact population growth over time, but rather to describe  the *growth potential* of a given population, or a subpopulation with a given phenotype, genotype or allele. In that case, the growth rate $\lambda$ is a measure of the fitness of the subpopulation. For small populations, like the initial population of an invasive species, exponential growth often provides a good description of population growth during the critical initial phase when the success of the invasion is usually determined. Similarly, the exponential growth model is useful to predict the ultimate fate of a new mutation (the chances that it becomes fixed).  Mutations tend to arise in one individual at a time, and the subpopulation of mutants will therefore be small at first.  Due to chance events even beneficial mutations are often lost in this critical initial phase.  If the growth rate of this mutant population is positive and higher than that of the wild-type sub-population, the allele has a chance to spread and become fixed in the population. To describe the exact dynamics of allele frequencies in a population over time requires more complex models that account for density and frequency dependence.
+
+<br>
+
+
+## Exercises 
+
+For suggested solutions, see appendix \@ref(s09-Solutions).
+
+ 
+<br>
+
+
+### Exercise 1.1 {-}
+
+1. Write an R function that takes $\lambda$, $N_0$ (initial population size) and number of time steps $T$ as inputs, and returns a vector of population sizes $[N_0, N_1, ..., N_T]$ based on exponential growth.
+
+2. Use the function to make some plots showing population growth for different values of $\lambda<0$, $\lambda=1$, and $\lambda>1$, for the same initial population size. 
+ 
+<br>
+
+
+ 
+### Exercise 1.2 {-}
+
+<center>
+
+![Long-tailed silverfish (*Ctenolepisma longicaudata*). Photo: Johan Mattson. ](skjeggkre.jpg){width=400px}
+
+</center>
+
+To your dismay, you discover that a population of long-tailed silverfish ("Skjeggkre", *Ctenolepisma longicaudata*) has moved into your apartment. After some initial investigations, you find out that the population grows by approximately $1\%$ each day.
+
+1. What is the value of $\lambda$ for this population? What is the time unit?
+ 
+2. How long will it take for the population to double in size?  
+  
+3. If the current population size is 100 individuals, how large will it be after one year - assuming nothing is stopping its growth? Make a plot of the population growth over this period. 

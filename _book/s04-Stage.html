@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Stage structured models | Demographic methods in life history theory</title>
+  <meta name="description" content="4 Stage structured models | Demographic methods in life history theory" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Stage structured models | Demographic methods in life history theory" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Stage structured models | Demographic methods in life history theory" />
+  
+  
+  
+
+<meta name="author" content="Yngvild Vindenes (yngvild.vindenes@ibv.uio.no)" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="s03-MatrixModels.html"/>
+<link rel="next" href="Stochasticity.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="s01-Exponential.html"><a href="s01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="s01-Exponential.html"><a href="s01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="s01-Exponential.html"><a href="s01-Exponential.html#the-exponential-growth-model"><i class="fa fa-check"></i><b>1.2</b> The exponential growth model</a></li>
+<li class="chapter" data-level="1.3" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="s01-Exponential.html"><a href="s01-Exponential.html#the-role-of-exponential-growth-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> The role of exponential growth in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s01-Exponential.html"><a href="s01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="s02-life-tables.html"><a href="s02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i><b>2.1</b> Learning goals</a></li>
+<li class="chapter" data-level="2.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#age-specific-survival-and-fecundity"><i class="fa fa-check"></i><b>2.2</b> Age-specific survival and fecundity</a></li>
+<li class="chapter" data-level="2.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-history-strategies-and-trade-offs"><i class="fa fa-check"></i><b>2.3</b> Life history strategies and trade-offs</a></li>
+<li class="chapter" data-level="2.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.4</b> A basic life table</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#bird"><i class="fa fa-check"></i><b>2.4.1</b> Songbird example</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="s02-life-tables.html"><a href="s02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.5</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.6" data-path="s02-life-tables.html"><a href="s02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.6</b> Life table calculations</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="s02-life-tables.html"><a href="s02-life-tables.html#net-reproductive-rate"><i class="fa fa-check"></i><b>2.6.1</b> Net reproductive rate</a></li>
+<li class="chapter" data-level="2.6.2" data-path="s02-life-tables.html"><a href="s02-life-tables.html#cohort-generation-time"><i class="fa fa-check"></i><b>2.6.2</b> Cohort generation time</a></li>
+<li class="chapter" data-level="2.6.3" data-path="s02-life-tables.html"><a href="s02-life-tables.html#approximation-of-long-term-growth-rate"><i class="fa fa-check"></i><b>2.6.3</b> Approximation of long-term growth rate</a></li>
+<li class="chapter" data-level="2.6.4" data-path="s02-life-tables.html"><a href="s02-life-tables.html#Euler"><i class="fa fa-check"></i><b>2.6.4</b> Euler-lotka equation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="s02-life-tables.html"><a href="s02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.7</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.8" data-path="s02-life-tables.html"><a href="s02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="s02-life-tables.html"><a href="s02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a></li>
+<li class="chapter" data-level="2.10" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.2"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s02-life-tables.html"><a href="s02-life-tables.html#exercise-2.3"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i><b>3.1</b> Learning goals</a></li>
+<li class="chapter" data-level="3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#age-structured-growth"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#avoiding-mistakes"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected-growth"><i class="fa fa-check"></i><b>3.5</b> Projected growth</a></li>
+<li class="chapter" data-level="3.6" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#asymptotic"><i class="fa fa-check"></i><b>3.6</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.6.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.6.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.6.2</b> Calculations based on projection matrix</a></li>
+<li class="chapter" data-level="3.6.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#lifetime"><i class="fa fa-check"></i><b>3.6.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="3.6.4" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.6.4</b> Lifetime reproduction</a></li>
+<li class="chapter" data-level="3.6.5" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#gentime"><i class="fa fa-check"></i><b>3.6.5</b> Generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-and-elasticity-of-lambda"><i class="fa fa-check"></i><b>3.7</b> Sensitivity and elasticity of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-matrix-elements"><i class="fa fa-check"></i><b>3.7.1</b> Sensitivity to matrix elements</a></li>
+<li class="chapter" data-level="3.7.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#sensitivity-to-underlying-parameters"><i class="fa fa-check"></i><b>3.7.2</b> Sensitivity to underlying parameters</a></li>
+<li class="chapter" data-level="3.7.3" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.7.3</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#LTRE"><i class="fa fa-check"></i><b>3.9</b> Life table response experiments (LTRE)</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#general-description-of-ltre-approach"><i class="fa fa-check"></i><b>3.9.1</b> General description of LTRE approach</a></li>
+<li class="chapter" data-level="3.9.2" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#ltre-and-sensitivity-analyses"><i class="fa fa-check"></i><b>3.9.2</b> LTRE and sensitivity analyses</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.10</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="s03-MatrixModels.html"><a href="s03-MatrixModels.html#exercise-3.2"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="s04-Stage.html"><a href="s04-Stage.html"><i class="fa fa-check"></i><b>4</b> Stage structured models</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#learning-goals-3"><i class="fa fa-check"></i><b>4.1</b> Learning goals</a></li>
+<li class="chapter" data-level="4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#general-stage-structured-matrix-model"><i class="fa fa-check"></i><b>4.2</b> General stage structured matrix model</a></li>
+<li class="chapter" data-level="4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#decomposing-mathbfu-and-mathbff"><i class="fa fa-check"></i><b>4.3</b> Decomposing <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="s04-Stage.html"><a href="s04-Stage.html#examples-of-stage-structured-models"><i class="fa fa-check"></i><b>4.4</b> Examples of stage structured models</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="s04-Stage.html"><a href="s04-Stage.html#lefkovitch-models"><i class="fa fa-check"></i><b>4.4.1</b> Lefkovitch models</a></li>
+<li class="chapter" data-level="4.4.2" data-path="s04-Stage.html"><a href="s04-Stage.html#agestage"><i class="fa fa-check"></i><b>4.4.2</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4.3" data-path="s04-Stage.html"><a href="s04-Stage.html#disease-models"><i class="fa fa-check"></i><b>4.4.3</b> Disease models</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="s04-Stage.html"><a href="s04-Stage.html#integral-projection-models-ipms"><i class="fa fa-check"></i><b>4.5</b> Integral projection models (IPMs)</a></li>
+<li class="chapter" data-level="4.6" data-path="s04-Stage.html"><a href="s04-Stage.html#exercises-3"><i class="fa fa-check"></i><b>4.6</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.2"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+<li class="chapter" data-level="" data-path="s04-Stage.html"><a href="s04-Stage.html#exercise-4.3"><i class="fa fa-check"></i>Exercise 4.3</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="Stochasticity.html"><a href="Stochasticity.html"><i class="fa fa-check"></i><b>5</b> Stochasticity</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="Stochasticity.html"><a href="Stochasticity.html#learning-goals-4"><i class="fa fa-check"></i><b>5.1</b> Learning goals</a></li>
+<li class="chapter" data-level="5.2" data-path="Stochasticity.html"><a href="Stochasticity.html#variable-vs-unpredictable-environments"><i class="fa fa-check"></i><b>5.2</b> Variable vs unpredictable environments</a></li>
+<li class="chapter" data-level="5.3" data-path="Stochasticity.html"><a href="Stochasticity.html#the-lewontin-cohen-model"><i class="fa fa-check"></i><b>5.3</b> The Lewontin-Cohen model</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="Stochasticity.html"><a href="Stochasticity.html#defining-the-process"><i class="fa fa-check"></i><b>5.3.1</b> Defining the process</a></li>
+<li class="chapter" data-level="5.3.2" data-path="Stochasticity.html"><a href="Stochasticity.html#the-stochastic-growth-rate"><i class="fa fa-check"></i><b>5.3.2</b> The stochastic growth rate</a></li>
+<li class="chapter" data-level="5.3.3" data-path="Stochasticity.html"><a href="Stochasticity.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.3.3</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.3.4" data-path="Stochasticity.html"><a href="Stochasticity.html#bet-hedging"><i class="fa fa-check"></i><b>5.3.4</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="Stochasticity.html"><a href="Stochasticity.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.4</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="Stochasticity.html"><a href="Stochasticity.html#defining-the-process-1"><i class="fa fa-check"></i><b>5.4.1</b> Defining the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-one-realization-of-the-process-1"><i class="fa fa-check"></i>Plot one realization of the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-many-realizations-of-the-process-1"><i class="fa fa-check"></i>Plot many realizations of the process</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#plot-percentiles-from-many-realizations-1"><i class="fa fa-check"></i>Plot percentiles from many realizations</a></li>
+<li class="chapter" data-level="5.4.2" data-path="Stochasticity.html"><a href="Stochasticity.html#stochastic-growth-rate"><i class="fa fa-check"></i><b>5.4.2</b> Stochastic growth rate</a></li>
+<li class="chapter" data-level="5.4.3" data-path="Stochasticity.html"><a href="Stochasticity.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.4.3</b> Small noise approximation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="Stochasticity.html"><a href="Stochasticity.html#exercises-4"><i class="fa fa-check"></i><b>5.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#exercise-5.1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="Stochasticity.html"><a href="Stochasticity.html#exercise-5.2"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>Bibliography</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="s09-Solutions.html"><a href="s09-Solutions.html"><i class="fa fa-check"></i><b>A</b> Suggested solutions to exercises</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-1-exercises"><i class="fa fa-check"></i><b>A.1</b> Chapter 1 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.1-1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-1.2-1"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+<li class="chapter" data-level="A.2" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-2-exercises"><i class="fa fa-check"></i><b>A.2</b> Chapter 2 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.1-1"><i class="fa fa-check"></i>Exercise 2.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.2-1"><i class="fa fa-check"></i>Exercise 2.2</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-2.3-1"><i class="fa fa-check"></i>Exercise 2.3</a></li>
+</ul></li>
+<li class="chapter" data-level="A.3" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-3-exercises"><i class="fa fa-check"></i><b>A.3</b> Chapter 3 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-3.1-1"><i class="fa fa-check"></i>Exercise 3.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-3.2-1"><i class="fa fa-check"></i>Exercise 3.2</a></li>
+</ul></li>
+<li class="chapter" data-level="A.4" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-4-exercises"><i class="fa fa-check"></i><b>A.4</b> Chapter 4 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.1-1"><i class="fa fa-check"></i>Exercise 4.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.2-1"><i class="fa fa-check"></i>Exercise 4.2</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-4.3-1"><i class="fa fa-check"></i>Exercise 4.3</a></li>
+</ul></li>
+<li class="chapter" data-level="A.5" data-path="s09-Solutions.html"><a href="s09-Solutions.html#chapter-5-exercises"><i class="fa fa-check"></i><b>A.5</b> Chapter 5 exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-5.1-1"><i class="fa fa-check"></i>Exercise 5.1</a></li>
+<li class="chapter" data-level="" data-path="s09-Solutions.html"><a href="s09-Solutions.html#exercise-5.2-1"><i class="fa fa-check"></i>Exercise 5.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html"><i class="fa fa-check"></i><b>B</b> R code collection</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>B.1</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="B.1.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>B.1.1</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="B.1.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#euler-lotka"><i class="fa fa-check"></i><b>B.1.2</b> Euler-Lotka</a></li>
+</ul></li>
+<li class="chapter" data-level="B.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>B.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#create-leslie-matrix"><i class="fa fa-check"></i><b>B.2.1</b> Create Leslie matrix</a></li>
+<li class="chapter" data-level="B.2.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#decompose-mathbfu-and-mathbff"><i class="fa fa-check"></i><b>B.2.2</b> Decompose <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span></a></li>
+<li class="chapter" data-level="B.2.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>B.2.3</b> Population projection</a></li>
+<li class="chapter" data-level="B.2.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#long-term-growth-rate-stable-structure-and-reproductive-value"><i class="fa fa-check"></i><b>B.2.4</b> Long-term growth rate, stable structure and reproductive value</a></li>
+<li class="chapter" data-level="B.2.5" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>B.2.5</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.2.6" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#lifetime-reproduction"><i class="fa fa-check"></i><b>B.2.6</b> Lifetime reproduction</a></li>
+<li class="chapter" data-level="B.2.7" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>B.2.7</b> Generation time</a></li>
+<li class="chapter" data-level="B.2.8" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>B.2.8</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="B.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#stochastic-models"><i class="fa fa-check"></i><b>B.3</b> Stochastic models</a>
+<ul>
+<li class="chapter" data-level="B.3.1" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#arithmetic-and-geometric-mean-1"><i class="fa fa-check"></i><b>B.3.1</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="B.3.2" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#simulations-in-lewontin-cohen-model"><i class="fa fa-check"></i><b>B.3.2</b> Simulations in Lewontin-Cohen model</a></li>
+<li class="chapter" data-level="B.3.3" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#simulations-of-stochastic-structured-model"><i class="fa fa-check"></i><b>B.3.3</b> Simulations of stochastic structured model</a></li>
+<li class="chapter" data-level="B.3.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#estimate-stochastic-growth-rate"><i class="fa fa-check"></i><b>B.3.4</b> Estimate stochastic growth rate</a></li>
+</ul></li>
+<li class="chapter" data-level="B.4" data-path="s07-Code-Collection.html"><a href="s07-Code-Collection.html#parameters-and-matrices-for-the-songbird-example"><i class="fa fa-check"></i><b>B.4</b> Parameters and matrices for the songbird example</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demographic methods in life history theory</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="s04-Stage" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Stage structured models<a href="s04-Stage.html#s04-Stage" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The life table and associated parameters defined in the previous chapters apply only to age structured populations. However, the methods you learned for matrix models can be used with any projection matrix <span class="math inline">\(\mathbf{A}\)</span> (provided it fulfills certain mathematical assumptions). The only difference is that the results refer to stages instead of age class. This chapter will present a general stage structured matrix model and show how to build the projection matrix from four main components describing transitions, survival probability and fertility. We will then go through some main sources of stage structure and consider examples.</p>
+<p><br></p>
+<div id="learning-goals-3" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Learning goals<a href="s04-Stage.html#learning-goals-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Understand the key components of a stage structured matrix model.</p></li>
+<li><p>Get the vectors of survival probability and fertility coefficients from the matrices <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span> .</p></li>
+<li><p>Discuss some main sources of stage structure.</p></li>
+<li><p>Draw a life cycle graph for any stage structured model.</p></li>
+<li><p>Apply methods from chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a> to stage structured matrix models</p></li>
+<li><p>Define a simple integral projection model for size structured populations.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="general-stage-structured-matrix-model" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> General stage structured matrix model<a href="s04-Stage.html#general-stage-structured-matrix-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will now extend the age structured model to the general case of stage structured models, which can be adapted to describe many different kinds of stage structure. As shown by <span class="citation">Vindenes, le Coeur, and Caswell (<a href="#ref-Vindenes2020" role="doc-biblioref">2020</a>)</span>, the general projection matrix <span class="math inline">\(\mathbf{A}\)</span> can be decomposed into four main components:</p>
+<p><span class="math display" id="eq:General">\[\begin{align}
+\mathbf{A}&amp;=\mathbf{U}+\mathbf{F}=\mathbf{G}\text{Diag}(\mathbf{s})+\mathbf{Q}\text{Diag}(\mathbf{f}),
+\tag{4.1}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\mathbf{G}\)</span> is a transition matrix containing the transition probabilities <span class="math inline">\(g_{ij}\)</span> from stage <span class="math inline">\(j\)</span> to stage <span class="math inline">\(i\)</span> per time step (column sums of this matrix should all be 1), <span class="math inline">\(\mathbf{s}\)</span> is the vector of survival probabilities (survival from current to next time step) in each stage, <span class="math inline">\(\mathbf{Q}\)</span> is a matrix containing the probabilities <span class="math inline">\(q_{ij}\)</span> that an offspring produced in stage <span class="math inline">\(j\)</span> is assigned to stage <span class="math inline">\(i\)</span> at birth (columns should sum to 1), and <span class="math inline">\(\mathbf{f}\)</span> is the vector of fertilities per stage, i.e. the mean number of offspring contributed by an individual to next time step’s population.</p>
+<p>For a population with 3 stages, the elements of each matrix in equation <a href="s04-Stage.html#eq:General">(4.1)</a> are given by</p>
+<p><span class="math display">\[\begin{align*}
+&amp;\left[\begin{matrix}
+g_{11}s_1+q_{11}f_1  &amp; g_{12}s_2+q_{12}f_2 &amp; g_{13}s_3+q_{13}f_3\\
+g_{21}s_1+q_{21}f_1  &amp; g_{22}s_2+q_{22}f_2 &amp; g_{23}s_3+q_{23}f_3\\
+g_{31}s_1+q_{31}f_1  &amp; g_{32}s_2+q_{32}f_2 &amp; g_{33}s_3+q_{33}f_3
+\end{matrix}\right]\\
+=
+&amp;\left[\begin{matrix}
+g_{11} &amp; g_{12}&amp; g_{13} \\
+g_{21} &amp; g_{22}&amp; g_{33} \\
+g_{31} &amp; g_{32}&amp; g_{33}  
+\end{matrix}\right]
+\left[\begin{matrix}
+s_1 &amp; 0&amp; 0 \\
+0 &amp; s_2&amp;0 \\
+0 &amp; 0&amp; s_3
+\end{matrix}\right]+
+\left[\begin{matrix}
+q_{11} &amp; q_{12}&amp; q_{13} \\
+q_{21} &amp; q_{22}&amp; q_{33} \\
+q_{31} &amp; q_{32}&amp; q_{33}  
+\end{matrix}\right]
+\left[\begin{matrix}
+f_1 &amp; 0&amp; 0 \\
+0 &amp; f_2&amp;0 \\
+0 &amp; 0&amp; f_3
+\end{matrix}\right].
+\end{align*}\]</span></p>
+<p><br></p>
+<p>The stage-specific survival and fertility coefficients are the same as before: The survival coefficient <span class="math inline">\(s_j\)</span> represent the probability that an individual in stage <span class="math inline">\(j\)</span> will survive until the next time step. The fertility coefficient <span class="math inline">\(f_j\)</span> represent the average number of offspring contributed by an individual in stage <span class="math inline">\(j\)</span> to the population in the next time step. Census time still plays a role in the definition of the fertility coefficient from underlying parameters.</p>
+<p>The main difference from age structured models is the explicit specification of the transition matrices <span class="math inline">\(\mathbf{G}\)</span> and <span class="math inline">\(\mathbf{Q}\)</span>. The matrix <span class="math inline">\(\mathbf{G}\)</span> specifies the transition probabilities between stages in the model, while <span class="math inline">\(\mathbf{Q}\)</span> specifies the probabilities for assigning offspring among the stages.</p>
+<p>Note that for the methods defined in chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a> to work, the transition matrices together need to be defined in such a way that all stages are ‘connected’. For any given stage, it must be possible for an individual or its descendents to reach any other stage in the model within some (non-infinite) number of time steps. Otherwise, the model could lead to disconnected sub-populations and the methods for calculating <span class="math inline">\(\lambda\)</span>, stable structure etc would no longer work. We will not define the mathematical criteria for these requirements here (see e.g. <span class="citation">Hal Caswell (<a href="#ref-Caswell1" role="doc-biblioref">2001</a>)</span> for details), but note that with stage-structured models we have to be more careful with specifying the stages and transition probabilities. For most biologically realistic and well defined models this is not a problem.</p>
+<p>With this general definition of the projection matrix we can obtain special cases by adjusting the transition matrices <span class="math inline">\(\mathbf{G}\)</span> and <span class="math inline">\(\mathbf{Q}\)</span>. For instance, for an age structured model with 3 stages these matrices are given by
+<span class="math display">\[\begin{align*}
+\mathbf{G}=
+\left[\begin{matrix}
+0 &amp; 0&amp; 0 \\
+1 &amp; 0&amp; 0 \\
+0&amp; 1&amp; 1
+\end{matrix}\right],
+\end{align*}\]</span>
+and</p>
+<p><span class="math display">\[\begin{align*}
+\mathbf{Q}=
+\left[\begin{matrix}
+1 &amp; 1&amp; 1 \\
+0 &amp; 0&amp; 0 \\
+0&amp; 0&amp; 0
+\end{matrix}\right].
+\end{align*}\]</span></p>
+<p>Note that the transition matrix <span class="math inline">\(\mathbf{G}\)</span> has the value 1 in the lower right corner, meaning that if the survival probability is not zero in the final age class individuals will be allowed to accumulate in this class. For a ‘true’ age-structured model the survival probability should be zero in the final class. Since all offspring are born into the first age class, the matrix <span class="math inline">\(\mathbf{Q}\)</span> contains 1’s on all elements of the first row (even if the fertility coefficient may be 0) and 0 elsewhere.</p>
+<p><br></p>
+</div>
+<div id="decomposing-mathbfu-and-mathbff" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Decomposing <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span><a href="s04-Stage.html#decomposing-mathbfu-and-mathbff" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It is often useful to decompose the matrices <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span> based on equation <a href="s04-Stage.html#eq:General">(4.1)</a> to obtain the transition matrices <span class="math inline">\(\mathbf{G}\)</span> and <span class="math inline">\(\mathbf{Q}\)</span> and the vectors of survival probability <span class="math inline">\(\mathbf{s}\)</span> and fertility <span class="math inline">\(\mathbf{f}\)</span>.</p>
+<p>Note that in general we need to do this decompososition from <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span>, as it is not possible to decompose elements of <span class="math inline">\(\mathbf{A}\)</span> directly (without being given more information on the life history).</p>
+<p>To decompose <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span> we take advantage of the fact that the column sums of the transition matrices have to sum up to one (individuals have to end up in one of the stages, if they survive). This means that the column sums of <span class="math inline">\(\mathbf{U}\)</span> are the stage-specific survival coefficients, while the column sums of <span class="math inline">\(\mathbf{F}\)</span> are the stage-specific fertilities.</p>
+<p>The following R function returns the survival vector <span class="math inline">\(\mathbf{s}\)</span> and the transition matrix <span class="math inline">\(\mathbf{Q}\)</span> based on the matrix <span class="math inline">\(\mathbf{U}\)</span>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="s04-Stage.html#cb44-1" aria-hidden="true" tabindex="-1"></a>DecomposeU <span class="ot">&lt;-</span> <span class="cf">function</span>(MatU){</span>
+<span id="cb44-2"><a href="s04-Stage.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  k<span class="ot">&lt;-</span><span class="fu">dim</span>(MatU)[<span class="dv">1</span>]</span>
+<span id="cb44-3"><a href="s04-Stage.html#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.na</span>(MatU[k,k])){</span>
+<span id="cb44-4"><a href="s04-Stage.html#cb44-4" aria-hidden="true" tabindex="-1"></a>    MatU[k,k]<span class="ot">&lt;-</span><span class="dv">0</span></span>
+<span id="cb44-5"><a href="s04-Stage.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-6"><a href="s04-Stage.html#cb44-6" aria-hidden="true" tabindex="-1"></a>  Svec <span class="ot">&lt;-</span> <span class="fu">apply</span>(MatU,<span class="dv">2</span>,sum)</span>
+<span id="cb44-7"><a href="s04-Stage.html#cb44-7" aria-hidden="true" tabindex="-1"></a>  MatG <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">t</span>(MatU)<span class="sc">/</span>Svec)</span>
+<span id="cb44-8"><a href="s04-Stage.html#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb44-9"><a href="s04-Stage.html#cb44-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(Svec[i]<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb44-10"><a href="s04-Stage.html#cb44-10" aria-hidden="true" tabindex="-1"></a>      MatG[,i] <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb44-11"><a href="s04-Stage.html#cb44-11" aria-hidden="true" tabindex="-1"></a>      MatG[i,i] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb44-12"><a href="s04-Stage.html#cb44-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb44-13"><a href="s04-Stage.html#cb44-13" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb44-14"><a href="s04-Stage.html#cb44-14" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(<span class="st">&quot;Gmat&quot;</span><span class="ot">=</span>MatG,<span class="st">&quot;Survival&quot;</span><span class="ot">=</span>Svec)</span>
+<span id="cb44-15"><a href="s04-Stage.html#cb44-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>Similarly, this following R function returns the survival vector <span class="math inline">\(\mathbf{s}\)</span> and the transition matrix <span class="math inline">\(\mathbf{Q}\)</span> based on the matrix <span class="math inline">\(\mathbf{U}\)</span></p>
+<p><br></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="s04-Stage.html#cb45-1" aria-hidden="true" tabindex="-1"></a>DecomposeF <span class="ot">&lt;-</span> <span class="cf">function</span>(MatF){</span>
+<span id="cb45-2"><a href="s04-Stage.html#cb45-2" aria-hidden="true" tabindex="-1"></a>    k <span class="ot">&lt;-</span> <span class="fu">dim</span>(MatF)[<span class="dv">1</span>]</span>
+<span id="cb45-3"><a href="s04-Stage.html#cb45-3" aria-hidden="true" tabindex="-1"></a>    Fvec <span class="ot">&lt;-</span> <span class="fu">apply</span>(MatF,<span class="dv">2</span>,sum)</span>
+<span id="cb45-4"><a href="s04-Stage.html#cb45-4" aria-hidden="true" tabindex="-1"></a>    MatQ <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>,k,k)</span>
+<span id="cb45-5"><a href="s04-Stage.html#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>k){</span>
+<span id="cb45-6"><a href="s04-Stage.html#cb45-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span>(Fvec[i]<span class="sc">==</span><span class="dv">0</span>){</span>
+<span id="cb45-7"><a href="s04-Stage.html#cb45-7" aria-hidden="true" tabindex="-1"></a>            MatQ[<span class="dv">1</span>,i]<span class="ot">&lt;-</span><span class="dv">1</span></span>
+<span id="cb45-8"><a href="s04-Stage.html#cb45-8" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb45-9"><a href="s04-Stage.html#cb45-9" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb45-10"><a href="s04-Stage.html#cb45-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>{</span>
+<span id="cb45-11"><a href="s04-Stage.html#cb45-11" aria-hidden="true" tabindex="-1"></a>            MatQ[,i]<span class="ot">&lt;-</span>MatF[,i]<span class="sc">/</span>Fvec[i]</span>
+<span id="cb45-12"><a href="s04-Stage.html#cb45-12" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb45-13"><a href="s04-Stage.html#cb45-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb45-14"><a href="s04-Stage.html#cb45-14" aria-hidden="true" tabindex="-1"></a> <span class="fu">list</span>(<span class="st">&quot;Qmat&quot;</span><span class="ot">=</span>MatQ,<span class="st">&quot;Fertility&quot;</span><span class="ot">=</span>Fvec)</span>
+<span id="cb45-15"><a href="s04-Stage.html#cb45-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+</div>
+<div id="examples-of-stage-structured-models" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Examples of stage structured models<a href="s04-Stage.html#examples-of-stage-structured-models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This section includes some descriptions and examples for a few common types of stage structured models. This is by no means a comprehensive list of all possible kinds of stage structure - which is almost endless.</p>
+<p><br></p>
+<div id="lefkovitch-models" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Lefkovitch models<a href="s04-Stage.html#lefkovitch-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="citation">Lefkovitch (<a href="#ref-Lefkovitch1" role="doc-biblioref">1965</a>)</span> introduced an important extension of age structured models for life histories of discrete stages where individuals can either remain in the same stage or transition to the next stage with a certain probability.
+Distinct life cycle stages are typical for many invertebrates, and the Lefkovitch model can also be used for discrete stages representing size, where individuals can either grow (to the next size stage) or not.</p>
+<p>With this kind of structure, there will be two transition probabilities for each stage. For instance, if the the probability of developing from stage <span class="math inline">\(j\)</span> to <span class="math inline">\(j+1\)</span> is denoted <span class="math inline">\(g_j\)</span>, then the probability of remaining is <span class="math inline">\((1-g_j)\)</span>. Offspring transitions are usually the same as in age structured models, i.e. the first stage is the offspring stage and the matrix <span class="math inline">\(\mathbf{Q}\)</span> will have 1’s on the first row and 0’s elsewhere. The projection matrix of such a model with 3 stages takes the form</p>
+<p><br></p>
+<p><span class="math display" id="eq:Lefkovitch">\[\begin{align}
+\mathbf{A}=&amp;\left[\begin{matrix}
+(1-g_{1}) s_1+ f_1  &amp;  f_2 &amp;   f_3\\
+g_{1}s_1   &amp; (1-g_{2})s_2  &amp; 0 \\
+0   &amp; g_{2}s_2  &amp;  s_3 \\
+\end{matrix}\right].
+\tag{4.2}
+\end{align}\]</span></p>
+<p>This kind of projection matrix is also known as a <strong>Lefkovitch matrix</strong>. Here, surviving individuals accumulate in the final stage. Note also that the first element <span class="math inline">\(A_{11}\)</span> of the transition matrix potentially depends on both survival and reproduction. Although in most life histories individuals do not reproduce during their first year, this can happen in some cases. For these models we need to be careful when decomposing the projection matrix so that fertility coefficients are not inadvertently interpreted as survival, and vice versa.</p>
+<p><br></p>
+<div id="example-wild-boar" class="section level4 unnumbered hasAnchor">
+<h4>Example: Wild boar<a href="s04-Stage.html#example-wild-boar" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<center>
+<div class="figure"><span style="display:block;" id="fig:fig6"></span>
+<img src="Villsvin.jpg" alt="Wild boar (*Sus scrofa*). Photo: Dave Pape" width="60%" />
+<p class="caption">
+Figure 4.1: Wild boar (<em>Sus scrofa</em>). Photo: Dave Pape
+</p>
+</div>
+</center>
+<p><br></p>
+<p>As an example of a study using a Lefkovitch matrix, we can consider the model of <span class="citation">Bieber and Ruf (<a href="#ref-Bieber1" role="doc-biblioref">2005</a>)</span> for female wild boar. Their model has annual time steps and three stages: Juveniles (age 0-1), yearlings (age 1-2) and adults (age 2+). Thus, the first to stages represent age classes lasting 1 year each, while the final stage contain all individuals of age 2 and above. Wild boar start reproducing before their first year, so in this case even the juveniles can contribute offspring to the next year’s population (figure <a href="s04-Stage.html#fig:wildboar">4.2</a>).</p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:wildboar"></span>
+<img src="LifeCycleBoar.jpg" alt="Life cycle graph for the wild boar (*Sus scrofa*), fig 1 from @Bieber1." width="60%" />
+<p class="caption">
+Figure 4.2: Life cycle graph for the wild boar (<em>Sus scrofa</em>), fig 1 from <span class="citation">Bieber and Ruf (<a href="#ref-Bieber1" role="doc-biblioref">2005</a>)</span>.
+</p>
+</div>
+</center>
+<p>The projection matrix for this wild boar model is given by</p>
+<p><span class="math display">\[
+\mathbf{A}=\left[\begin{matrix} 0.26 &amp; 0.94 &amp;1.93  \\ 0.33&amp;0  &amp;0  \\ 0&amp;0.4  &amp;0.66  \\  \end{matrix}\right].
+\]</span></p>
+<p><br></p>
+<p>This matrix is quite similar to an age structured model (Leslie matrix), but with the exception that adults do not necessarily die after reaching age 2, but can continue to live so that the final stage contains all individuals of age 2 and more (2+).</p>
+<p><br></p>
+</div>
+</div>
+<div id="agestage" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Age by stage models<a href="s04-Stage.html#agestage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Individuals in a population will always differ in more than one way, and sometimes (depending on the study question as well as the species) we have to account for more than one state variable in order to adequately describe the life history. For instance, we may need to combine age and life cycle stage, if the age differences within each stage are large. Even if age does not have a large effect on survival and fecundity compared to stage, we often need to describe how model outputs (e.g. sensitivities) change with age, for instance to compare with other age-structured models. Models that combine age and stage are able to handle a wide range of possible structures - and can be seen as a special case of the general stage structured model where each class is a combination of age and stage.</p>
+<p>For instance, there are <span class="math inline">\(k\)</span> age classes, and <span class="math inline">\(m\)</span> stages, the new age by stage model will have <span class="math inline">\(\phi=k*m\)</span> classes in total. From these classes we can define a new projection matrix of dimension <span class="math inline">\(\phi \times \phi\)</span>, which can be analysed using the same methods as before to find <span class="math inline">\(\lambda\)</span> and other parameters. For a broad overview of this kind of matrix model, see <span class="citation">H. Caswell et al. (<a href="#ref-Caswell19" role="doc-biblioref">2018</a>)</span>.</p>
+<p><br></p>
+<div id="example-black-headed-gulls" class="section level4 unnumbered hasAnchor">
+<h4>Example: Black-headed gulls<a href="s04-Stage.html#example-black-headed-gulls" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<center>
+<div class="figure"><span style="display:block;" id="fig:BlackHeadedGull"></span>
+<img src="BlackHeadedGull.jpg" alt="Black-headed gull (*Chroicocephalus ridibundus*). Photo: Hans Hillewaert (https://creativecommons.org/licenses/by-sa/4.0/)" width="60%" />
+<p class="caption">
+Figure 4.3: Black-headed gull (<em>Chroicocephalus ridibundus</em>). Photo: Hans Hillewaert (<a href="https://creativecommons.org/licenses/by-sa/4.0/" class="uri">https://creativecommons.org/licenses/by-sa/4.0/</a>)
+</p>
+</div>
+</center>
+<p><br></p>
+<p><span class="citation">Lebreton (<a href="#ref-Lebreton2" role="doc-biblioref">1996</a>)</span> used an age-by-stage model to study a french colony of black-headed gulls (<em>Chroicocephalus ridibundus</em>) living in two types of habitat of ‘good’ and ‘poor’ quality. In this species dispersal among habitats happens mainly before first reproduction, but young breeders may also disperse. <span class="citation">Lebreton (<a href="#ref-Lebreton2" role="doc-biblioref">1996</a>)</span> considered different scenarios for dispersal, here we will consider the scenario where only offspring disperse. This model was also used as an example by <span class="citation">Hunter and Caswell (<a href="#ref-Hunter2" role="doc-biblioref">2005</a>)</span> demonstrating a useful approach (‘vec-permutation’) to calculate sensitivity in age-by-stage models, and by <span class="citation">Vindenes, le Coeur, and Caswell (<a href="#ref-Vindenes2020" role="doc-biblioref">2020</a>)</span> in their introduction to matrix models.</p>
+<p>The gulls have five main age classes corresponding to age 1, 2, 3, 4, and 5+ (all individuals of age 5 and older). With two habitats and five age classes we get a <span class="math inline">\(10\times 10\)</span> projection matrix, where each stage corresponds to a combination of habitat and age class. There are two ways to structure such a matrix <span class="citation">(<a href="#ref-Lebreton2" role="doc-biblioref">Lebreton 1996</a>)</span>: Either include age within habitat (so that the first five stages represent habitat 1 and the last five habitat 2), or habit within age class (the first two stages represent habitat 1 and 2 in age class 1, etc).</p>
+<p>Using a structure of age within habitat, we get the following projection matrix <span class="citation">(<a href="#ref-Vindenes2020" role="doc-biblioref">Vindenes, le Coeur, and Caswell 2020</a>)</span>:</p>
+<p><span class="math display">\[\begin{align}\label{AGulls}
+\mathbf{A}
+&amp;=\left[\begin{array}{ccccc|ccccc}
+f_1&amp;f_2&amp;f_3&amp;f_4&amp;f_5 &amp;0&amp;0&amp;0&amp;0&amp;0 \\
+(1-p)s_1&amp;0&amp;0&amp;0&amp;0&amp;qs_6&amp;0&amp;0&amp;0&amp;0\\
+0&amp;s_2&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;s_3&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;s_4&amp;s_5&amp;0&amp;0&amp;0&amp;0&amp;0\\
+\hline
+0&amp;0&amp;0&amp;0&amp;0&amp;f_6&amp;f_7&amp;f_8&amp;f_9&amp;f_{10}\\
+ps_1&amp;0&amp;0&amp;0&amp;0&amp;(1-q)s_6&amp;0&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;s_7&amp;0&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;s_8&amp;0&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;s_9&amp;s_{10}\\
+\end{array}\right].
+\end{align}\]</span></p>
+<p><br></p>
+<p>The constants <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> describe dispersal probabilities of 1-year olds: The probability of dispersing from a good to a poor quality habitat is <span class="math inline">\(p\)</span>, while <span class="math inline">\(q\)</span> is the probability of dispersing from the poor to the good habitat. This is also an example of source-sink dynamics, where the good habitat (the source) is sustaining the population living in the poor habitat (a sink). There is a limited number available number of breeding spots in good habitats, so some individuals are forced to use a lower quality site.</p>
+<p>The survival coefficients are given by <span class="math inline">\(\mathbf{s}=[0.8, 0.82, 0.82, 0.82, 0.82]\)</span> for both sites, while the fertility coefficients differ. In the good site they are given by <span class="math inline">\(\mathbf{f}_\text{good}=[0, 0.096, 0.16, 0.224, 0.32]\)</span>, and in the poor site by <span class="math inline">\(\mathbf{f}_{\text{poor}}=[0, 0.1, 0.16, 0.2, 0.2]\)</span>. Thus, for the youngest breeders the fertility is slightly higher in the poor site, but for older breeders the fertility is higher in the good site.</p>
+<p>In R we can construct the projection matrix as a function of the dispersal rates <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span> as follows:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="s04-Stage.html#cb46-1" aria-hidden="true" tabindex="-1"></a>Sboth <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">8</span>, <span class="fu">rep</span>(.<span class="dv">82</span>,<span class="dv">4</span>))</span>
+<span id="cb46-2"><a href="s04-Stage.html#cb46-2" aria-hidden="true" tabindex="-1"></a>Fgood <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.096</span>, <span class="fl">0.16</span>, <span class="fl">0.224</span>, <span class="fl">0.32</span>) </span>
+<span id="cb46-3"><a href="s04-Stage.html#cb46-3" aria-hidden="true" tabindex="-1"></a>Fpoor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.16</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>) </span>
+<span id="cb46-4"><a href="s04-Stage.html#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="s04-Stage.html#cb46-5" aria-hidden="true" tabindex="-1"></a>AmatGulls <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q){</span>
+<span id="cb46-6"><a href="s04-Stage.html#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Survival in good environment:</span></span>
+<span id="cb46-7"><a href="s04-Stage.html#cb46-7" aria-hidden="true" tabindex="-1"></a>  SGood <span class="ot">&lt;-</span> <span class="fu">c</span>((<span class="dv">1</span><span class="sc">-</span>p)<span class="sc">*</span>Sboth[<span class="dv">1</span>], Sboth[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span>
+<span id="cb46-8"><a href="s04-Stage.html#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Survival in poor environment:</span></span>
+<span id="cb46-9"><a href="s04-Stage.html#cb46-9" aria-hidden="true" tabindex="-1"></a>  SPoor <span class="ot">&lt;-</span> <span class="fu">c</span>((<span class="dv">1</span><span class="sc">-</span>q)<span class="sc">*</span>Sboth[<span class="dv">1</span>], Sboth[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span>
+<span id="cb46-10"><a href="s04-Stage.html#cb46-10" aria-hidden="true" tabindex="-1"></a>  Amat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">10</span>) </span>
+<span id="cb46-11"><a href="s04-Stage.html#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-----------------------------------------------</span></span>
+<span id="cb46-12"><a href="s04-Stage.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fertility in good site:</span></span>
+<span id="cb46-13"><a href="s04-Stage.html#cb46-13" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">1</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>] <span class="ot">&lt;-</span> Fgood </span>
+<span id="cb46-14"><a href="s04-Stage.html#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Fertility in poor site:</span></span>
+<span id="cb46-15"><a href="s04-Stage.html#cb46-15" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">6</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>] <span class="ot">&lt;-</span> Fpoor </span>
+<span id="cb46-16"><a href="s04-Stage.html#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-----------------------------------------------</span></span>
+<span id="cb46-17"><a href="s04-Stage.html#cb46-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#P(survive and remain), good site</span></span>
+<span id="cb46-18"><a href="s04-Stage.html#cb46-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diag</span>(Amat[<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="ot">&lt;-</span> SGood[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>] </span>
+<span id="cb46-19"><a href="s04-Stage.html#cb46-19" aria-hidden="true" tabindex="-1"></a>  <span class="co">#P(survive), last class</span></span>
+<span id="cb46-20"><a href="s04-Stage.html#cb46-20" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">5</span>,<span class="dv">5</span>] <span class="ot">&lt;-</span> SGood[<span class="dv">5</span>]  </span>
+<span id="cb46-21"><a href="s04-Stage.html#cb46-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">#P(survive and remain), poor site</span></span>
+<span id="cb46-22"><a href="s04-Stage.html#cb46-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">diag</span>(Amat[<span class="dv">7</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">9</span>]) <span class="ot">&lt;-</span> SPoor[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  </span>
+<span id="cb46-23"><a href="s04-Stage.html#cb46-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">#P(survive), last class</span></span>
+<span id="cb46-24"><a href="s04-Stage.html#cb46-24" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">10</span>,<span class="dv">10</span>] <span class="ot">&lt;-</span> SPoor[<span class="dv">5</span>]  </span>
+<span id="cb46-25"><a href="s04-Stage.html#cb46-25" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-----------------------------------------------</span></span>
+<span id="cb46-26"><a href="s04-Stage.html#cb46-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Survive / disperse from good to poor:</span></span>
+<span id="cb46-27"><a href="s04-Stage.html#cb46-27" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">7</span>,<span class="dv">1</span>] <span class="ot">&lt;-</span> p<span class="sc">*</span>Sboth[<span class="dv">1</span>] </span>
+<span id="cb46-28"><a href="s04-Stage.html#cb46-28" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Survive / disperse from poor to good</span></span>
+<span id="cb46-29"><a href="s04-Stage.html#cb46-29" aria-hidden="true" tabindex="-1"></a>  Amat[<span class="dv">2</span>,<span class="dv">6</span>] <span class="ot">&lt;-</span> q<span class="sc">*</span>Sboth[<span class="dv">1</span>] </span>
+<span id="cb46-30"><a href="s04-Stage.html#cb46-30" aria-hidden="true" tabindex="-1"></a>  <span class="co">#-----------------------------------------------</span></span>
+<span id="cb46-31"><a href="s04-Stage.html#cb46-31" aria-hidden="true" tabindex="-1"></a>  Amat</span>
+<span id="cb46-32"><a href="s04-Stage.html#cb46-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><br></p>
+<p>With this function we can make calculate <span class="math inline">\(\lambda\)</span> for different combinations of the two dispersal probabilities and plot the result. Here we also use the <code>expand_grid</code> function, which is useful for making new data frames for combinations of variables:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="s04-Stage.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sequences of p and values</span></span>
+<span id="cb47-2"><a href="s04-Stage.html#cb47-2" aria-hidden="true" tabindex="-1"></a>pVec <span class="ot">&lt;-</span>  <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">01</span>)</span>
+<span id="cb47-3"><a href="s04-Stage.html#cb47-3" aria-hidden="true" tabindex="-1"></a>qVec <span class="ot">&lt;-</span>  <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,.<span class="dv">01</span>)</span>
+<span id="cb47-4"><a href="s04-Stage.html#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="s04-Stage.html#cb47-5" aria-hidden="true" tabindex="-1"></a>gulls_table <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(<span class="st">&quot;p&quot;</span><span class="ot">=</span>pVec, <span class="st">&quot;q&quot;</span><span class="ot">=</span>qVec )</span>
+<span id="cb47-6"><a href="s04-Stage.html#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="s04-Stage.html#cb47-7" aria-hidden="true" tabindex="-1"></a>lambdagulls <span class="ot">&lt;-</span> <span class="cf">function</span>(p, q){</span>
+<span id="cb47-8"><a href="s04-Stage.html#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">uvlambda</span>(<span class="fu">AmatGulls</span>(<span class="at">p=</span>p,<span class="at">q=</span>q))<span class="sc">$</span>lam</span>
+<span id="cb47-9"><a href="s04-Stage.html#cb47-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-10"><a href="s04-Stage.html#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="s04-Stage.html#cb47-11" aria-hidden="true" tabindex="-1"></a>gulls_table <span class="ot">&lt;-</span> gulls_table <span class="sc">%&gt;%</span> <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb47-12"><a href="s04-Stage.html#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lambda=</span><span class="fu">lambdagulls</span>(p,q))  </span>
+<span id="cb47-13"><a href="s04-Stage.html#cb47-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="s04-Stage.html#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gulls_table, <span class="fu">aes</span>(<span class="at">x=</span>p, <span class="at">y=</span>q, <span class="at">fill=</span>lambda) ) <span class="sc">+</span> </span>
+<span id="cb47-15"><a href="s04-Stage.html#cb47-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>()<span class="sc">+</span></span>
+<span id="cb47-16"><a href="s04-Stage.html#cb47-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>()  <span class="sc">+</span></span>
+<span id="cb47-17"><a href="s04-Stage.html#cb47-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb47-18"><a href="s04-Stage.html#cb47-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill=</span><span class="fu">expression</span>(lambda))<span class="sc">+</span></span>
+<span id="cb47-19"><a href="s04-Stage.html#cb47-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span> )  </span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:gullfig"></span>
+<img src="_main_files/figure-html/gullfig-1.png" alt="Surface of $\lambda$ as a function of dispersal parameters $p$ (probability of leaving the 'good' site) and $q$ (probability of leaving the 'poor' site) in the black-headed gull model." width="384" />
+<p class="caption">
+Figure 4.4: Surface of <span class="math inline">\(\lambda\)</span> as a function of dispersal parameters <span class="math inline">\(p\)</span> (probability of leaving the ‘good’ site) and <span class="math inline">\(q\)</span> (probability of leaving the ‘poor’ site) in the black-headed gull model.
+</p>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="disease-models" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Disease models<a href="s04-Stage.html#disease-models" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Stage structured matrix model play an important role in understanding disease dynamics, for systems that can be analysed with discrete time models. Classifying host individuals according to disease status (susceptible, infected, etc) is essential, and often other sources of variation need to be accounted for as well (age, sex, and other factors that can affect disease transmission and immunity). Space is another fundamental factor that often needs to be included to accurately capture the dynamics of an epidemic. In host-vector-pathogen systems the vector can also be classified according to multiple stages.</p>
+<p>Disease dynamics are inherently frequency-dependent, so cannot be analyzed with the density independent methods presented so far, but they often have equilibrium dynamics that are analysed with matrix model methods. The parameter <span class="math inline">\(R_0\)</span> (that we now know as the lifetime reproductive success) has an important interpretation in disease models as the total number of new infections that each infected individual will give rise to in a susceptible population. In other words it is the lifetime reproductive success of the pathogen.</p>
+<p>One of the simplest and most common models for disease dynamics is the SIR model <span class="citation">(<a href="#ref-Kermack1" role="doc-biblioref">Kermack and McKendrick 1927</a>)</span>, classifying host individuals into three disease states (Susceptible - Infected - Recovered). This is an example of a compartmental model in epidemiology.</p>
+<p><br></p>
+</div>
+</div>
+<div id="integral-projection-models-ipms" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Integral projection models (IPMs)<a href="s04-Stage.html#integral-projection-models-ipms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Many state variables are intrinsically continuous, such as body size. Matrix models can still be used to study size structure by lumping individuals into different discrete size classes, but this adds an extra modeling decision of where to set the limits for each size class. And sometimes this decision affects the results of the model. This can be avoided by using an IPM, i.e. an <strong>integral projection model</strong> <span class="citation">(<a href="#ref-Easterling1" role="doc-biblioref">Easterling, Ellner, and Dixon 2000</a>)</span>, which accomodates continuous state variables. Instead of a population vector with a discrete number of stages, IPMs track individuals over a continuous trait distribution <span class="math inline">\(n(z)\)</span>, where <span class="math inline">\(z\)</span> represents the trait measure (e.g. size), and instead of a projection matrix, IPMs use a projection kernel. You can think of an IPM as a matrix model with infinitely many stages, and in fact they belong to the same class of models (matrix models). The good news is that IPMs can be analysed with matrix model methods (e.g. those introduced in chapter <a href="s03-MatrixModels.html#s03-MatrixModels">3</a>) to find <span class="math inline">\(\lambda\)</span> and other model outputs. In R, we then specify the mesh size of the kernel (creating a matrix), and the finer the mesh size the more accurate are the estimated model outputs.</p>
+<p>IPMs and matrix models are both part of the same model framework (matrix models). The main difference between an IPM and a matrix model is in how the underlying parameters are (typically) estimated from data: With IPMs we typically use some kind of regression model, where the state variable is an explanatory variable explaining the survival, fecundity and transition rates that define the model. With matrix models, these parameters are usually estimated independently within each stage, without treating the stage as an explanatory variable - however regression models can still be used to estimate parameters of a matrix model. We will not go into details regarding IPMs here, but you have already learned the methods for analyzing them, as they are the same as for matrix models. For more details on IPMs and their application, see <span class="citation">Ellner, Childs, and Rees (<a href="#ref-Ellner5" role="doc-biblioref">2016</a>)</span>.</p>
+<p><br></p>
+</div>
+<div id="exercises-3" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Exercises<a href="s04-Stage.html#exercises-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For suggested solutions, see appendix <a href="s09-Solutions.html#s09-Solutions">A</a>.</p>
+<p><br></p>
+<div id="exercise-4.1" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 4.1<a href="s04-Stage.html#exercise-4.1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Draw the life cycle graph for each of the projection matrices below.</li>
+</ol>
+<p><span class="math display">\[\mathbf{A}=\left[\begin{matrix}0.5&amp;2\\1&amp;0.7\end{matrix}\right]\]</span></p>
+<p><span class="math display">\[\mathbf{A}=\left[\begin{matrix}0&amp;0&amp;10\\0.9&amp;0&amp;0\\0&amp;0.9&amp;0\end{matrix}\right]\]</span></p>
+<p><span class="math display">\[\mathbf{A}=\left[\begin{matrix}0&amp;8&amp;5\\0.9&amp;0.1&amp;0.7\\0&amp;0.7&amp;0.2\end{matrix}\right]\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Can you determine the stage-specific survival probability in each case? What assumption(s) do you need to make in order to do this?</p></li>
+<li><p>What could the stages represent in each case?</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="exercise-4.2" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 4.2<a href="s04-Stage.html#exercise-4.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This exercise is based on an experimental toxicology study by <span class="citation">Kammenga, Gestel, and Hornung (<a href="#ref-Kammenga1" role="doc-biblioref">2001</a>)</span>, and their model for the isopod common woodlouse (<em>Porcellio scaber</em>) was also used as an example by <span class="citation">Vindenes, le Coeur, and Caswell (<a href="#ref-Vindenes2020" role="doc-biblioref">2020</a>)</span>. The woodlouse model has seven discrete life history stages and monthly time steps.</p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:Porcellio1"></span>
+<img src="Porcellio_scaber.jpg" alt="Common woodlouse (*Porcellio scaber*)." width="40%" />
+<p class="caption">
+Figure 4.5: Common woodlouse (<em>Porcellio scaber</em>).
+</p>
+</div>
+</center>
+<p>There are 7 main stages in this woodlouse model:</p>
+<ol style="list-style-type: decimal">
+<li>Oocytes<br />
+</li>
+<li>Eggs/offspring (in marsupium)<br />
+</li>
+<li>Juveniles<br />
+</li>
+<li>First (spring) reproductive stage<br />
+</li>
+<li>Non-reproductive adult stage<br />
+</li>
+<li>Second (summer) reproductive stage<br />
+</li>
+<li>Senescent non-reproductive stage</li>
+</ol>
+<p><br></p>
+<p>The following life cycle graph is from <span class="citation">Kammenga, Gestel, and Hornung (<a href="#ref-Kammenga1" role="doc-biblioref">2001</a>)</span> (their fig. 1B):</p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:Porcellio2"></span>
+<img src="Porcellio_scaber2.jpg" alt="Life cycle graph for the common woodlouse (*Porcellio scaber*)." width="80%" />
+<p class="caption">
+Figure 4.6: Life cycle graph for the common woodlouse (<em>Porcellio scaber</em>).
+</p>
+</div>
+</center>
+<p><br></p>
+<p>The vectors of P, G and F in R have the following values:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Stage</th>
+<th align="center">P</th>
+<th align="center">G</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0.158</td>
+<td align="center">0.722</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">0.545</td>
+<td align="center">0.245</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">0.539</td>
+<td align="center">0.231</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">0.162</td>
+<td align="center">0.788</td>
+<td align="center">2.355</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">0.008</td>
+<td align="center">0.792</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">0.136</td>
+<td align="center">0.664</td>
+<td align="center">5.568</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">0.800</td>
+<td align="center">0.000</td>
+<td align="center">0.000</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p>Use the life cycle graph and the vectors defined in the table to define the fertility matrix <span class="math inline">\(\mathbf{F}\)</span>, the survival matrix <span class="math inline">\(\mathbf{U}\)</span>, and the projection matrix <span class="math inline">\(\mathbf{A}\)</span> in R.</p></li>
+<li><p>Decompose the matrices <span class="math inline">\(\mathbf{U}\)</span> and <span class="math inline">\(\mathbf{F}\)</span> to calculate the stage-specific fertility and survival probability, and the transition matrix (based on the decomposition in equation <a href="s04-Stage.html#eq:General">(4.1)</a>. Plot the stage-specific fertility and survival probability.</p></li>
+<li><p>Calculate <span class="math inline">\(\lambda\)</span>, the stable stage structure <span class="math inline">\(\mathbf{u}\)</span> and reproductive values <span class="math inline">\(\mathbf{v}\)</span>, and plot <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span>. How fast does this population grow per year? Does this model work well to describe a life history that reproduces twice per year <span class="citation">(<a href="#ref-Kammenga1" role="doc-biblioref">Kammenga, Gestel, and Hornung 2001</a>)</span>?</p></li>
+<li><p>Write an R function that returns the value of <span class="math inline">\(\lambda\)</span> for this population for a set of three vectors corresponding to <em>proportional changes</em> to elements of <span class="math inline">\(P\)</span>, <span class="math inline">\(G\)</span> or <span class="math inline">\(F\)</span>. What happens to <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> if you modify the element <span class="math inline">\(G_6\)</span> in the vector <span class="math inline">\(G\)</span>? Explain why.</p></li>
+<li><p>What happens to <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(\mathbf{u}\)</span> and <span class="math inline">\(\mathbf{v}\)</span> if you modify the element <span class="math inline">\(G_4\)</span>? Explain why.</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="exercise-4.3" class="section level3 unnumbered hasAnchor">
+<h3>Exercise 4.3<a href="s04-Stage.html#exercise-4.3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This exercise will continue with the woodlouse model from the previous exercise.</p>
+<p><span class="citation">Kammenga, Gestel, and Hornung (<a href="#ref-Kammenga1" role="doc-biblioref">2001</a>)</span> considered toxicological effects of cadmium. At the highest concentration, the woodlouse will switch to only one reproductive event instead of two, and the survival probabilities are reduced between 7 and 12 % in all stages except the egg stage. In addition the development time of eggs decreased <span class="citation">(<a href="#ref-Kammenga1" role="doc-biblioref">Kammenga, Gestel, and Hornung 2001</a>)</span>. For this exercise we assume the values of <span class="math inline">\(P\)</span>, <span class="math inline">\(G\)</span>, and <span class="math inline">\(F\)</span> corresponding to cadmium exposure are given by</p>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Stage</th>
+<th align="center">P</th>
+<th align="center">G</th>
+<th align="center">F</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">0.158</td>
+<td align="center">0.722</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">0.491</td>
+<td align="center">0.220</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">0.485</td>
+<td align="center">0.208</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">0.145</td>
+<td align="center">0.710</td>
+<td align="center">2.355</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">0.007</td>
+<td align="center">0.713</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center">0.122</td>
+<td align="center">0.598</td>
+<td align="center">0.000</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center">0.720</td>
+<td align="center">0.000</td>
+<td align="center">0.000</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ol style="list-style-type: decimal">
+<li><p>Define a new matrix <span class="math inline">\(\mathbf{A}_C\)</span> (C for cadmium) in R based on these values. This is now a treatment matrix, while the previously defined matrix is the reference matrix.</p></li>
+<li><p>Calculate <span class="math inline">\(\lambda\)</span> for the new matrix. How does it compare to the previous value?</p></li>
+<li><p>Calculate the halfway matrix <span class="math inline">\(\mathbf{A}^*\)</span> and the difference matrix <span class="math inline">\(\mathbf{D}\)</span>.</p></li>
+<li><p>Calculate the sensitivity matrix <span class="math inline">\(\mathbf{S}^*\)</span> based on the halfway matrix, and finally calculate and plot the elements of the matrix corresponding to the contributions to the difference in <span class="math inline">\(\lambda\)</span> between <span class="math inline">\(\mathbf{A}\)</span> and <span class="math inline">\(\mathbf{A}_C\)</span>. Which element contributes the most?</p></li>
+<li><p>Why is it often better to use an LTRE than a sensitivity analysis when we want to understand the impacts of an external factor such as a toxicant?</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Bieber1" class="csl-entry">
+Bieber, C., and T. Ruf. 2005. <span>“Population Dynamics in Wild Boar <em>Sus Scrofa</em>: Ecology, Elasticity of Growth Rate and Implications for the Management of Pulsed Resource Consumers.”</span> <em>J. Appl. Ecol.</em> 42: 1203–13.
+</div>
+<div id="ref-Caswell1" class="csl-entry">
+Caswell, Hal. 2001. <em>Matrix Population Models</em>. 2nd ed. Sunderland, Massachusetts: Sinauer Associates.
+</div>
+<div id="ref-Caswell19" class="csl-entry">
+Caswell, H., C. de Vries, N. Hartemink, G. Roth, and S. F. van Daalen. 2018. <span>“Age x Stage-Classified Demographic Analysis: A Comprehensive Approach.”</span> <em>Ecol. Monogr.</em> 88: 560–84.
+</div>
+<div id="ref-Easterling1" class="csl-entry">
+Easterling, M. R., Stephen P. Ellner, and P. M. Dixon. 2000. <span>“Size-Specific Sensitivity: Applying a New Structured Population Model.”</span> <em>Ecology</em> 81: 694–708.
+</div>
+<div id="ref-Ellner5" class="csl-entry">
+Ellner, Stephen P., Dylan Z. Childs, and Mark Rees. 2016. <em>Data-Driven Modelling of Structured Populations</em>. Lecture Notes on Mathematical Modelling in the Life Sciences. Springer International Publishing Switzerland.
+</div>
+<div id="ref-Hunter2" class="csl-entry">
+Hunter, Christine M., and Hal Caswell. 2005. <span>“The Use of the Vec-Permutation Matrix in Spatial Matrix Population Models.”</span> <em>Ecol. Model.</em> 188: 15–21.
+</div>
+<div id="ref-Kammenga1" class="csl-entry">
+Kammenga, J. E., C. A. M. van Gestel, and E. Hornung. 2001. <span>“Switching Life-History Sensitivities to Stress in Soil Invertebrates.”</span> <em>Ecol. Appl.</em> 11: 226–38.
+</div>
+<div id="ref-Kermack1" class="csl-entry">
+Kermack, W. O., and A. G. McKendrick. 1927. <span>“Contributions to the Mathematical Theory of Epidemics.”</span> <em>Proc. R. Soc. Lond. A</em> 115: 700–721.
+</div>
+<div id="ref-Lebreton2" class="csl-entry">
+Lebreton, J. D. 1996. <span>“Demographic Models for Subdivided Populations: The Renewal Equation Approach.”</span> <em>Theor. Popul. Biol.</em> 49: 291–313.
+</div>
+<div id="ref-Lefkovitch1" class="csl-entry">
+Lefkovitch, L. P. 1965. <span>“The Study of Population Growth in Organisms Grouped by Stages.”</span> <em>Biometrics</em> 21: 1–18.
+</div>
+<div id="ref-Vindenes2020" class="csl-entry">
+Vindenes, Y., C. le Coeur, and H. Caswell. 2020. <span>“Introduction to Matrix Population Models.”</span> In <em>Demographic Methods Across the Tree of Life</em>, edited by R. Salguero-Gomez and M. Gamelon, 163–79. Oxford, UK.: Oxford University Press.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="s03-MatrixModels.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Stochasticity.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

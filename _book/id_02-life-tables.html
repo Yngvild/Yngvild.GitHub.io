@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Life tables | Demography and matrix models</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Life tables | Demography and matrix models" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Life tables | Demography and matrix models" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+set in the _output.yml file.
+The HTML output format for this example is bookdown::gitbook,</p>" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_01-Exponential.html"/>
+<link rel="next" href="id_03-MatrixModels.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="index.html#section" id="toc-section"></a></li>
+<li class="chapter" data-level="1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html"><i class="fa fa-check"></i><b>1</b> Exponential growth</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#baseline-model-for-population-growth"><i class="fa fa-check"></i><b>1.2</b> Baseline model for population growth</a></li>
+<li class="chapter" data-level="1.3" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exponential-growth-in-structured-populations"><i class="fa fa-check"></i><b>1.3</b> Exponential growth in structured populations</a></li>
+<li class="chapter" data-level="1.4" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#the-exponential-growth-model-in-ecology-and-evolution"><i class="fa fa-check"></i><b>1.4</b> The exponential growth model in ecology and evolution</a></li>
+<li class="chapter" data-level="1.5" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercises"><i class="fa fa-check"></i><b>1.5</b> Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercise-1.1"><i class="fa fa-check"></i>Exercise 1.1</a></li>
+<li class="chapter" data-level="" data-path="id_01-Exponential.html"><a href="id_01-Exponential.html#exercise-1.2"><i class="fa fa-check"></i>Exercise 1.2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html"><i class="fa fa-check"></i><b>2</b> Life tables</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#learning-goals-1"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="2.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#what-is-a-life-table"><i class="fa fa-check"></i><b>2.1</b> What is a life table?</a></li>
+<li class="chapter" data-level="2.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-basic-life-table"><i class="fa fa-check"></i><b>2.2</b> A basic life table</a></li>
+<li class="chapter" data-level="2.3" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#dynamic-and-static-life-tables"><i class="fa fa-check"></i><b>2.3</b> Dynamic and static life tables</a></li>
+<li class="chapter" data-level="2.4" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#life-table-calculations"><i class="fa fa-check"></i><b>2.4</b> Life table calculations</a></li>
+<li class="chapter" data-level="2.5" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-euler-lotka-equation"><i class="fa fa-check"></i><b>2.5</b> The Euler-Lotka equation</a></li>
+<li class="chapter" data-level="2.6" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#fitness-measures-in-life-history-theory"><i class="fa fa-check"></i><b>2.6</b> Fitness measures in life history theory</a></li>
+<li class="chapter" data-level="2.7" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#a-fictive-bird-example"><i class="fa fa-check"></i><b>2.7</b> A fictive bird example</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-by-hand"><i class="fa fa-check"></i><b>2.7.1</b> Calculations ‘by hand’</a></li>
+<li class="chapter" data-level="2.7.2" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#calculations-in-r"><i class="fa fa-check"></i><b>2.7.2</b> Calculations in R</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#semelparity-and-iteroparity"><i class="fa fa-check"></i><b>2.8</b> Semelparity and iteroparity</a></li>
+<li class="chapter" data-level="2.9" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#the-lack-clutch"><i class="fa fa-check"></i><b>2.9</b> The Lack clutch</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="id_02-life-tables.html"><a href="id_02-life-tables.html#exercises-1"><i class="fa fa-check"></i><b>2.9.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html"><i class="fa fa-check"></i><b>3</b> Age-structured matrix population models</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#learning-goals-2"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#why-matrix-models"><i class="fa fa-check"></i><b>3.1</b> Why matrix models?</a></li>
+<li class="chapter" data-level="3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#age-structured-growth-and-the-leslie-matrix"><i class="fa fa-check"></i><b>3.2</b> Age-structured growth and the Leslie matrix</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#LeslieR"><i class="fa fa-check"></i><b>3.2.1</b> Creating a Leslie matrix in R</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#census"><i class="fa fa-check"></i><b>3.3</b> Pre- and post-reproductive census</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#pre-reproductive-census"><i class="fa fa-check"></i><b>3.3.1</b> Pre-reproductive census</a></li>
+<li class="chapter" data-level="3.3.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#post-reproductive-census"><i class="fa fa-check"></i><b>3.3.2</b> Post-reproductive census</a></li>
+<li class="chapter" data-level="3.3.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#avoiding-mistakes-when-constructing-matrix-models"><i class="fa fa-check"></i><b>3.3.3</b> Avoiding mistakes when constructing matrix models</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-cycle-graph"><i class="fa fa-check"></i><b>3.4</b> Life cycle graph</a></li>
+<li class="chapter" data-level="3.5" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#asymptotic-properties"><i class="fa fa-check"></i><b>3.5</b> Asymptotic properties</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#projected"><i class="fa fa-check"></i><b>3.5.1</b> Calculations based on projected growth</a></li>
+<li class="chapter" data-level="3.5.2" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#eigen"><i class="fa fa-check"></i><b>3.5.2</b> Calculations using eigen analysis</a></li>
+<li class="chapter" data-level="3.5.3" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#netrate"><i class="fa fa-check"></i><b>3.5.3</b> Net reproductive rate and generation time</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#sensitivity-analysis-of-lambda"><i class="fa fa-check"></i><b>3.6</b> Sensitivity analysis of <span class="math inline">\(\lambda\)</span></a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#elasticities"><i class="fa fa-check"></i><b>3.6.1</b> Elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#life-table-response-experiments"><i class="fa fa-check"></i><b>3.7</b> Life table response experiments</a></li>
+<li class="chapter" data-level="3.8" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#senescence"><i class="fa fa-check"></i><b>3.8</b> Senescence</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#the-effect-of-extrinsic-mortality-on-senescence"><i class="fa fa-check"></i>The effect of extrinsic mortality on senescence</a></li>
+<li class="chapter" data-level="3.8.1" data-path="id_03-MatrixModels.html"><a href="id_03-MatrixModels.html#exercises-2"><i class="fa fa-check"></i><b>3.8.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="id_04-Stage.html"><a href="id_04-Stage.html"><i class="fa fa-check"></i><b>4</b> Beyond age structure</a>
+<ul>
+<li class="chapter" data-level="" data-path="id_04-Stage.html"><a href="id_04-Stage.html#learning-goals-3"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="4.1" data-path="id_04-Stage.html"><a href="id_04-Stage.html#flexibility-of-matrix-models"><i class="fa fa-check"></i><b>4.1</b> Flexibility of matrix models</a></li>
+<li class="chapter" data-level="4.2" data-path="id_04-Stage.html"><a href="id_04-Stage.html#life-cycle-stages"><i class="fa fa-check"></i><b>4.2</b> Life cycle stages</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="id_04-Stage.html"><a href="id_04-Stage.html#example-of-lefkovitch-matrix-wild-boar"><i class="fa fa-check"></i><b>4.2.1</b> Example of Lefkovitch matrix: Wild boar</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="id_04-Stage.html"><a href="id_04-Stage.html#age-by-stage-models"><i class="fa fa-check"></i><b>4.3</b> Age by stage models</a></li>
+<li class="chapter" data-level="4.4" data-path="id_04-Stage.html"><a href="id_04-Stage.html#size-structure-integral-projection-models"><i class="fa fa-check"></i><b>4.4</b> Size structure: Integral projection models</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="stochastic-environments.html"><a href="stochastic-environments.html"><i class="fa fa-check"></i><b>5</b> Stochastic environments</a>
+<ul>
+<li class="chapter" data-level="" data-path="stochastic-environments.html"><a href="stochastic-environments.html#learning-goals-4"><i class="fa fa-check"></i>Learning goals</a></li>
+<li class="chapter" data-level="5.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#what-is-a-stochastic-environment"><i class="fa fa-check"></i><b>5.1</b> What is a stochastic environment?</a></li>
+<li class="chapter" data-level="5.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-unstructured-populations"><i class="fa fa-check"></i><b>5.2</b> Stochastic growth of unstructured populations</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#deriving-the-long-term-mean-growth-rate"><i class="fa fa-check"></i><b>5.2.1</b> Deriving the long-term mean growth rate</a></li>
+<li class="chapter" data-level="5.2.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#arithmetic-and-geometric-mean"><i class="fa fa-check"></i><b>5.2.2</b> Arithmetic and geometric mean</a></li>
+<li class="chapter" data-level="5.2.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#bet-hedging"><i class="fa fa-check"></i><b>5.2.3</b> Bet-hedging</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="stochastic-environments.html"><a href="stochastic-environments.html#stochastic-growth-of-structured-populations"><i class="fa fa-check"></i><b>5.3</b> Stochastic growth of structured populations</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="stochastic-environments.html"><a href="stochastic-environments.html#small-noise-approximation"><i class="fa fa-check"></i><b>5.3.1</b> Small noise approximation</a></li>
+<li class="chapter" data-level="5.3.2" data-path="stochastic-environments.html"><a href="stochastic-environments.html#example-with-r-code-stochastic-growth-of-the-bird-population"><i class="fa fa-check"></i><b>5.3.2</b> Example with R code: Stochastic growth of the bird population</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="id_06-references.html"><a href="id_06-references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html"><i class="fa fa-check"></i><b>A</b> Appendix A. R Code collection</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-tables"><i class="fa fa-check"></i><b>A.1</b> Life tables</a></li>
+<li class="chapter" data-level="A.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#matrix-population-models"><i class="fa fa-check"></i><b>A.2</b> Matrix population models</a>
+<ul>
+<li class="chapter" data-level="A.2.1" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#population-projection"><i class="fa fa-check"></i><b>A.2.1</b> Population projection</a></li>
+<li class="chapter" data-level="A.2.2" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#asymptotic-parameters"><i class="fa fa-check"></i><b>A.2.2</b> Asymptotic parameters</a></li>
+<li class="chapter" data-level="A.2.3" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#life-expectancy"><i class="fa fa-check"></i><b>A.2.3</b> Life expectancy</a></li>
+<li class="chapter" data-level="A.2.4" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#generation-time"><i class="fa fa-check"></i><b>A.2.4</b> Generation time</a></li>
+<li class="chapter" data-level="A.2.5" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#net-reproductive-rate-r_0"><i class="fa fa-check"></i><b>A.2.5</b> Net reproductive rate <span class="math inline">\(R_0\)</span></a></li>
+<li class="chapter" data-level="A.2.6" data-path="id_07-Code-Collection.html"><a href="id_07-Code-Collection.html#sensitivities-and-elasticities"><i class="fa fa-check"></i><b>A.2.6</b> Sensitivities and elasticities</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html"><i class="fa fa-check"></i><b>B</b> Appendix B. Case study: Asian elephants</a>
+<ul>
+<li class="chapter" data-level="B.0.1" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#define-vital-rates-and-matrices"><i class="fa fa-check"></i><b>B.0.1</b> Define vital rates and matrices</a></li>
+<li class="chapter" data-level="B.0.2" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#project-population-growth"><i class="fa fa-check"></i><b>B.0.2</b> Project population growth</a></li>
+<li class="chapter" data-level="B.0.3" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#matrix-calculations"><i class="fa fa-check"></i><b>B.0.3</b> Matrix calculations</a></li>
+<li class="chapter" data-level="B.0.4" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#life-expectancy-1"><i class="fa fa-check"></i><b>B.0.4</b> Life expectancy</a></li>
+<li class="chapter" data-level="B.0.5" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#mean-lifetime-reproduction"><i class="fa fa-check"></i><b>B.0.5</b> Mean lifetime reproduction</a></li>
+<li class="chapter" data-level="B.0.6" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#generation-time-1"><i class="fa fa-check"></i><b>B.0.6</b> Generation time</a></li>
+<li class="chapter" data-level="B.0.7" data-path="id_08-CaseStudy.html"><a href="id_08-CaseStudy.html#sensitivities-and-elasticities-1"><i class="fa fa-check"></i><b>B.0.7</b> Sensitivities and elasticities</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="id_09-Solutions.html"><a href="id_09-Solutions.html"><i class="fa fa-check"></i><b>C</b> Appendix C. Solution to exercises</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Demography and matrix models</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="id_02-life-tables" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Life tables<a href="id_02-life-tables.html#id_02-life-tables" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="learning-goals-1" class="section level2 unnumbered hasAnchor">
+<h2>Learning goals<a href="id_02-life-tables.html#learning-goals-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Explain the difference between a dynamic and static life table.</p></li>
+<li><p>Perform simple life table calculations (e.g. net reproductive rate <span class="math inline">\(R_0\)</span>, generation time <span class="math inline">\(T_C\)</span>).</p></li>
+<li><p>Write down the Euler-Lotka equation for a given life table and explain how it can be used to find the long-term growth rate <span class="math inline">\(\lambda\)</span>.</p></li>
+<li><p>Discuss the advantages and disadvantages of different fitness measures.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="what-is-a-life-table" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is a life table?<a href="id_02-life-tables.html#what-is-a-life-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>life table</strong> is a simple method to keep track of births and deaths of individuals across age. Life tables are used extensively in human demography, social sciences, and epidemiology, for instance to calculate the remaining life expectancy at each age and project future mortality rates. In life history theory, which focuses on a wide range of species and understanding of their life history strategies, life tables are used to calculate important parameters for ecological and evolutionary dynamics, such as the net reproductive rate <span class="math inline">\(R_0\)</span> and the long-term population growth rate <span class="math inline">\(\lambda\)</span>. Life tables are closely connected to age-structured matrix models and life cycle graphs - these are all different ways to describe the life history of a given population. While life tables are useful for manual calculations, matrix models are the most efficient way to do life history calculations, and have several additional useful properties.</p>
+<p><br></p>
+</div>
+<div id="a-basic-life-table" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> A basic life table<a href="id_02-life-tables.html#a-basic-life-table" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the most basic form, the life table is a list of age-specific parameters of age-specific survival (survivorship <span class="math inline">\(l_x\)</span> and annual survival probability <span class="math inline">\(p_x\)</span>) and fecundity (<span class="math inline">\(m_x\)</span>):</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age <span class="math inline">\(x\)</span></th>
+<th>Survival probability <span class="math inline">\(p_x\)</span></th>
+<th>Survivorship <span class="math inline">\(l_x\)</span></th>
+<th>Fecundity <span class="math inline">\(m_x\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td><span class="math inline">\(p_0\)</span></td>
+<td><span class="math inline">\(l_0=1\)</span></td>
+<td><span class="math inline">\(m_0\)</span></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td><span class="math inline">\(p_1\)</span></td>
+<td><span class="math inline">\(l_1=p_0\)</span></td>
+<td><span class="math inline">\(m_1\)</span></td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td><span class="math inline">\(p_2\)</span></td>
+<td><span class="math inline">\(l_2=l_1p_1\)</span></td>
+<td><span class="math inline">\(m_2\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+<td><span class="math inline">\(\vdots\)</span></td>
+</tr>
+<tr class="odd">
+<td>k</td>
+<td><span class="math inline">\(p_k=0\)</span></td>
+<td><span class="math inline">\(l_k=l_{k-1}p_{k-1}\)</span></td>
+<td><span class="math inline">\(m_k\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>No individual lives past the final age, so the annual survival probability in the final age class is <span class="math inline">\(p_k=0\)</span>. However, before they die, individuals in this final class can produce <span class="math inline">\(m_k\)</span> offspring on their <span class="math inline">\(k\)</span>’th birthday. The fecundity will also be zero for the first age classes, until the age of maturation.</p>
+<p>For sexual species, life tables are often defined only for the female subpopulation, under the assumption that survival and reproduction of females are not influenced by the number of males. In that case, the male and female subpopulation will grow with the same rate, and it does not matter which of the subpopulations we use to describe population growth. If female reproduction or survival is limited by the number of males, more complex two-sex models are needed to describe the population growth <span class="citation">(see e.g. <a href="#ref-Caswell1" role="doc-biblioref">Caswell 2001</a>)</span>. In our case, where we assume that males do not limit population growth, the fecundity parameter <span class="math inline">\(m_x\)</span> represents the number of female offspring, unless it is specifically mentioned that it includes both male and female offspring. In that case wee need to first find the number of female offspring, which is the relevant number for the life table, and take into account the offspring sex ratio. If the offspring sex ratio is 1:1, the number of female offspring is simply the number of offspring divided by 2.</p>
+<p><br></p>
+</div>
+<div id="dynamic-and-static-life-tables" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Dynamic and static life tables<a href="id_02-life-tables.html#dynamic-and-static-life-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There are two main ways of collecting data and estimating the age-specific parameters of survival and reproduction in a population. With a <em>dynamic life table</em>, also known as a cohort life table, an entire cohort of individuals are followed from birth to death, and their mortality and fecundity is recorded at each age. This approach is often expensive and time-demanding, and in many cases it is not practically possible to get such data. Another kind of life table is the <em>static life table</em>, which is based on recording the survival and reproduction of individuals in each age class over just one time step. This approach is usually more feasible, and corresponds to taking a cross-section of the population at a given time. However, it requires that we are able to determine the age of individuals, which is difficult in many species.</p>
+<p>Importantly, the static life table approach is based on the assumptions that 1) the population is stationary (constant or near constant population size over time), and 2) the population has a stable age structure (the proportions of individuals in each age class do not change over time). A dynamic and static life table for a given population will be the same if the age-specific parameters of survival and fecundity are constant over time.</p>
+<p><br></p>
+</div>
+<div id="life-table-calculations" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Life table calculations<a href="id_02-life-tables.html#life-table-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Several properties can be calculated from a life table. We will focus on two of them: The net reproductive rate <span class="math inline">\(R_0\)</span>, and the cohort generation time <span class="math inline">\(T_C\)</span>. The <strong>net reproductive rate</strong> represents the number of female offspring by which each female will be replaced, on average:</p>
+<p><span class="math display" id="eq:R0">\[\begin{align}
+R_0=\sum_{x=0}^k l_xm_x.
+\tag{2.1}
+\end{align}\]</span></p>
+<p>The product <span class="math inline">\(l_xm_x\)</span> represents the number of offspring produced at age <span class="math inline">\(x\)</span> given that the individual survives to that age. Thus, summing up this product for all ages we get the net reproductive rate.</p>
+<p>The net reproductive rate is a measure of the population growth rate per generation. For instance, if <span class="math inline">\(R_0=1.1\)</span> the population will grow by 10% each generation. Thus, <span class="math inline">\(R_0\)</span> holds information on the population growth rate <span class="math inline">\(\lambda\)</span>, although the two are not the same (<span class="math inline">\(\lambda\)</span> is per time step, while <span class="math inline">\(R_0\)</span> is per generation). If <span class="math inline">\(R_0&gt;1\)</span>, we know that the population is growing (<span class="math inline">\(\lambda&gt;1\)</span>), if <span class="math inline">\(R_0=1\)</span> then <span class="math inline">\(\lambda=1\)</span> and the population is stable, and if <span class="math inline">\(R_0&lt;1\)</span> then <span class="math inline">\(\lambda&lt;1\)</span>, and the population is declining.</p>
+<p>The generation time reflects the ‘pace of life’ of a species, and many biological properties (physiological rates, other life history parameters) scale with it. For age structured populations there are several ways to define generation time. We will use the socalled <strong>cohort generation time</strong>, which is the mean age at reproduction of all the <span class="math inline">\(R_0\)</span> offspring an average individual produces:</p>
+<p><span class="math display" id="eq:Generation">\[\begin{align}
+T_C=\frac{1}{R_0}\sum_{x=0}^{k} xl_xm_x.
+\tag{2.2}
+\end{align}\]</span></p>
+<p>The expression <span class="math inline">\(xl_xm_x/R_0\)</span> represents the fraction of the total expected reproduction (<span class="math inline">\(R_0\)</span>) that occurs at age <span class="math inline">\(x\)</span>. By summing this up for all ages (and moving 1/<span class="math inline">\(R_0\)</span> outside the sum) we get the average age at which reproduction occurs. This is also a measure of the average time from birth of an individual until the birth of her offspring.</p>
+<p>Both the net reproductive rate and the generation time can also be calculated directly from a projection matrix, as we will see later.</p>
+<p><br></p>
+<p>Since <span class="math inline">\(R_0\)</span> is an estimate of the per generation growth rate and <span class="math inline">\(T_C\)</span> an estimate of generation time, we can use them to estimate the population growth rate per time step, the intrinsic growth rate <span class="math inline">\(r\)</span> (see section <a href="#exponential-growth"><strong>??</strong></a> on exponential growth):</p>
+<p><span class="math display" id="eq:R0T">\[\begin{align}
+r \approx \frac{\ln R_0}{T_C}.
+\tag{2.3}
+\end{align}\]</span></p>
+<p>This approximation assumes that all offspring produced during the lifetime on average (<span class="math inline">\(R_0\)</span>) are produced exactly at age <span class="math inline">\(T_C\)</span>, rather than at different ages. It can be a good starting point for more accurate calculations based on the Euler-Lotka equation, which is the topic of the next section.</p>
+<p><br></p>
+</div>
+<div id="the-euler-lotka-equation" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> The Euler-Lotka equation<a href="id_02-life-tables.html#the-euler-lotka-equation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <strong>Euler-Lotka equation</strong> is an essential equation in life history theory, because it provides the link between the life history of the focal population, as described by the age-specific fecundity <span class="math inline">\(m_x\)</span> and survivorship <span class="math inline">\(l_x\)</span>, and the mean fitness <span class="math inline">\(\lambda\)</span>, associated with that life history.</p>
+<p>Deriving the Euler-Lotka equation is considered advanced level knowledge in this course, although it is not very difficult. It is most important to know what the equation looks like, and to understand the importance in linking the life history (<span class="math inline">\(l_x\)</span> and <span class="math inline">\(m_x\)</span>) to fitness (<span class="math inline">\(\lambda\)</span>). To derive the Euler-Lotka equation, we first define the number of newborn individuals at time <span class="math inline">\(t\)</span>, which is the sum of the newborns produced at each age:</p>
+<p><span class="math display" id="eq:Euler1">\[\begin{align}
+n_0(t)=\sum_{x=0}^{k}n_0(t-x)l_xm_x.
+\tag{2.4}
+\end{align}\]</span></p>
+<p>Here, <span class="math inline">\(n_0(t-x)\)</span> is the number of newborn <span class="math inline">\(x\)</span> years ago (that are now aged <span class="math inline">\(x\)</span> years). This number is multiplied by <span class="math inline">\(l(x)\)</span> to obtain the number of them that are still alive at age <span class="math inline">\(x\)</span>, and then by <span class="math inline">\(m(x)\)</span> to get the total number of offspring they produce at age <span class="math inline">\(x\)</span>. The sum is over all ages, to get the total number of offspring (left side of the equation). For the next step of the derivation, we first assume that the population, and therefore each age class, grows steadily and exponentially at rate <span class="math inline">\(\lambda\)</span>. Because the population grows exponentially, we can guess that the number of newborn will follow an equation on the form <span class="math inline">\(n_0(t)=Q\lambda^t\)</span> (remember the equation for exponential growth), where <span class="math inline">\(Q\)</span> is a constant. Inserting this for <span class="math inline">\(n_0(t)\)</span> and <span class="math inline">\(n_0(t-x)\)</span> in the equation above, we now get</p>
+<p><span class="math display" id="eq:Euler2">\[\begin{align}
+Q\lambda^{t}=\sum_{x=0}^{k}Q\lambda^{t-x}l_xm_x.
+\tag{2.5}
+\end{align}\]</span></p>
+<p>Finally, we divide each side by <span class="math inline">\(Q\lambda^t\)</span> to get the Euler-Lotka equation (remember that we can write <span class="math inline">\(\lambda^{t-x}=\lambda^{t}\lambda^{-x}\)</span>):</p>
+<p><span class="math display" id="eq:Euler">\[\begin{align}
+1=\sum_{x=0}^{k}\lambda^{-x}l_xm_x.
+\tag{2.6}
+\end{align}\]</span></p>
+<p>It is tempting to try to rearrange this equation to isolate <span class="math inline">\(\lambda\)</span> on one side, to get a nice expression for <span class="math inline">\(\lambda\)</span> as a function of
+cumulative survival and fecundity. Unfortunately, this is not possible! The equation can only be solved numerically, for instance by trial and error (change the value of <span class="math inline">\(\lambda\)</span> in the expression until you find the one that leads to the sum being close to 1).</p>
+<p><br></p>
+</div>
+<div id="fitness-measures-in-life-history-theory" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Fitness measures in life history theory<a href="id_02-life-tables.html#fitness-measures-in-life-history-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In the context of life history theory, fitness is often measured by the intrinsic growth rate <span class="math inline">\(r\)</span> (<span class="math inline">\(=\ln\lambda\)</span>) as defined by the Euler-Lotka equation, or by the dominant eigenvalue of the projection matrix.</p>
+<p>Another fitness measure which is commonly used, is the lifetime reproductive success, <span class="math inline">\(R_0\)</span> <span class="math inline">\(\eqref{R0}\)</span>. This measure does however not account for timing of life history events (at which ages reproduction happens, for instance), and thus misses an important aspect of the life history. Both <span class="math inline">\(r\)</span> and <span class="math inline">\(R_0\)</span> are based on the assumption of constant age-specific survival and fecundity in the life table, and neither is a good measure of fitness in the case of strong density- or frequency-dependence (because <span class="math inline">\(r\)</span> and <span class="math inline">\(R_0\)</span> are both based on average values that are not useful for understanding selection in such situations). Life history theory deals mostly with outcomes of evolutionary processes in the long run (i.e. evolution of entire life histories) and to a less extent the short-term dynamics of gene frequencies (population genetics). In cases of strong density or frequency dependence, and where the purpose is to estimate gene frequencies over time, other methods are better suited (e.g. adaptive dynamics frameworks). These are not considered here, but note that the measure of fitness will also generally be different in these frameworks.</p>
+<p>Here, we follow the convention through most of the literature on life history evolution and quantitative genetics based on demographic models, and use <span class="math inline">\(\lambda\)</span> as our main fitness measure (or the equivalent <span class="math inline">\(r=\ln\lambda\)</span>).</p>
+<p><br></p>
+</div>
+<div id="a-fictive-bird-example" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> A fictive bird example<a href="id_02-life-tables.html#a-fictive-bird-example" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><br></p>
+<center>
+<div class="figure"><span style="display:block;" id="fig:fig2"></span>
+<img src="Songbird2.jpg" alt="A songbird." width="30%" />
+<p class="caption">
+Figure 2.1: A songbird.
+</p>
+</div>
+</center>
+<p><br></p>
+<p>As an example, consider a songbird that can live up to 3 years, then reproduces for the last time and dies before reaching age 4. The life table for the female population is given by</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age <span class="math inline">\(x\)</span></th>
+<th>Survival probability <span class="math inline">\(p_x\)</span></th>
+<th>Survivorship <span class="math inline">\(l_x\)</span></th>
+<th>Fecundity <span class="math inline">\(m_x\)</span></th>
+<th><span class="math inline">\(l_xm_x\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.2</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.9</td>
+<td>0.2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.6</td>
+<td>0.18</td>
+<td>3</td>
+<td>0.54</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0</td>
+<td>0.108</td>
+<td>6</td>
+<td>0.648</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>The final column of this life table lists the product of survivorship and fecundity, <span class="math inline">\(l_xm_x\)</span>, and represents the expected number of offspring that an age 0 individual will produce at each age through life. This product occurs in the calculations of <span class="math inline">\(R_0\)</span>, <span class="math inline">\(T_C\)</span> and <span class="math inline">\(\lambda\)</span>, and it is therefore often useful to include a separate column for it. We will return to this bird example in the following sections.</p>
+<p><br></p>
+<div id="calculations-by-hand" class="section level3 hasAnchor" number="2.7.1">
+<h3><span class="header-section-number">2.7.1</span> Calculations ‘by hand’<a href="id_02-life-tables.html#calculations-by-hand" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>From the bird life table, we see that the age at first reproduction is 2, and that although few individuals live to age 3, this is the age class of highest expected number of offspring. The lifetime reproductive success is in this case</p>
+<p><span class="math display">\[
+R_0=\sum_{x=0}^3 l_xm_x=0+0+0.54+0.648=1.19.
+\]</span>
+Thus, each female is expected to be replaced by 1.188 female offspring on average. From this number we also know that the population is growing (<span class="math inline">\(\lambda&gt;1\)</span>), although we do not yet know the exact value of the population growth rate <span class="math inline">\(\lambda\)</span>.</p>
+<p>Using the measure defined above, the cohort generation time for the songbird is given by</p>
+<p><span class="math display">\[
+T_C=\frac{1}{R_0}\sum_{x=0}^k xl_xm_x=\frac{1}{1.118} (0+0+2\cdot0.54+3\cdot0.648)=2.54.
+\]</span>
+The estimate of <span class="math inline">\(\lambda\)</span> based on <span class="math inline">\(R_0\)</span> and <span class="math inline">\(T_C\)</span> is given by
+<span class="math display">\[
+\lambda=e^r\approx e^{\ln R_0/T_C}=e^{\ln 1.118/2.54}\approx 1.05.
+\]</span></p>
+<p>The exact value of <span class="math inline">\(\lambda\)</span> is defined by the Euler-Lotka equation, which for this population is given by</p>
+<p><span class="math display">\[
+1=\sum_{x=0}^{k}\lambda^{-x}l_xm_x=0.54\lambda^{-2}+0.648\lambda^{-3}.
+\]</span>
+We can always solve this by trial and error, and a good starting value for <span class="math inline">\(\lambda\)</span> is the estimate from <span class="math inline">\(R_0\)</span> and <span class="math inline">\(T_C\)</span>, <span class="math inline">\(\lambda \approx1.049\)</span>. However, this is more easily done in R, as shown below.</p>
+<p><br></p>
+</div>
+<div id="calculations-in-r" class="section level3 hasAnchor" number="2.7.2">
+<h3><span class="header-section-number">2.7.2</span> Calculations in R<a href="id_02-life-tables.html#calculations-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can also create a life table and do the above calculations in R. First we define the vectors for age class, age-specific survival, and fecundity. Then we define the life table using a data frame.</p>
+<p><br></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="id_02-life-tables.html#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">3</span> <span class="co">#Age</span></span>
+<span id="cb1-2"><a href="id_02-life-tables.html#cb1-2" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="fu">length</span>(x) <span class="co">#Maximum age</span></span>
+<span id="cb1-3"><a href="id_02-life-tables.html#cb1-3" aria-hidden="true" tabindex="-1"></a>px <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">2</span>, .<span class="dv">9</span>, .<span class="dv">6</span>, <span class="dv">0</span>) <span class="co">#Annual survival probability</span></span>
+<span id="cb1-4"><a href="id_02-life-tables.html#cb1-4" aria-hidden="true" tabindex="-1"></a>lx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fu">cumprod</span>(px)[<span class="sc">-</span>k]) <span class="co">#survivorship probability</span></span>
+<span id="cb1-5"><a href="id_02-life-tables.html#cb1-5" aria-hidden="true" tabindex="-1"></a>mx <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">6</span>) <span class="co">#Fecundity</span></span>
+<span id="cb1-6"><a href="id_02-life-tables.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="id_02-life-tables.html#cb1-7" aria-hidden="true" tabindex="-1"></a>songbird.lifetable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;x&quot;</span> <span class="ot">=</span> x, <span class="st">&quot;px&quot;</span><span class="ot">=</span>px, <span class="st">&quot;l_x&quot;</span><span class="ot">=</span>lx, <span class="st">&quot;mx&quot;</span><span class="ot">=</span>mx, <span class="st">&quot;lxmx&quot;</span><span class="ot">=</span>lx<span class="sc">*</span>mx)</span></code></pre></div>
+<p><br></p>
+<p>Calculating the net reproductive rate and cohort generation time is straightforward using the vectors (note that R automatically multiplies each element of the vectors first, before summing the products):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="id_02-life-tables.html#cb2-1" aria-hidden="true" tabindex="-1"></a>R0 <span class="ot">&lt;-</span> <span class="fu">sum</span>(lx<span class="sc">*</span>mx) <span class="co">#Net reproductive rate</span></span>
+<span id="cb2-2"><a href="id_02-life-tables.html#cb2-2" aria-hidden="true" tabindex="-1"></a>T_C <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">*</span>lx<span class="sc">*</span>mx)<span class="sc">/</span>R0 <span class="co">#Generation time</span></span></code></pre></div>
+<p>The calculated values are <span class="math inline">\(R_0=\)</span> 1.19 and <span class="math inline">\(T_C=\)</span> 2.55.</p>
+<p>Solving the Euler-Lotka equation in R is a bit more tricky (and not something you are expected to memorize). One of several possible approaches is using the function <code>uniroot()</code>. This function can be applied to another function (here: the Euler-Lotka equation) where the focal variable is the first argument (here: <span class="math inline">\(\lambda\)</span>). Uniroot searches for the solution (the value that makes the function equal to zero) within a predefined range. For this to work for the Euler-Lotka equation, we need to rearrange it to get an expression that equals zero (move the number 1 from right-hand side to left hand side), make sure <span class="math inline">\(\lambda\)</span> is the first argument, and then apply the uniroot function:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="id_02-life-tables.html#cb3-1" aria-hidden="true" tabindex="-1"></a>EulerLotka <span class="ot">&lt;-</span> <span class="cf">function</span>(lambda  ){</span>
+<span id="cb3-2"><a href="id_02-life-tables.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(lambda<span class="sc">^</span>(<span class="sc">-</span>x)<span class="sc">*</span>lx<span class="sc">*</span>mx)<span class="sc">-</span><span class="dv">1</span></span>
+<span id="cb3-3"><a href="id_02-life-tables.html#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-4"><a href="id_02-life-tables.html#cb3-4" aria-hidden="true" tabindex="-1"></a>lambda.range <span class="ot">&lt;-</span> <span class="fu">c</span>(.<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb3-5"><a href="id_02-life-tables.html#cb3-5" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(EulerLotka, <span class="at">interval=</span>lambda.range)<span class="sc">$</span>root</span></code></pre></div>
+<p><br></p>
+<p>With this approach the estimated value is <span class="math inline">\(\lambda=\)</span> 1.07.</p>
+<p>You have now seen an example of how the Euler-Lotka equation can be solved in R, but this approach is not commonly used. It is much more convenient to find <span class="math inline">\(\lambda\)</span> based on the projection matrix from a matrix model, which is the topic of section <a href="#MatrixModels"><strong>??</strong></a>.</p>
+<p><br></p>
+</div>
+</div>
+<div id="semelparity-and-iteroparity" class="section level2 hasAnchor" number="2.8">
+<h2><span class="header-section-number">2.8</span> Semelparity and iteroparity<a href="id_02-life-tables.html#semelparity-and-iteroparity" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Some species, including most mammals, have multiple reproductive events during their lifetime. This is known as <strong>iteroparity</strong>, while <strong>semelparity</strong> applies to species that reproduce only once. This mode of reproduction is used by annual plants as well as some perennials, several invertebrates, many fish species, and a few mammals. In salmon, some species are iteroparous and others are semelparous. From a life history perspective it is interesting to know under which circumstances evolution of iteroparity is favored, and we can now apply the knowledge from general age structured models to investigate it.</p>
+<p><span class="citation">Cole (<a href="#ref-Cole1" role="doc-biblioref">1954</a>)</span> was among the authors interested in this and other life history questions. He is known for <strong>Cole’s paradox</strong>, which was only a small part of a larger article. Here, Cole compared two species: The first is semelparous and lives for only a year, after which it produces <span class="math inline">\(m_1\)</span> offspring and died. The second species is iteroparous and lives forever (survival probability of 1 each year), producing <span class="math inline">\(m_2\)</span> offspring each year. Now we can calculate the annual growth rate (fitness) <span class="math inline">\(\lambda\)</span> for each species. Species 1 has a growth rate <span class="math inline">\(\lambda_1=m_1\)</span> (since each individual leaves behind <span class="math inline">\(m_1\)</span> individuals on average each year), while the second species has a growth rate <span class="math inline">\(\lambda_2=1+m_2\)</span> (each individual leaves behind <span class="math inline">\(1+m_2\)</span> individuals each year, i.e. itself plus offspring). What would it take for the semelparous species to have higher fitness than the iteroparous one?</p>
+<p><span class="math display">\[\begin{align}
+\lambda_1 &gt; \lambda_2\\
+m_ 1&gt; 1+m_2.
+\end{align}\]</span></p>
+<p>In other words, as long as species 1 produces at least 1 more offspring per clutch than species 2, it would have the same or higher fitness! This is known as Cole’s paradox, as it seems unlikely especially since species 2 is immortal. This is also the clue to the solution of the paradox: The assumptions for each species are too unrealistic to apply to the real world. Once we take more realism into account, for instance drop immortality but instead have an annual survival probability <span class="math inline">\(p&lt;1\)</span> for species 2, and introduce a difference between adults and juveniles (where juveniles cannot reproduce), iteroparity becomes more favorable and it would cost more to switch to a semelparous life history.</p>
+<p><br></p>
+</div>
+<div id="the-lack-clutch" class="section level2 hasAnchor" number="2.9">
+<h2><span class="header-section-number">2.9</span> The Lack clutch<a href="id_02-life-tables.html#the-lack-clutch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The concept of the <strong>Lack clutch</strong> originates from ornithology, but applies generally to other organisms as well. It is named after the ornithologist David Lack, who suggested a pioneering baseline model for understanding life history trade-offs that affect clutch size.</p>
+<p>The problem started from the observation, including brood manipulation studies, that many birds seem to lay fewer eggs per clutch than they could manage to raise to fledging (independence). This suggests there could be one or more trade-offs preventing them from laying larger clutches, and that the observed clutch size perhaps represents some fitness optimum for the current environment. Lack’s model assumes that this trade-off is with fledgling survival, and he also assumed this trade off was linear. In that case, the optimum clutch size, from the parent’s point of view, is the one that maximizes the number of offspring that survive to fledging. This clutch size is known as the Lack clutch. The offspring, of course, would prefer (from a fitness perspective) to have all parental effort to itself, and the optimum clutch size for the offspring is 1 (just itself). This is an example of a <strong>parent-offspring conflict</strong> (where offspring and parents do not ‘agree’, evolutionarily speaking, on what is the optimum). We discuss other examples in the lectures.</p>
+<p>We can describe the Lack clutch model mathematically as follows. Let <span class="math inline">\(N_e\)</span> be the number of eggs laid in a clutch, and let <span class="math inline">\(l_f(N_e)\)</span> be the probability of survival from egg laying until fledging. It is a linear function of the number of eggs in the clutch:</p>
+<p><span class="math display">\[\begin{align}
+l_f(N_e)=1-cN_e,
+\end{align}\]</span>
+where <span class="math inline">\(c\)</span> is the slope of the relationship. The number of survived fledglings is then given by</p>
+<p><span class="math display">\[\begin{align}
+N_f(N_e)&amp;=l_f(N_e)N_e\\
+&amp;=(1-cN_e)N_e\\
+&amp;=N_e-cN_e^2.
+\end{align}\]</span></p>
+<p><br></p>
+<p>This is a quadratic function, and we can find the maximum by taking the derivative and find the value of <span class="math inline">\(N_e\)</span> (the Lack clutch <span class="math inline">\(N_e^*\)</span>) where this is equal to zero:</p>
+<p><span class="math display">\[\begin{align}
+\frac{dN_f(N_e)}{dN_e}&amp;=1-2cN_e\\
+1-2cN_e^*&amp;=0\\
+N_e^*=\frac{1}{2c}.
+\end{align}\]</span></p>
+<p>This tells us that the stronger the trade-off with offspring survival (size of the slope <span class="math inline">\(c\)</span>), the lower the Lack clutch size. The Lack clutch is larger than one only for <span class="math inline">\(c&lt;0.5\)</span>. The Lack clutch is based on a simple model, with some important assumptions that may not be true in many cases. For instance, the model considers only one (but important) trade-off, with offspring survival. However, other trade-offs could also affect the clutch size, for instance parental survival and future reproduction. Another important assumption is that the trade-off between offspring survival and clutch size is linear, but this is just a convenient assumption and in many cases the offspring survival may be a non-linear function of clutch size (e.g. due to parasitism affecting large clutches only). Furthermore, the model assumes a constant environment, and that parents will treat each offspring equally. In many species, for instance in many raptors, parents will favor the largest / oldest of the siblings, so that younger siblings only survive in very good conditions (or if the older ones die for some reason). In these cases, the younger offspring may represent an “insurance” for the parents, and effects like this are not captured in the model for the Lack clutch.</p>
+<p><br></p>
+<div id="exercises-1" class="section level3 hasAnchor" number="2.9.1">
+<h3><span class="header-section-number">2.9.1</span> Exercises<a href="id_02-life-tables.html#exercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exercise-3.1--1" class="section level4 hasAnchor" number="2.9.1.1">
+<h4><span class="header-section-number">2.9.1.1</span> Exercise 3.1 {-1}<a href="id_02-life-tables.html#exercise-3.1--1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following table shows the average lifetime number of children per woman in different countries<span class="math inline">\(^1\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Country</th>
+<th>Total number of children per woman</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mali</td>
+<td>5.92</td>
+</tr>
+<tr class="even">
+<td>Laos</td>
+<td>2.62</td>
+</tr>
+<tr class="odd">
+<td>Norway</td>
+<td>1.83</td>
+</tr>
+<tr class="even">
+<td>Taiwan</td>
+<td>1.22</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Assume exponential growth, and use the approximation in equation <a href="id_02-life-tables.html#eq:R0T">(2.3)</a> to answer the questions:</p>
+<ul>
+<li><p>If we assume that the generation time of humans is 25 years, what is the annual population growth rate (<span class="math inline">\(\lambda\)</span>) of each country?</p></li>
+<li><p>How many years does each country need to double in population size?</p></li>
+<li><p>What happens to estimated annual growth rate if you increase/decrease the generation time?</p></li>
+<li><p>How well / poorly do you think these populations meet the assumptions made for these calculations?</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="exercise-3.2--1" class="section level4 hasAnchor" number="2.9.1.2">
+<h4><span class="header-section-number">2.9.1.2</span> Exercise 3.2 {-1}<a href="id_02-life-tables.html#exercise-3.2--1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>A botanist follows a cohort of a flowering plant from seeds (age 0) until all are dead. He comes back every year and counts how many live plants are remaining, and how many seeds they produce. Based on this information he writes the following incomplete life table:</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Age <span class="math inline">\(x\)</span></th>
+<th>Remaining cohort <span class="math inline">\(N_x\)</span></th>
+<th>Survivorship <span class="math inline">\(l_x\)</span></th>
+<th>Annual survival <span class="math inline">\(p_x\)</span></th>
+<th>Fecundity <span class="math inline">\(m_x\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>12376</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>4233</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>1790</td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>340</td>
+<td></td>
+<td></td>
+<td>2.1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>268</td>
+<td></td>
+<td></td>
+<td>3.2</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<ul>
+<li><p>What is the age at first reproduction of this plant?</p></li>
+<li><p>Create the same life table in R, with columns corresponding to <span class="math inline">\(x\)</span>, <span class="math inline">\(N_x\)</span> and <span class="math inline">\(m_x\)</span> (hint: you can make vectors first).</p></li>
+<li><p>Calculate the vectors of cumulative survival probability <span class="math inline">\(l_x\)</span> and annual survival probability <span class="math inline">\(p_x\)</span>, and add these as columns to the life table.</p></li>
+<li><p>Make plots of each life table column (<span class="math inline">\(N_x\)</span>, <span class="math inline">\(l_x\)</span>, <span class="math inline">\(p_x\)</span>, <span class="math inline">\(m_x\)</span>) as a function of age <span class="math inline">\(x\)</span> (hint: the <code>melt()</code> function from the package <code>reshape2</code> is useful if you use ggplot2). Describe the life history you see from the plot.</p></li>
+<li><p>Calculate the expected lifetime reproduction <span class="math inline">\(R_0\)</span>. What does this value say about the population growth rate?</p></li>
+<li><p>Calculate the generation time <span class="math inline">\(T_C\)</span>. What does this measure describe? What is the estimate of <span class="math inline">\(\lambda\)</span> based on <span class="math inline">\(R_0\)</span> and <span class="math inline">\(T_C\)</span>?</p></li>
+<li><p>Write down the Euler-Lotka equation for this life history. Solve the equation for <span class="math inline">\(\lambda\)</span> using the method provided in <a href="id_02-life-tables.html#calculations-in-r">2.7.2</a></p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="exercise-3.3" class="section level4 unnumbered hasAnchor">
+<h4>Exercise 3.3<a href="id_02-life-tables.html#exercise-3.3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>In our bird example, the average clutch size is 3 in age 2, and 6 in age 3. If we assume that the assumptions of the Lack clutch apply, and that the fecundity represents the number of survived fledglings, what is the trade-off between offspring survival and number at each age?</p></li>
+<li><p>In the bird example, no individuals survive until age 4. How could this affect the trade-offs involving clutch size at the different ages?</p></li>
+<li><p>In another fictive bird species, which is a close relative to our example bird, individuals only reproduce at age 4. Otherwise this species has the same average fitness and the same survivorship as in our bird example. What is the clutch size in this other species?</p></li>
+<li><p>What is the name of the reproductive mode of each species from the previous question? Discuss why (or why not) the two species fit with the result of Cole’s paradox.</p></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Caswell1" class="csl-entry">
+Caswell, Hal. 2001. <em>Matrix Population Models</em>. 2nd ed. Sunderland, Massachusetts: Sinauer Associates.
+</div>
+<div id="ref-Cole1" class="csl-entry">
+Cole, Lamont C. 1954. <span>“The Population Consequences of Life History Phenomena.”</span> <em>The Quarterly Review of Biology</em> 29: 103–37.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_01-Exponential.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="id_03-MatrixModels.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "lunr",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
